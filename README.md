@@ -8,4 +8,8 @@ Mostly for my own use, but shared in case it's of interest/use to others.
 
 See my comments in the bash script for additional information (usage; ...).
 
-Example: run the bash script on the input text file.
+USAGE:
+```
+      ./sed_sentence_chunker.sh  <input_file>  <output_file>
+   bash sed_sentence_chunker.sh  <input_file>  <output_file>
+```

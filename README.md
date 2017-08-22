@@ -1,11 +1,8 @@
-# sed_sentence_chunker
-sed-based biomedical sentence chunking (splitting)
+sed-based biomedical sentence chunking (splitting): experiments in processing biomedical text with sed and regex expressions.
 
-Experiments in processing biomedical text with sed and regex expressions.
+Useful for biomedical natural language processing (BioNLP) pre-processing, etc.
 
-Useful for natural language processing (NLP) pre-processing, etc.
-
-Not by any means perfect, but very good sentence chinking, other capabilities.
+Not by any means perfect, but very good sentence chunking, other capabilities.
 
 Mostly for my own use, but shared in case it's of interest/use to others.
 

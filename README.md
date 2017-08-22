@@ -5,7 +5,7 @@
 * Not by any means perfect, but very good sentence chunking, other capabilities.
   * tests: my script > OpenNLP (v. good) > GeniaSS ...
 * Mostly for my own use, but shared in case it's of interest/use to others.
-* See my comments in the bash script for additional information (usage; ...).
+* See my comments in the bash script for additional detail/information.
 
 **USAGE:**
 ```

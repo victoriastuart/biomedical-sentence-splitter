@@ -9,8 +9,6 @@
 # Posted (in part) to:
 #   https://gist.github.com/victoriastuart/4f961f65ae4f7b742d11e95395384692
 
-# Detailed notes: /mnt/Vancouver/Reference/Linux/chunking - sentences (delimiters; sed).txt
-
 # USAGE:
 #      ./sed_sentence_chunker.sh  <input_file>  <output_file>
 #   bash sed_sentence_chunker.sh  <input_file>  <output_file>

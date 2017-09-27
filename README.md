@@ -72,8 +72,6 @@ Otherwise, you can also do this directly in the shell (terminal) the "normal" wa
 
     cat $OUTPUT
 
-----------
-
 ## SAMPLE OUTPUT / TESTS
 
 ```
@@ -133,8 +131,6 @@ Again:
 
     Victoria's here!
 ```
-
-----------
 
 ## ASSIGNING THE OUTPUT TO A SHELL VARIABLE
 
@@ -236,8 +232,6 @@ cat $OUTPUT
     'Internal quotation 2.'
 ```
 
-----------
-
 ## REDIRECTING THE OUTPUT TO A FILE
 
 ... then printing the contents of that file to a shell variable.  The commonly-employed source execution (loads the process in another shell; thus the $OUTPUT variable specifiec in the script is not available to the parent, running shell):
@@ -311,8 +305,6 @@ ls -l out*
 
     ls: cannot access 'out*': No such file or directory
 ```
-
-----------
 
 ## NOTES:
 

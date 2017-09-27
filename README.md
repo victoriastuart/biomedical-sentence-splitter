@@ -62,7 +62,7 @@ Alternatively, you can execute this as follows (same thing):
 
     source sed_sentence_chunker2.sh <<< " Sentence 1. Sentence 2. Victoria's here! \"Internal quotation 1.\" 'Internal quotation 2.' "
 
-As explained below, executing the script that way (note: `sed_sentence_chunker.sh`, *not* `sed_sentence_chunker2.sh` -- which honestly is much easier to use -- allows that script to write the output to a shell variable and export it to the terminal.
+As explained further below, executing the [sed_sentence_chunker2.sh](https://github.com/victoriastuart/sed_sentence_chunker/blob/master/sed_sentence_chunker2.sh) that way allows that script to write the output to a shell variable and export it to the terminal.  [*Aside: honestly, [sed_sentence_chunker.sh](https://github.com/victoriastuart/sed_sentence_chunker/blob/master/sed_sentence_chunker.sh) is much easier to use.* <i class="em em-wink"></i> ]
 
 Otherwise, you can also do this directly in the shell (terminal) the "normal" way, and manually assign the output to a shell variable, as follows:
 

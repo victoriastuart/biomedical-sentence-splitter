@@ -274,7 +274,7 @@ cat applebanana
 
 cat $applebanana    ## hangs!!
 
-    ^C      ## manually kiled that process
+    ^C              ## manually kiled that process
     
 ls -l out*
 

@@ -313,7 +313,7 @@ ls -l out*
 
 2. I wanted to see what would happen with mixed quotes {single: ' | double: "} in the input text string.  This is trivial in the original `sed_sentence_chunker.sh` script (where input and output is passed from / to files).  It is *much* more difficult on the command-line.  The accepted answer in this [StackOverflow](https://stackoverflow.com/questions/8254120/how-to-escape-a-single-quote-in-single-quote-string-in-bash) explains how and why to escape a backslash in a single-quoted string!  Fabulous!! :-D
 
-3. Assigning the output to a shell variable was also surprisingly difficult -- but doable, as explained (e.g.) in this [StackOverflow](https://stackoverflow.com/questions/496702/can-a-shell-script-set-environment-variables-of-the-calling-shell) thread, and illustrated in the output, above.  I modified the script (`sed_sentence_chunker.sh` >> `sed_sentence_chunker2.sh`) to output a variable; in that case you MUST "source" execute the script:
+3. Assigning the output to a shell variable was also surprisingly difficult -- but doable as explained (e.g.) in this [StackOverflow](https://stackoverflow.com/questions/496702/can-a-shell-script-set-environment-variables-of-the-calling-shell) thread, and illustrated in the output, above.  I modified the script (`sed_sentence_chunker.sh` >> `sed_sentence_chunker2.sh`) to output a variable; in that case you MUST "source" execute the script:
 
     . sed_sentence_chunker2.sh <<< " Sentence 1. Sentence 2. Victoria's here! \"Internal quotation 1.\" 'Internal quotation 2.' "
 

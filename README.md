@@ -263,7 +263,8 @@ cat output
 
 cat $OUTPUT
 
-    ^C      ## hangs (as there is no $OUTPUT variable); need to kill that command
+    ^C      ## hangs (as there is no $OUTPUT variable);
+            ## you need to manually kill that command
     
 # E.g.:
 

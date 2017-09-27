@@ -310,7 +310,7 @@ ls -l out*
 
 1. The `<<<` redirect feeds the string to the bash script; for more on that see this [StackOverflow](https://stackoverflow.com/questions/6541109/send-string-to-stdin) thread.
 
-2. I wanted to see what would happen with mixed quotes {single: ' | double: "} in the input text string.  This is trivial in the original `sed_sentence_chunker.sh` script (where inout and output is passed from / to files).  It is *much* more difficult on the command-line.  The accepted answer in this [StackOverflow](https://stackoverflow.com/questions/8254120/how-to-escape-a-single-quote-in-single-quote-string-in-bash) explains how and why to escape a backslash in a single-quoted string!  Fabulous!! :-D
+2. I wanted to see what would happen with mixed quotes {single: ' | double: "} in the input text string.  This is trivial in the original `sed_sentence_chunker.sh` script (where input and output is passed from / to files).  It is *much* more difficult on the command-line.  The accepted answer in this [StackOverflow](https://stackoverflow.com/questions/8254120/how-to-escape-a-single-quote-in-single-quote-string-in-bash) explains how and why to escape a backslash in a single-quoted string!  Fabulous!! :-D
 
 3. Assigning the output to a shell variable was also surprisingly difficult -- but doable, as explained (e.g.) in this [StackOverflow](https://stackoverflow.com/questions/496702/can-a-shell-script-set-environment-variables-of-the-calling-shell) thread, and illustrated in the output, above.  I modified the script (`sed_sentence_chunker.sh` >> `sed_sentence_chunker2.sh`) to output a variable; in that case you MUST "source" execute the script:
 

@@ -308,7 +308,7 @@ ls -l out*
 
 ## NOTES:
 
-1. The `<<<` redirect feeds the string to the bash script; for more on that see this [StackOverflow](https://stackoverflow.com/questions/6541109/send-string-to-stdin) thread.
+1. The `<<<` pipe / redirect feeds the string to the bash script; for more on that see this [StackOverflow](https://stackoverflow.com/questions/6541109/send-string-to-stdin) thread.
 
 2. I wanted to see what would happen with mixed quotes {single: ' | double: "} in the input text string.  This is trivial in the original `sed_sentence_chunker.sh` script (where inout and output is passed from / to files).  It is *much* more difficult on the command-line.  The accepted answer in this [StackOverflow](https://stackoverflow.com/questions/8254120/how-to-escape-a-single-quote-in-single-quote-string-in-bash) explains how and why to escape a backslash in a single-quoted string!  Fabulous!! :-D
 

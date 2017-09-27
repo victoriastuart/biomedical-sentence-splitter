@@ -1,19 +1,34 @@
 #!/bin/bash
 
 # ----------------------------------------------------------------------------
+# https://github.com/victoriastuart/sed_sentence_chunker/blob/master/sed_sentence_chunker2.sh
 # /mnt/Vancouver/Programming/scripts/sed_sentence_chunker2.sh
 
-# Created: 2017-Jul-20 | Victoria Stuart | "mail"..@t.."VictoriasJourney.com"
-# Updated: 2017-Jul-30
+# Modification of:
+#   https://github.com/victoriastuart/sed_sentence_chunker/blob/master/sed_sentence_chunker.sh
+#   /mnt/Vancouver/Programming/scripts/sed_sentence_chunker.sh
 
-# Posted (in part) to:
+# Detailed in my GitHub repo,
+#   https://github.com/victoriastuart/sed_sentence_chunker/blob/master/README.md
+# and my Personal Projects page at Persagen.com,
+#   http://persagen.com/about/victoria/projects/sed_sentence_chunker.html
+
+# Created: 2017-Sep-26 | Victoria Stuart | info@Persagen.com
+# Updated: 2017-Sep-27
+
+# See also (re: original file, sed_sentence_chunker.sh):
 #   https://gist.github.com/victoriastuart/4f961f65ae4f7b742d11e95395384692
 
-# Detailed notes: /mnt/Vancouver/Reference/Linux/chunking - sentences (delimiters; sed).txt
+# Detailed notes (mine | personal | not online): /mnt/Vancouver/Reference/Linux/chunking - sentences (delimiters; sed).txt
 
+# ----------------------------------------------------------------------------
 # USAGE:
-#      ./sed_sentence_chunker.sh  <input_file>  <output_file>
-#   bash sed_sentence_chunker.sh  <input_file>  <output_file>
+# ======
+#
+# See comments at: http://persagen.com/about/victoria/projects/sed_sentence_chunker.html
+#
+#        . sed_sentence_chunker2.sh  "quoted input text / sentences"      ## << note: dot space command
+#   source sed_sentence_chunker2.sh  "quoted input text / sentences"
 # ----------------------------------------------------------------------------
 
 # ============================================================================

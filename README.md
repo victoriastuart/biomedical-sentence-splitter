@@ -279,7 +279,7 @@ ls -l out*
 
     -rw-r--r-- 1 victoria victoria 93 Sep 26 20:31 output
 
-OUTPUT=$(printf output)     ## can also do: OUTPUT=$echo output)
+OUTPUT=$(printf output)     ## can also do: OUTPUT=$(echo output)
 
 cat $OUTPUT
 

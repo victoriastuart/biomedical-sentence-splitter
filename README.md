@@ -93,6 +93,8 @@ $ ./sed_sentence_chunker2.sh <<< " Sentence 1. Sentence 2. Victoria's here! \"In
     'Internal quotation 2.'
 ```
 
+Tweak the script e.g. to get rid of the blank lines between the output lines (i.e. remove one of the `\n` in the `\n\n` statements.
+
 The following (**note:** different use of quotations but otherwise identical) will fail to execute, as you cannot use the escape ( `\` ) character within single-quoted strings, *except* by prefixing the string with `$`, per the accepted answer at [StackOverflow](https://stackoverflow.com/questions/8254120/how-to-escape-a-single-quote-in-single-quote-string-in-bash)
 
 ```

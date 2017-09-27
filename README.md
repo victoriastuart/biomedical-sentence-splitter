@@ -234,7 +234,7 @@ cat $OUTPUT
 
 ## REDIRECTING THE OUTPUT TO A FILE
 
-... then printing the contents of that file to a shell variable.  The commonly-employed source execution (loads the process in another shell; thus the $OUTPUT variable specifiec in the script is not available to the parent, running shell):
+... then printing the contents of that file to a shell variable.  The commonly-employed source execution (loads the process in another shell; thus the $OUTPUT variable specific in the script is not available to the parent, running shell):
 
 ```
 ./sed_sentence_chunker2.sh <<< " Sentence 1. Sentence 2. Victoria's here! \"Internal quotation 1.\" 'Internal quotation 2.' "

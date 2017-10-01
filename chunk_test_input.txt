@@ -76,8 +76,9 @@ iv. Final sentence.
 
 
 ==============================================================================
-CITATIONS
+CITATIONS - AUTHOR NAME ABBREVIATIONS
 ==============================================================================
+
 BRCA1. Genes.
 
 Some text, Robert O. Watson. More text.
@@ -108,6 +109,157 @@ Some text. Chen A.-B. Jiang. More text.
 
 Some text, Chen A-B. Jiang. More text.
 Some text. Chen A-B. Jiang. More text.
+
+
+==============================================================================
+CITATIONS - JOURNAL TITLE ABBREVIATIONS
+==============================================================================
+
+We study the thermodiffusion behavior of spherical polystyrene beads with a diameter of 25 nm by infrared thermal diffusion Forced Rayleigh Scattering (IR-TDFRS). Similar beads were used to investigate the radial dependence of the Soret coefficient by different authors. While Duhr and Braun (Proc. Natl. Acad. Sci. U.S.A. 104, 9346 (2007)) observed a quadratic radial dependence Braibanti et al. (Phys. Rev. Lett. 100, 108303 (2008)) found a linear radial dependence of the Soret coefficient. We demonstrated that special care needs to be taken to obtain reliable thermophoretic data, because the measurements are very sensitive to surface properties.
+
+------------------------------------------------------------------------------
+Stuart, G. R., & Glickman, B. W. (2000). Through a glass, darkly: reflections of mutation from lacI transgenic mice. Genetics, 155(3), 1359-1367. Cited by 32
+--------------------------------------------------------------
+
+Andrew, S. E., A. H. Reitmair, J. Fox, L. Hsiao, A. Francis et al., 1997 Base transitions dominate the mutational spectrum of a transgenic reporter gene in MSH2 deficient mice. Oncogene 15: 123–129.
+
+Bhattacharya, S. K., S. Ramchandani, N. Cervoni and M. Szyf, 1999 A mammalian protein with specific demethylase activity for mCpG DNA. Nature 397: 579–583.  Bird, A. P., 1980 DNA methylation and the frequency of CpG in animal DNA. Nucleic Acids Res. 8: 1499–1504.
+
+Bowman, P. D., 1985 Aging and the cell cycle in vivo and in vitro, pp. 117–136 in CRC Handbook of Cell Biology of Ageing, edited by V. J. Cristofalo. CRC Press, Boca Raton, FL.
+
+Brodsky, V. Y., and I. V. Uryvaeva, 1985 The biological significance of polyploidy and polyteny, pp. 175–233 in Genome Multiplication in Growth and Development. Biology of Polyploid and Polytene Cells.  Cambridge University Press, Cambridge.
+
+Brodsky, W. Y., and I. V. Uryvaeva, 1977 Cell polyploidy: its relation to tissue growth and function. Int. Rev. Cytol. 50: 275–332.
+
+Brooks, P. J., C. Marietta and D. Goldman, 1996 DNA mismatch repair and DNA methylation in adult brain neurons. J. Neurosci.  16: 939–945.
+
+Brown, T. C., and J. Jiricny, 1987 A specific mismatch repair event protects mammalian cells from loss of 5-methylcytosine. Cell 50: 945–950.
+
+Buetow, D. E., 1985 Cell numbers vs. age in mammalian tissues and organs, pp. 1–115 in CRC Handbook of Cell Biology of Ageing, edited by V. J. Cristofalo. CRC Press, Boca Raton, FL.
+
+Burkhart, J. G., and H. V. Malling, 1993 Mutagenesis and transgenic systems: perspective from the mutagen, N-ethyl-N-nitrosourea. Environ. Mol. Mutagen. 22: 1–6.
+
+Cameron, I. L., 1971 Cell proliferation and renewal in the mammalian body, pp. 45–85 in Cellular and Molecular Renewal in the Mammalian Body, edited by I. L. Cameron and J. D. Thrasher. Academic Press, New York.
+
+Carriere, R., 1969 The growth of liver parenchymal nuclei and its endocrine regulation. Int. Rev. Cytol. 25: 201–277.
+
+Cooper, D. N., and M. Krawczak, 1989 Cytosine methylation and the fate of CpG dinucleotides in vertebrate genomes. Hum.  Genet. 83: 181–188.
+
+Cooper, D. N., and H. Youssoufian, 1988 The CpG dinucleotide and human genetic disease. Hum. Genet. 78: 151–155.
+
+Coulondre, C., J. H. Miller, P. J. Farabaugh and W. Gilbert, 1978 Molecular basis of base substitution hotspots in Escherichia coli.  Nature 274: 775–780.
+
+Curtis, H. J., 1971 Genetic factors in aging. Adv. Genet. 16: 305–324.  de Boer, J. G., and B. W. Glickman, 1998 The lacI gene as a target for mutation in transgenic rodents and Escherichia coli. Genetics 148: 1441–1451.
+
+de Boer, J. G., H. Erfle, J. Holcroft, D. Walsh, M. Dycaico et al., 1996 Spontaneous mutants recovered from liver and germ cell tissue of low copy number lacI transgenic rats. Mutat. Res. 352: 73–78.
+
+de Boer, J. G., H. Erfle, D. Walsh, J. Holcroft, J. S. Provost et al., 1997 Spectrum of spontaneous mutations in liver tissue of lacI transgenic mice. Environ. Mol. Mutagen. 30: 273–286.
+
+Drahovsky, D., and T. L. J. Boehm, 1980 Enzymatic DNA methylation in higher eukaryotes. Int. J. Biochem. 12: 523–528.
+
+Drake, J. W., B. Charlesworth, D. Charlesworth and J. F. Crow, 1998 Rates of spontaneous mutation. Genetics 148: 1667–1686.
+
+Drost, J. B., and W. R. Lee, 1995 Biological basis of germline mutation: comparisons of spontaneous germline mutation rates among Drosophila, mouse, and human. Environ. Mol. Mutagen.  25 (Suppl. 26): 48–64.
+
+Dycaico, M. J., G. S. Provost, P. L. Kretz, S. L. Ransom, J. C.  Moores et al., 1994 The use of shuttle vectors for mutation analysis in transgenic mice and rats. Mutat. Res. 307: 461–478.
+
+Eldridge, S. R., and S. M. Goldsworthy, 1996 Cell proliferation rates in common cancer target tissues of B6C3F1 mice and F344 rats: effects of age, gender, and choice of marker. Fundam. Appl.  Toxicol. 32: 159–167.
+
+Farabaugh, P. J., 1978 Sequence of the lacI gene. Nature 274: 765– 769.
+
+Franks, L. M., P. D. Wilson and R. D. Whelan, 1974 The effects of age on total DNA and cell number in the mouse brain. Gerontologia 20: 21–26.
+
+Gama-Sosa, M. A., R. M. Midgett, V. A. Slagel, S. Githens, K. C.  Kuo et al., 1983 Tissue-specific differences in DNA methylation in various mammals. Biochim. Biophys. Acta 740: 212–219.
+
+Heddle, J. A., 1998 The role of proliferation in the origin of mutations in mammalian cells. Drug Metab. Rev. 30: 327–338.  
+
+Heddle, J. A., 1999 On clonal expansion and its effects on mutant frequencies, mutation spectra and statistics for somatic mutations in vivo. Mutagenesis 14: 257–260.
+
+Hoal-van Helden, E. G., and P. D. van Helden, 1989 Age-related methylation changes in DNA may reflect the proliferative potential of organs. Mutat. Res. 219: 263–266.
+
+Holmquist, G. P., 1998 Chronic low-dose lesion equilibrium along genes: measurement, molecular epidemiology, and theory of the minimal relevant dose. Mutat. Res. 405: 155–159.
+
+James, S. J., L. Muskhelishvili, D. W. Gaylor, A. Turturro and R.  Hart, 1998 Upregulation of apoptosis with dietary restriction: implications for carcinogenesis and aging. Environ. Health Perspect. 106 (Suppl. 1): 307–312.
+
+Kanungo, M. S., and S. Saran, 1992 Methylation of DNA of the brain and liver of young and old rats. Indian J. Biochem. Biophys.  29: 49–53.
+
+Koeberl, D. D., C. D. K. Bottema, R. P. Ketterling, P. J. Bridge,Reflections of Mutation in lacI Mice D. P. Lillicrap et al., 1990 Mutations causing hemophilia B: direct estimate of the underlying rates of spontaneous germ-line transitions, transversions, and deletions in a human gene. Am.  J. Hum. Genet. 47: 202–217.
+
+Kohler, S. W., G. S. Provost, P. L. Kretz, M. J. Dycaico, J. A. Sorge et al., 1990 Development of a short-term, in vivo mutagenesis assay: the effects of methylation on the recovery of a lambda phage shuttle vector from transgenic mice. Nucleic Acids Res.  25: 3007–3013.
+
+Kohler, S. W., G. S. Provost, A. Fieck, P. L. Kretz, W. O. Bullock et al., 1991 Spectra of spontaneous and mutagen-induced mutations in the lacI gene in transgenic mice. Proc. Natl. Acad. Sci.  USA 88: 7958–7962.
+
+Korr, H., 1980 Proliferation of different cell types in the brain. Adv.  Anat. Embryol. Cell Biol. 61: 1–72.
+
+Laird, P. W., and R. Jaenisch, 1996 The role of DNA methylation in cancer genetic and epigenetics. Annu. Rev. Genet. 30: 441–464.
+
+Li, W.-H., and M. Tanimura, 1987 The molecular clock runs more slowly in man than in apes and monkeys. Nature 326: 93–96.
+
+Li, W.-H., D. L. Ellsworth, J. Krushkal, B.-H. Chang and D. Hewett-Emmett, 1996 Rates of nucleotide substitution in primates and rodents and the generation-time effect hypothesis. Mol. Phylogenet. Evol. 5: 182–187.
+
+Loeb, L. A., 1991 Mutator phenotype may be required for multistage carcinogenesis. Cancer Res. 51: 3075–3079.
+
+Marietta, C., F. Palombo, P. Gallinari, J. Jiricny and P. J. Brooks, 1998 Expression of long-patch and short-patch DNA mismatch repair proteins in the embryonic and adult mammalian brain.  Brain Res. Mol. Brain Res. 53: 317–320.
+
+Matsuo, K., O. Clay, T. Takahashi, J. Silke and W. Schaffner, 1993 Evidence for erosion of mouse CpG islands during mammalian evolution. Somat. Cell Mol. Genet. 19: 543–555.
+
+Mazin, A. L., 1994 Enzymatic DNA methylation as a mechanism of ageing. Mol. Biol. 28: 11–31.
+
+Mazin, A. L., 1995 Life span prediction from the rate of age-related DNA demethylation in normal and cancer cell lines. Exp. Gerontol. 30: 475–484.
+
+Mirsalis, J. C., 1995 Transgenic models for detection of mutations in tumors and normal tissues of rodents. Toxicol. Lett. 82–83: 131–134.
+
+Mirsalis, J. C., J. A. Monforte and R. A. Winegar, 1994 Transgenic animal models for measuring mutations in vivo. Crit. Rev. Toxicol.  24: 255–280.
+
+Ochiai, M., K. Ishida, T. Ushijima, T. Suzuki, T. Sofuni et al., 1998 DNA adduct level induced by 2-amino-3,4-dimethylimidazo[4,5-f]-quinoline in Big Blue mice does not correlate with mutagenicity.  Mutagenesis 13: 381–384.
+
+Okonogi, H., T. Ushijima, X. B. Zhang, J. A. Heddle, T. Suzuki et al., 1997 Agreement of mutational characteristics of heterocyclic amines in lacI of the Big Blue mouse with those in tumor related genes in rodents. Carcinogenesis 18: 745–748.
+
+Provost, G. S., and J. M. Short, 1994 Characterization of mutations induced by ethylnitrosourea in seminiferous tubule germ cells of transgenic B6C3F 1 mice. Proc. Natl. Acad. Sci. USA 91: 6564–6568.
+
+Ramchandani, S., S. K. Bhattacharya, N. Cervoni and M. Szyf, 1999 DNA methylation is a reversible biological signal. Proc. Natl. Acad. Sci. USA 96: 6107–6112.
+
+Rein, T., M. L. DePamphilis and H. Zorbas, 1998 Identifying 5-methylcytosine and related modifications in DNA genomes.  Nucleic Acids Res. 26: 2255–2264.  1367
+
+Schultze, B., A. M. Kellerer, C. Grossmann and W. Maurer, 1978 Growth fraction and cycle duration of hepatocytes in the three-week-old rat. Cell Tissue Kinet. 11: 241–249.
+
+Scrable, H., and P. J. Stambrook, 1997 Activation of the lac repressor in the transgenic mouse. Genetics 147: 297–304.
+
+Shen, J.-C., W. M. Rideout III and P. A. Jones, 1992 High frequency mutagenesis by a DNA methyltransferase. Cell 71: 1073–1080.
+
+Shen, J.-C., W. M. Rideout III and P. A. Jones, 1994 The rate of hydrolytic deamination of 5-methylcytosine in double-stranded DNA. Nucleic Acids Res. 22: 972–976.
+
+Singhal, R. P., L. L. Mays-Hoopes and G. L. Eichhorn, 1987 DNA methylation in aging of mice. Mech. Ageing Dev. 41: 199–210.
+
+Skopek, T. R., K. L. Kort and D. R. Marino, 1995 Relative sensitivity of the endogenous hprt gene and lacI transgene in ENU-treated Big Blue B6C3F1 mice. Environ. Mol. Mutagen. 26: 9–15.
+
+Skopek, T., D. Marino, K. Kort, J. Miller, M. Trumbauer et al., 1998 Effect of target gene CpG content on spontaneous mutation in transgenic mice. Mutat. Res. 400: 77–88.
+
+Steinberg, R. A., and K. B. Gorman, 1992 Linked spontaneous CG→TA mutations at CpG sites in the gene for protein kinase regulatory subunit. Mol. Cell. Biol. 12: 767–772.
+
+Stuart, G. R., Y. Oda, J. G. de Boer and B. W. Glickman, 2000 Mutation frequency and specificity with age in liver, bladder and brain of lacI transgenic mice. Genetics 154: 1291–1300.
+
+Tao, K. S., C. Urlando and J. A. Heddle, 1993 Comparison of somatic mutation in a transgenic versus host locus. Proc. Natl.  Acad. Sci. USA 90: 10681–10685.
+
+Tawa, R., T. Ono, A. Kurishita, S. Okada and S. Hirose, 1990 Changes of DNA methylation level during pre- and postnatal periods in mice. Differentiation 45: 44–48.
+
+Thompson, J. N., Jr., R. C. Woodruff and H. Huai, 1998 Mutation rate: a simple concept has become complex. Environ. Mol. Mutagen. 32: 292–300.
+
+Uryvaeva, I. V., 1981 Biological significance of liver cell polyploidy: an hypothesis. J. Theor. Biol. 89: 557–571.
+
+Walker, V. E., N. J. Gorelick, J. L. Andrews, T. R. Craft, J. G. de Boer et al., 1996 Frequency and spectrum of ethylnitrosourea-induced mutation at the hprt and lacI loci in splenic lymphocytes of exposed lacI transgenic mice. Cancer Res. 56: 4654–4661.
+
+Walter, C. A., G. W. Intano, J. R. McCarrey, C. A. McMahan and R. B. Walter, 1998 Mutation frequency declines during spermatogenesis in young mice but increases in old mice. Proc.  Natl. Acad. Sci. USA 95: 10015–10019.
+
+Wilson, V. L., and P. A. Jones, 1983 DNA methylation decreases in aging but not in immortal cells. Science 220: 1055–1057.  Wilson, V. L., R. A. Smith, S. Ma and R. G. Cutler, 1987 Genomic 5-methyldeoxycytidine decreases with age. J. Biol. Chem. 262: 9948–9951.
+
+Winick, M., J. A. Brasel and P. Rosso, 1972 Nutrition and cell growth. Curr. Concepts Nutr. 1: 49–97.
+
+Yang, A. S., M. L. Gonzalgo, J.-M. Zingg, R. P. Millar, J. D. Buckley et al., 1996 The rate of CpG mutation in Alu repetitive elements within the p53 tumor suppressor gene in the primate germline.  J. Mol. Biol. 258: 240–250.
+
+You, Y. H., A. Halangoda, V. Buettner, K. Hill, S. Sommer et al., 1998 Methylation of CpG dinucleotides in the lacI gene of the Big Blue transgenic mouse. Mutat. Res. 420: 55–65.
+
+Zhang, X., and C. K. Mathews, 1994 Effect of DNA cytosine methylation upon deamination-induced mutagenesis in a natural target sequence in duplex DNA. J. Biol. Chem. 269: 7066–7069.
 
 
 ==============================================================================

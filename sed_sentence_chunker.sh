@@ -1,13 +1,18 @@
 #!/bin/bash
 
 # ----------------------------------------------------------------------------
-# /mnt/Vancouver/Programming/scripts/sed_sentence_chunker.sh
+# /mnt/Vancouver/Programming/scripts/sed_sentence_chunker/sed_sentence_chunker.sh
+
+# For command-line text input/output, use
+# /mnt/Vancouver/Programming/scripts/sed_sentence_chunker2.sh
 
 # Created: 2017-Jul-20 | Victoria Stuart | "mail"..@t.."VictoriasJourney.com"
 # Updated: 2017-Jul-30
 
 # Posted (in part) to:
 #   https://gist.github.com/victoriastuart/4f961f65ae4f7b742d11e95395384692
+
+# Detailed notes: /mnt/Vancouver/Reference/Linux/chunking - sentences (delimiters; sed).txt
 
 # USAGE:
 #      ./sed_sentence_chunker.sh  <input_file>  <output_file>
@@ -45,7 +50,7 @@ exit; fi
 # =================================
 
 # ----------------------------------------
-# CITATIONS:
+# CITATIONS - AUTHORS ABBREVIATIONS:
 
 # Remove periods in initials:
 sed -r 's/( [A-Z])\.([A-Z])\.([A-Z])\.([A-Z])\. /\1\2\3\4 /g' $input > tmp_file_1
@@ -101,8 +106,8 @@ sed -i -r 's/[cC]\.f\.\s\s*([A-Z])/Ri9Ohk\1/g' tmp_file_1
 
 #sed -r 's/([.?!"])\s\s*([A-Z\"])/\1\n\n\2/g' tmp_file_1 > tmp_file_2
 
-# Quotations a 'problem;' partial solution (idea) per
-# https://stackoverflow.com/questions/24509214/how-to-escape-single-quote-in-sed
+# ----------------------------------------------------------------------------
+# LEADING WHITESPACE, TABS:
 
 # Remove all leading and trailing whitespace from sentences as well as multiple spaces:
 # https://www.cyberciti.biz/tips/delete-leading-spaces-from-front-of-each-word.html
@@ -110,9 +115,58 @@ sed -i 's/^[ \t]*//;s/[ \t]*$//' tmp_file_1
 # Replace multiple spaces with single space:
 sed -i 's/  */ /g' tmp_file_1
 
+# ----------------------------------------------------------------------------
+# CITATIONS - JOURNAL TITLE ABBREVIATIONS:
+
+# Another very tricky 'problem.'  Will need to approach as textual spans, presuming that
+# Journal abbreviations will be <= 20 characters (can adjust below, if needed).
+# For comparison, how long are simple sentences?
+#   "Here in the car." : 16 char
+#        "In the car." : 11 char
+
+#https://stackoverflow.com/questions/29953042/limit-sed-to-certain-character-range-in-a-line
+#https://stackoverflow.com/questions/538664/using-sed-how-do-you-print-the-first-n-characters-of-a-line
+# https://www.gnu.org/software/sed/manual/html_node/Regular-Expressions.html
+
+# Approach:
+# ---------
+
+# Match periods followed by a span of .{x,y} characters (replace first period
+# with Shah7a; replace 2nd period with Aesh4s):
+
+sed -i -r "s/[.](.{1,20})[.]/Shah7a\1./g" tmp_file_1
+# Need to iterate a few more times, to catch longer Titles, e.g. Proc. Natl. Acad. Sci. U.S.A.
+sed -i -r "s/[.](.{1,20})[.]/Shah7a\1./g" tmp_file_1
+sed -i -r "s/[.](.{1,20})[.]/Shah7a\1./g" tmp_file_1
+sed -i -r "s/[.](.{1,20})[.]/Shah7a\1./g" tmp_file_1
+sed -i -r "s/[.](.{1,20})[.]/Shah7a\1./g" tmp_file_1
+sed -i -r "s/[.](.{1,20})[.]/Shah7a\1./g" tmp_file_1
+sed -i -r "s/[.](.{1,20})[.]/Shah7a\1./g" tmp_file_1
+sed -i -r "s/[.](.{1,20})[.]/Shah7a\1./g" tmp_file_1
+sed -i -r "s/[.](.{1,20})[.]/Shah7a\1./g" tmp_file_1
+sed -i -r "s/[.](.{1,20})[.]/Shah7a\1./g" tmp_file_1
+# NOW, substitute the second period in the journal title abbreviations"
+sed -i -r "s/Shah7a(.{1,20})[.]/Shah7a\1Aesh4s/g" tmp_file_1
+
+# Logic:
+# ------
+
+# {._ _ _ _ _.}  -->  {i_ _ _ _ _.}
+# Repeat / iterate expression above as needed (see explanation, above),
+# then make final substitution (terminal period, in {x,y} span):
+# {i_ _ _ _ _.}  -->  {i_ _ _ _ _j}
+# Replace i, j substitutions later, restoring periods.
+
+# - ---------------------------------------------------------------------------
+# QUOTATIONS:
+
+# Also a 'problem;' partial solution (idea) per
+# https://stackoverflow.com/questions/24509214/how-to-escape-single-quote-in-sed
+
 # Process double-quotes (" "):
 sed -r 's/([?!])\s\s*/\1\n\n/g' tmp_file_1 > tmp_file_2
-sed -r 's/([."])\s\s*([A-Z"])/\1\n\n\2/g' tmp_file_1 > tmp_file_2
+#sed -r 's/([."])\s\s*([A-Z"])/\1\n\n\2/g' tmp_file_1 > tmp_file_2
+sed -r 's/\{5,\}.*([."])\s\s*([A-Z"])/\1\n\n\2/g' tmp_file_1 > tmp_file_2
 
 # Process single-quotes (' '):
 sed -i -r "s/([?!])\s\s*/\1\n\n/g" tmp_file_2
@@ -156,9 +210,18 @@ sed -i 's/Ms, /Ms. /g' tmp_file_2
 sed -i 's/Mrs, /Mrs. /g' tmp_file_2
 sed -i 's/Mr, /Mr. /g' tmp_file_2
 sed -i 's/Drs, /Drs. /g' tmp_file_2
-# Final sed operation; OUTPUT final (processed) file:
-sed 's/Dr, /Dr. /g' tmp_file_2 > $output
 
+# ----------------------------------------------------------------------------
+# CITATIONS - JOURNAL ABBREVIATIONS:
+
+sed -i "s/Shah7a/./g" tmp_file_2
+sed -i "s/Aesh4s/./g" tmp_file_2
+
+# ----------------------------------------------------------------------------
+# FINAL SED OPERATION:
+
+# OUTPUT final (processed) file:
+sed 's/Dr, /Dr. /g' tmp_file_2 > $output
 
 # ========================================
 # CLEAN UP:

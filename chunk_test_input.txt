@@ -115,12 +115,13 @@ Some text. Chen A.-B. Jiang. More text.
 Some text, Chen A-B. Jiang. More text.
 Some text. Chen A-B. Jiang. More text.
 
-
 ==============================================================================
 CITATIONS - JOURNAL TITLE ABBREVIATIONS
 ==============================================================================
 
 We study the thermodiffusion behavior of spherical polystyrene beads with a diameter of 25 nm by infrared thermal diffusion Forced Rayleigh Scattering (IR-TDFRS). Similar beads were used to investigate the radial dependence of the Soret coefficient by different authors. While Duhr and Braun (Proc. Natl. Acad. Sci. U.S.A. 104, 9346 (2007)) observed a quadratic radial dependence Braibanti et al. (Phys. Rev. Lett. 100, 108303 (2008)) found a linear radial dependence of the Soret coefficient. We demonstrated that special care needs to be taken to obtain reliable thermophoretic data, because the measurements are very sensitive to surface properties.
+
+The item on p. 1. The item on pp. 2-3. The items on p. 23. The end.
 
 ------------------------------------------------------------------------------
 Stuart, G. R., & Glickman, B. W. (2000). Through a glass, darkly: reflections of mutation from lacI transgenic mice. Genetics, 155(3), 1359-1367. Cited by 32

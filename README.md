@@ -29,7 +29,7 @@ See also comments (below) and at: http://persagen.com/about/victoria/projects/se
 . sed_sentence_chunker2.sh  <<<  "quoted input text / sentences"        ## << note: dot space command
 source sed_sentence_chunker2.sh  <<<  "quoted input text / sentences"   ## alternative (script sourcing)
 ```
-**`sed_sentence_chunker<font color="red"2</font>.sh` example 1:**
+**`sed_sentence_chunker2.sh` example 1:**
 ```
 S="This is sentence 1. This is sentence 2."
 . sed_sentence_chunker2.sh <<< $S

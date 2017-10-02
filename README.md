@@ -2,7 +2,7 @@
 
 * My experiments in processing biomedical text with sed and regex expressions.
 * Useful for biomedical natural language processing (BioNLP) pre-processing, etc.
-* Not by any means perfect, but should provide very good sentence chunking (splitting).
+* Not by any means perfect, but should provide very good sentence splitting.
   * tests: my script > OpenNLP (v. good) ~ GeniaSS ...
 * Mostly for my own use, but shared in case it's of interest/use to others.
 * See my comments in the bash script(s) for additional detail/information.

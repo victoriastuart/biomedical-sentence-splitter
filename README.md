@@ -43,7 +43,7 @@ This is sentence 1.
 This is sentence 2.
 ```
 
-**`sed_sentence_chunker2.sh` example 1:**
+**`sed_sentence_chunker2.sh` example 2:**
 ```
 . sed_sentence_chunker2.sh <<< "This is sentence 3. This is sentence 4."
 This is sentence 3.

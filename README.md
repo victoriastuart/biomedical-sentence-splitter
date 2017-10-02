@@ -11,7 +11,7 @@
   * ssc2 (for sed_sentence_chunker2.sh).
 
 ----------
-**USAGE -- sed_sentence_chunker.sh:**
+**USAGE -- `sed_sentence_chunker.sh`:**
 
 *Processes input file; writes to output file.*
 ```
@@ -20,7 +20,7 @@
 ```
 
 ----------
-**USAGE -- sed_sentence_chunker2.sh:**
+**USAGE -- `sed_sentence_chunker2.sh`:**
 
 *Processes command-line input strings; outputs to terminal and bash environment variable.*
 
@@ -29,7 +29,7 @@ See also comments (below) and at: http://persagen.com/about/victoria/projects/se
 . sed_sentence_chunker2.sh  <<<  "quoted input text / sentences"        ## << note: dot space command
 source sed_sentence_chunker2.sh  <<<  "quoted input text / sentences"   ## alternative (script sourcing)
 ```
-**sed_sentence_chunker2.sh example 1:**
+**`sed_sentence_chunker2.sh` example 1:**
 ```
 S="This is sentence 1. This is sentence 2."
 . sed_sentence_chunker2.sh <<< $S
@@ -43,7 +43,7 @@ This is sentence 1.
 This is sentence 2.
 ```
 
-**sed_sentence_chunker2.sh example 1:**# ----------
+**`sed_sentence_chunker2.sh` example 1:**# ----------
 ```
 . sed_sentence_chunker2.sh <<< "This is sentence 3. This is sentence 4."
 This is sentence 3.
@@ -57,7 +57,7 @@ This is sentence 4.
 ```
 ----------
 
-**Update (Sep 26, 2017) -- sed_sentence_chunker2.sh:**
+**Update (Sep 26, 2017) -- `sed_sentence_chunker2.sh`:**
 
 ```
 A Reader asks via e-mail:

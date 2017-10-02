@@ -2,17 +2,59 @@
 
 * My experiments in processing biomedical text with sed and regex expressions.
 * Useful for biomedical natural language processing (BioNLP) pre-processing, etc.
-* Not by any means perfect, but very good sentence chunking, other capabilities.
+* Not by any means perfect, but should provide very good sentence chunking (splitting).
   * tests: my script > OpenNLP (v. good) ~ GeniaSS ...
 * Mostly for my own use, but shared in case it's of interest/use to others.
-* See my comments in the bash script for additional detail/information.
+* See my comments in the bash script(s) for additional detail/information.
+* Rename the scripts, if for convenience you want to use shortened script names:
+  * ssc (for sed_sentence_chunker.sh);
+  * ssc2 (for sed_sentence_chunker2.sh).
 
+----------
 **USAGE -- sed_sentence_chunker.sh:**
+
+*Processes input file; writes to output file.*
 ```
       ./sed_sentence_chunker.sh  <input_file>  <output_file>
    bash sed_sentence_chunker.sh  <input_file>  <output_file>
 ```
 
+----------
+**USAGE -- sed_sentence_chunker2.sh:**
+
+*Processes command-line input strings; outputs to terminal and bash environment variable.*
+
+See also comments (below) and at: http://persagen.com/about/victoria/projects/sed_sentence_chunker.html
+```
+. sed_sentence_chunker2.sh  <<<  "quoted input text / sentences"      ## << note: dot space command
+source sed_sentence_chunker2.sh  <<<  "quoted input text / sentences"      ## alternative (script sourcing)
+```
+**sed_sentence_chunker2.sh example 1:**
+```
+S="This is sentence 1. This is sentence 2."
+. sed_sentence_chunker2.sh <<< $S
+This is sentence 1.
+
+This is sentence 2.
+
+cat $OUTPUT
+This is sentence 1.
+
+This is sentence 2.
+```
+
+**sed_sentence_chunker2.sh example 1:**# ----------
+```
+. sed_sentence_chunker2.sh <<< "This is sentence 3. This is sentence 4."
+This is sentence 3.
+
+This is sentence 4.
+
+cat $OUTPUT
+This is sentence 3.
+
+This is sentence 4.
+```
 ----------
 
 **Update (Sep 26, 2017) -- sed_sentence_chunker2.sh:**

@@ -26,8 +26,8 @@
 
 See also comments (below) and at: http://persagen.com/about/victoria/projects/sed_sentence_chunker.html
 ```
-. sed_sentence_chunker2.sh  <<<  "quoted input text / sentences"      ## << note: dot space command
-source sed_sentence_chunker2.sh  <<<  "quoted input text / sentences"      ## alternative (script sourcing)
+. sed_sentence_chunker2.sh  <<<  "quoted input text / sentences"        ## << note: dot space command
+source sed_sentence_chunker2.sh  <<<  "quoted input text / sentences"   ## alternative (script sourcing)
 ```
 **sed_sentence_chunker2.sh example 1:**
 ```

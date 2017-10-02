@@ -14,10 +14,25 @@
 
 # Detailed notes: /mnt/Vancouver/Reference/Linux/chunking - sentences (delimiters; sed).txt
 
+# If the script name is "too long" for convenient use, just rename it; e.g.: ssc
+
+# ----------------------------------------------------------------------------
 # USAGE:
+# ======
+
 #      ./sed_sentence_chunker.sh  <input_file>  <output_file>
 #   bash sed_sentence_chunker.sh  <input_file>  <output_file>
-# ----------------------------------------------------------------------------
+
+# Examples:
+# ---------
+
+#   ./sed_sentence_chunker.sh  chunk_test_input.txt  chunk_test_output.txt
+
+# Read from directory/file, output to directory/file:
+#   ./sed_sentence_chunker.sh  input/chunk_test_input.txt  output/chunk_test_output.txt
+
+# ============================================================================
+
 
 # ============================================================================
 # PRELIMINARIES:
@@ -68,6 +83,10 @@ sed -i -r 's/( [A-Z])\. ([A-Z])\. /\1\2 /g' tmp_file_1
 sed -i -r 's/( [A-Z])\. /\1 /g' tmp_file_1
 sed -i -r 's/( [A-Z])\. /\1 /g' tmp_file_1
 
+# Special case -- page number abbreviation (pp.).  Approach: substitute unique
+# alphanumeric string for "pp." ((generated via: pwgen 6 1); restore later):
+sed -i 's/ pp./Eiph2T/g' tmp_file_1
+
 # ----------------------------------------
 # PERSONAL TITLES (replace '.' with ','):
 
@@ -89,9 +108,12 @@ sed -i 's/Figs. /Figs, /g' tmp_file_1
 # ----------------------------------------
 # OTHER COMPLICATIONS, PECULIARITIES:
 
-# use "pwgen 6" for UUIDs (e.g. pwgen 6 >> AdaeJ7)           ## pwgen 6 2 ; pwgen 6 5 ; etc.
+# use "pwgen 6 2" for UUIDs (e.g. pwgen 6  2 >> AdaeJ7)
+
 sed -i 's/," "/AdaeJ7/g' tmp_file_1
 sed -i 's/??/?/g' tmp_file_1
+
+# ------------------
 
 # "e.g." or "i.e." followed by Capital letter:
 sed -i -r 's/[eE]\.g\.\s\s*([A-Z])/Va1Eed\1/g' tmp_file_1
@@ -115,11 +137,15 @@ sed -i 's/^[ \t]*//;s/[ \t]*$//' tmp_file_1
 # Replace multiple spaces with single space:
 sed -i 's/  */ /g' tmp_file_1
 
+# Remove blank lines:
+# https://stackoverflow.com/questions/16414410/delete-empty-lines-using-sed
+#sed -i '/^\s*$/d' tmp_file_1
+
 # ----------------------------------------------------------------------------
 # CITATIONS - JOURNAL TITLE ABBREVIATIONS:
 
 # Another very tricky 'problem.'  Will need to approach as textual spans, presuming that
-# Journal abbreviations will be <= 20 characters (can adjust below, if needed).
+# most journal abbreviations are <= 15 characters (can adjust below, if needed).
 # For comparison, how long are simple sentences?
 #   "Here in the car." : 16 char
 #        "In the car." : 11 char
@@ -134,19 +160,19 @@ sed -i 's/  */ /g' tmp_file_1
 # Match periods followed by a span of .{x,y} characters (replace first period
 # with Shah7a; replace 2nd period with Aesh4s):
 
-sed -i -r "s/[.](.{1,20})[.]/Shah7a\1./g" tmp_file_1
+sed -i -r "s/[.](.{1,15})[.]/Shah7a\1./g" tmp_file_1
 # Need to iterate a few more times, to catch longer Titles, e.g. Proc. Natl. Acad. Sci. U.S.A.
-sed -i -r "s/[.](.{1,20})[.]/Shah7a\1./g" tmp_file_1
-sed -i -r "s/[.](.{1,20})[.]/Shah7a\1./g" tmp_file_1
-sed -i -r "s/[.](.{1,20})[.]/Shah7a\1./g" tmp_file_1
-sed -i -r "s/[.](.{1,20})[.]/Shah7a\1./g" tmp_file_1
-sed -i -r "s/[.](.{1,20})[.]/Shah7a\1./g" tmp_file_1
-sed -i -r "s/[.](.{1,20})[.]/Shah7a\1./g" tmp_file_1
-sed -i -r "s/[.](.{1,20})[.]/Shah7a\1./g" tmp_file_1
-sed -i -r "s/[.](.{1,20})[.]/Shah7a\1./g" tmp_file_1
-sed -i -r "s/[.](.{1,20})[.]/Shah7a\1./g" tmp_file_1
+sed -i -r "s/[.](.{1,15})[.]/Shah7a\1./g" tmp_file_1
+sed -i -r "s/[.](.{1,15})[.]/Shah7a\1./g" tmp_file_1
+sed -i -r "s/[.](.{1,15})[.]/Shah7a\1./g" tmp_file_1
+sed -i -r "s/[.](.{1,15})[.]/Shah7a\1./g" tmp_file_1
+sed -i -r "s/[.](.{1,15})[.]/Shah7a\1./g" tmp_file_1
+sed -i -r "s/[.](.{1,15})[.]/Shah7a\1./g" tmp_file_1
+sed -i -r "s/[.](.{1,15})[.]/Shah7a\1./g" tmp_file_1
+sed -i -r "s/[.](.{1,15})[.]/Shah7a\1./g" tmp_file_1
+sed -i -r "s/[.](.{1,15})[.]/Shah7a\1./g" tmp_file_1
 # NOW, substitute the second period in the journal title abbreviations"
-sed -i -r "s/Shah7a(.{1,20})[.]/Shah7a\1Aesh4s/g" tmp_file_1
+sed -i -r "s/Shah7a(.{1,15})[.]/Shah7a\1Aesh4s/g" tmp_file_1
 
 # Logic:
 # ------
@@ -156,6 +182,14 @@ sed -i -r "s/Shah7a(.{1,20})[.]/Shah7a\1Aesh4s/g" tmp_file_1
 # then make final substitution (terminal period, in {x,y} span):
 # {i_ _ _ _ _.}  -->  {i_ _ _ _ _j}
 # Replace i, j substitutions later, restoring periods.
+
+# CAVEAT:
+# -------
+
+# Input strings " " with sentences of < length y (in the {x,y} span, above) will NOT be split.  E.g.,
+#   "This is S1. This is S2."
+# will not split, as those sentences are only 11 characters (including the periods).
+# These are expected to be relatively uncommon; if problematic, adjust the span length in {x,y}.
 
 # - ---------------------------------------------------------------------------
 # QUOTATIONS:
@@ -184,6 +218,9 @@ sed -i 's/AdaeJ7/," "/g' tmp_file_2
 # ----------------------------------------
 # Line break after "." that is followed by new sentence (uppercased string, or number):
 sed -i -r 's/([.])\s\s*([A-Z0-9])/\1\n\n\2/g' tmp_file_2
+#
+# Restore "pp." (must appear after expression, above):
+sed -i 's/Eiph2T/ pp./g' tmp_file_2
 
 # Restore "[fF]ig. [0-9]":
 sed -i 's/fig, /fig. /g' tmp_file_2

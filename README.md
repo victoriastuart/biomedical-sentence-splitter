@@ -32,6 +32,7 @@ source sed_sentence_chunker2.sh  <<<  "quoted input text / sentences"   ## alter
 **`sed_sentence_chunker2.sh` example 1:**
 ```
 S="This is sentence 1. This is sentence 2."
+
 . sed_sentence_chunker2.sh <<< $S
 This is sentence 1.
 

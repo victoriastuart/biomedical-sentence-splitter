@@ -38,6 +38,7 @@
 # ----------
 
 #   T="This is sentence 1. This is sentence 2."
+
 #   . sed_sentence_chunker2.sh <<< $T
 #   This is sentence 1.
 #
@@ -49,7 +50,7 @@
 #   This is sentence 2.
 
 # ----------------------------------------
-# Example 1:
+# Example 2:
 # ----------
 
 #   . sed_sentence_chunker2.sh <<< "This is sentence 3. This is sentence 4."
@@ -115,9 +116,18 @@ sed -i -r 's/( [A-Z])\. ([A-Z])\. /\1\2 /g' tmp_file_1
 sed -i -r 's/( [A-Z])\. /\1 /g' tmp_file_1
 sed -i -r 's/( [A-Z])\. /\1 /g' tmp_file_1
 
-# Special case -- page number abbreviation (pp.).  Approach: substitute unique
-# alphanumeric string for "pp." ((generated via: pwgen 6 1); restore later):
+# ----------------------------------------
+# SPECIAL CASES -- COMMON ABBREVIATIONS:
+
+# Comment (Victoria): there is v. likely an easier approach, but as a "quick-fix" this will do.
+
+# Approach: substitute unique alphanumeric string for "pp." [generated via: pwgen 6 1 (restore later)]:
+
+# 1. Page number abbreviation (pp.),
 sed -i 's/ pp./Eiph2T/g' tmp_file_1
+
+# 2. versus (vs.) abbreviation:
+sed -i 's/ vs./Air5ah/g' tmp_file_1
 
 # ----------------------------------------
 # PERSONAL TITLES (replace '.' with ','):
@@ -255,9 +265,13 @@ sed -i 's/AdaeJ7/," "/g' tmp_file_2
 # Line break after "." that is followed by new sentence (uppercased string, or number):
 sed -i -r 's/([.])\s\s*([A-Z0-9])/\1\n\n\2/g' tmp_file_2
 #
-# Restore "pp." (must appear after expression, above):
+# Restore "vs." (must appear after expression, above):
+sed -i 's/Air5ah/ vs./g' tmp_file_2
+#
+# Restore "pp." (also must appear after 2nd previous expression, above):
 sed -i 's/Eiph2T/ pp./g' tmp_file_2
 
+# ----------------------------------------
 # Restore "[fF]ig. [0-9]":
 sed -i 's/fig, /fig. /g' tmp_file_2
 sed -i 's/figs, /figs. /g' tmp_file_2

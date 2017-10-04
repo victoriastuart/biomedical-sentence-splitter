@@ -12,7 +12,7 @@ NOTE: The following will often look VERY silly, but I am trying to functionally 
 
 Hello? Ms. Wilson is asking for the file!      a. b. e. k. l. m. s. t. u. ... as Dr. Stuart et al. proposed, yesterday. Dr. Drs. St. that Mr. Mrs. Ms. St. Where do you live? 1234 Baker St. That's where you can find me. They found nothing there? Yes, nothing! However, in v.3.4 (see Fig. 2, and fig 3, and Figs. 5-6), it clearly shows, ... on the last page..  Whoa!?! Very good, i.e., excellent! E.g., another example. E.g. another one; e.g one more; i.e. that's the last one!  :-D
 
-The item on p. 1. The item on pp. 2-3. The items on p. 23. The end.
+The item on p. 1. The item on pp. 2-3. The items on p. 23. The end. This versus that.  This vs. that. Stuart vs. Stuart. The end.
 
 ==============================================================================
 QUOTED SENTENCES:
@@ -178,7 +178,7 @@ Franks, L. M., P. D. Wilson and R. D. Whelan, 1974 The effects of age on total D
 
 Gama-Sosa, M. A., R. M. Midgett, V. A. Slagel, S. Githens, K. C.  Kuo et al., 1983 Tissue-specific differences in DNA methylation in various mammals. Biochim. Biophys. Acta 740: 212–219.
 
-Heddle, J. A., 1998 The role of proliferation in the origin of mutations in mammalian cells. Drug Metab. Rev. 30: 327–338.  
+Heddle, J. A., 1998 The role of proliferation in the origin of mutations in mammalian cells. Drug Metab. Rev. 30: 327–338.
 
 Heddle, J. A., 1999 On clonal expansion and its effects on mutant frequencies, mutation spectra and statistics for somatic mutations in vivo. Mutagenesis 14: 257–260.
 

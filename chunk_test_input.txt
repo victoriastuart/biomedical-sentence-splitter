@@ -21,6 +21,12 @@ This versus that.  This vs. that. Stuart vs. Stuart. The end.
 PARENTHESES:
 ============
 
+()  {}  []  <>  (some)  {more }  [text ]  <here>
+
+1-year OS was similar between cohorts (58% vs. 56%, respectively) (p = 0.43).
+1-year OS was similar between cohorts [58% vs. 56%, respectively] [p = 0.43].
+1-year OS was similar between cohorts {58% vs. 56%, respectively} {p = 0.43}.
+
 The objective of this study is to examine the frequency, development. [The objective of this study is to examine the frequency, development.]
 
 The objective of this study is to examine the frequency, development. (The objective of this study is to examine the frequency, development.)

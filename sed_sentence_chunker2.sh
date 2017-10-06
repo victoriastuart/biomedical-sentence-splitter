@@ -261,7 +261,7 @@ sed -i -r "s/Shah7a(.[^0-9]{1,15})[.]/Shah7a\1Aesh4s/g" tmp_file
 # ----------------------------------------
 # PROCESS SENTENCES:
 
-sed -i -r 's/([).?!])\s\s*([A-Z0-9([{])/\1\n\n\2/g' tmp_file
+sed -i -r 's/([.?!])\s\s*([A-Z0-9([{])/\1\n\n\2/g' tmp_file
 
 # ----------------------------------------
 # PROCESS QUOTATIONS:

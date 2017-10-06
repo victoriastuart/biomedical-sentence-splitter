@@ -2,8 +2,7 @@
 ADDITIONAL TESTS -- BIOMEDICAL LITERATURE
 
 Created: 2017-Jul-20 | Victoria Stuart | "mail"..@t.."VictoriasJourney.com"
-Updated: 2017-Jul-30
-Updated: 2017-Sep-02
+Updated: 2017-Jul-30 | 2017-Sep-02 | 2017-Oct-05
 ==============================================================================
 
 NOTE: The following will often look VERY silly, but I am trying to functionally challenge my script.  ;-)
@@ -12,9 +11,23 @@ NOTE: The following will often look VERY silly, but I am trying to functionally 
 
 Hello? Ms. Wilson is asking for the file!      a. b. e. k. l. m. s. t. u. ... as Dr. Stuart et al. proposed, yesterday. Dr. Drs. St. that Mr. Mrs. Ms. St. Where do you live? 1234 Baker St. That's where you can find me. They found nothing there? Yes, nothing! However, in v.3.4 (see Fig. 2, and fig 3, and Figs. 5-6), it clearly shows, ... on the last page..  Whoa!?! Very good, i.e., excellent! E.g., another example. E.g. another one; e.g one more; i.e. that's the last one!  :-D
 
-The item on p. 1. The item on pp. 2-3. The items on p. 23. The end.
+The item on p. 2. The item on p. 1.  The item on pp. 2-3. The items on p. 23. The item on p. 9. Apples, bananas!. The item on p. 2.
+
+The item on p. i.  The items on pp. iii-ix.
 
 This versus that.  This vs. that. Stuart vs. Stuart. The end.
+
+==============================================================================
+PARENTHESES:
+============
+
+The objective of this study is to examine the frequency, development. [The objective of this study is to examine the frequency, development.]
+
+The objective of this study is to examine the frequency, development. (The objective of this study is to examine the frequency, development.)
+
+The objective of this study is to examine the frequency, development. {The objective of this study is to examine the frequency, development.}
+
+(The objective of this study is to examine the frequency, development.) (The objective of this study is to examine the frequency, development.)
 
 ==============================================================================
 QUOTED SENTENCES:
@@ -81,6 +94,13 @@ i. Studying an isolated population ...
 ii. Analyzing missense variants with SKAT;
 iii. Examining only regions known to be associated
 iv. Final sentence.
+
+
+==============================================================================
+MISC
+====
+
+The objective of this study is to examine the frequency, development, concomitants, and risk factors of falls in a population-based incident Parkinson's disease (PD) cohort. One hundred eighty-one drug-naïve patients with incident PD and 173 normal controls recruited from the Norwegian ParkWest study were prospectively monitored over 7 years. Information on falls was obtained biannually from patients, and at baseline and after 1, 3, 5, and 7 years of follow-up in control subjects. Generalized estimating equation models for correlated data were applied to investigate concomitant features of falls and risk factors for incident falls during 7 years of follow-up in PD. Overall, 64.1% of patients reported falling during the study period. The 7-year cumulative incidence of falls in non-falling patients at baseline (n = 153) was 57.5%, with a relative risk to controls of at least 3.1 (95% confidence interval 1.5-6.3; p < 0.002). Significant concomitants of falls in patients during the study period were higher age, Unified PD Rating Scale motor score, postural instability and gait difficulties (PIGD) phenotype, dementia, and follow-up time. Higher age at baseline, PIGD phenotype at 1-year visit, and follow-up time were independent risk factors for incident falls during follow-up. Nearly two-thirds of patients in the general PD population experience falls within 7 years of diagnosis, representing a more than threefold increased risk compared to age- and gender-matched controls. Patients with higher age at baseline and early PIGD have the greatest risk of falling and may, therefore, be the prime target of specialized assessment and treatment interventions.
 
 
 ==============================================================================

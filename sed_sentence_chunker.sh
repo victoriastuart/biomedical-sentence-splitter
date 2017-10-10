@@ -102,7 +102,7 @@ sed -i -r 's/ p. ([ivx0-9])/Eiph2T\1/g' tmp_file
 # ----------------------------------------
 # versus (vs.) abbreviation:
 
-sed -i 's/ vs./Air5ah/g' tmp_file
+sed -i 's/ vs\./Air5ah./g' tmp_file
 
 # ----------------------------------------
 # PERSONAL TITLES (replace '.' with ','):
@@ -276,7 +276,7 @@ sed -i 's/AdaeJ7/," "/g' tmp_file
 sed -i -r 's/([.])\s\s*([A-Z0-9])/\1\n\n\2/g' tmp_file
 #
 # Restore "vs." (must appear after expression, above):
-sed -i 's/Air5ah/ vs./g' tmp_file
+sed -i 's/Air5ah/ vs/g' tmp_file
 #
 # Restore page number abbreviations {pp. | p.}
 # (also must appear after 2nd previous expression, above):

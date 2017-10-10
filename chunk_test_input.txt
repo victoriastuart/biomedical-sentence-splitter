@@ -17,6 +17,10 @@ The item on p. i.  The items on pp. iii-ix.
 
 This versus that.  This vs. that. Stuart vs. Stuart. The end.
 
+# Incorrectly abbreviated "vs" abbreviation:
+
+This versus that.  This vs that. Stuart vs Stuart. The end.
+
 ==============================================================================
 PARENTHESES:
 ============

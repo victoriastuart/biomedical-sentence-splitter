@@ -5,27 +5,127 @@ Created: 2017-Jul-20 | Victoria Stuart | "mail"..@t.."VictoriasJourney.com"
 Updated: 2017-Jul-30 | 2017-Sep-02 | 2017-Oct-05
 ==============================================================================
 
-NOTE: The following will often look VERY silly, but I am trying to functionally challenge my script.  ;-)
+NOTES:
 
+1. The following will often look VERY silly, but I am trying to functionally
+challenge my script.  ;-)
+
+2. Sentences of length <= 15 may not be split, a consequence of dealing with
+journal title abbreviations (see comments in script code).
 ==============================================================================
 
-Hello? Ms. Wilson is asking for the file!      a. b. e. k. l. m. s. t. u. ... as Dr. Stuart et al. proposed, yesterday. Dr. Drs. St. that Mr. Mrs. Ms. St. Where do you live? 1234 Baker St. That's where you can find me. They found nothing there? Yes, nothing! However, in v.3.4 (see Fig. 2, and fig 3, and Figs. 5-6), it clearly shows, ... on the last page..  Whoa!?! Very good, i.e., excellent! E.g., another example. E.g. another one; e.g one more; i.e. that's the last one!  :-D
+Hello? Ms. Wilson is asking for the file!      a. b. e. k. l. m. s. t. u. ... as Dr. Stuart et al. proposed, yesterday. ...  Testing here, these contractions: Dr., Drs., St., that Mr., Mrs., Ms., they all found me on the St. Where, exactly, do you live?   I live on 1234 Baker St. That's where you can find me. They found nothing there? Yes, nothing! However, in v.3.4 (see Fig. 2, and fig 3, and Figs. 5-6), it clearly shows, ... on the last page..  Whoa!?! Very good, i.e., excellent! E.g., another example. E.g. another one; e.g one more; i.e. that's the last one!  :-D
 
-The item on p. 2. The item on p. 1.  The item on pp. 2-3. The items on p. 23. The item on p. 9. Apples, bananas!. The item on p. 2.
+The items found on p. 2. The items found on p. 1.  The items found on pp. 2-3. The items found on p. 23. The items found on p. 9. Apples, bananas, carrots!. The items found on p. 2.
 
-The item on p. i.  The items on pp. iii-ix.
+The items found on p. i.  The items found on pp. iii-ix.
 
-This versus that.  This vs. that. Stuart vs. Stuart. The end.
+This versus that versus those.  This vs. that versus that vs. that Stuart vs Stuart.
 
-# Incorrectly abbreviated "vs" abbreviation:
-
+# Ignore incorrectly abbreviated "vs" abbreviation.
 This versus that.  This vs that. Stuart vs Stuart. The end.
+
+# The "vs" in the following sentences should remain "as is."
+This versus that.  This vs, that. Stuart vss Stuart. This vs: that. The end.
+
+You put it where??????????!
+
 
 ==============================================================================
 PARENTHESES:
 ============
 
 ()  {}  []  <>  (some)  {more }  [text ]  <here>
+
+This is sentence number one. This is sentence number 2.
+This is sentence number one! This is sentence number 2.
+This is sentence number one? This is sentence number 2.
+
+This is sentence number one.) (This is sentence number 2.
+This is sentence number one.] [This is sentence number 2.
+This is sentence number one.} {This is sentence number 2.
+
+This is sentence number one.) This is sentence number 2.
+This is sentence number one.] This is sentence number 2.
+This is sentence number one.} This is sentence number 2.
+
+This is sentence number one. (This is sentence number 2.
+This is sentence number one. {This is sentence number 2.
+This is sentence number one. [This is sentence number 2.
+
+This is sentence number one.) [This is sentence number 2.
+This is sentence number one.) {This is sentence number 2.
+
+This is sentence number one.] (This is sentence number 2.
+This is sentence number one.] {This is sentence number 2.
+
+This is sentence number one.} (This is sentence number 2.
+This is sentence number one.} [This is sentence number 2.
+
+This is sentence number one.' 'This is sentence number 2.
+This is sentence number one.' "This is sentence number 2.
+This is sentence number one." 'This is sentence number 2.
+This is sentence number one." "This is sentence number 2.
+
+This is sentence number one.') This is sentence number 2.
+This is sentence number one.') (This is sentence number 2.
+This is sentence number one.') [This is sentence number 2.
+This is sentence number one.') {This is sentence number 2.
+
+This is sentence number one'.) This is sentence number 2.
+This is sentence number one'.) (This is sentence number 2.
+This is sentence number one'.) [This is sentence number 2.
+This is sentence number one'.) {This is sentence number 2.
+
+This is sentence number one.") This is sentence number 2.
+This is sentence number one.") (This is sentence number 2.
+This is sentence number one.") [This is sentence number 2.
+This is sentence number one.") {This is sentence number 2.
+
+This is sentence number one".) This is sentence number 2.
+This is sentence number one".) (This is sentence number 2.
+This is sentence number one".) [This is sentence number 2.
+This is sentence number one".) {This is sentence number 2.
+
+This is sentence number one!' 'This is sentence number 2.
+This is sentence number one!' "This is sentence number 2.
+This is sentence number one!" 'This is sentence number 2.
+This is sentence number one!" "This is sentence number 2.
+
+This is sentence number one'!) This is sentence number 2.
+This is sentence number one'!) (This is sentence number 2.
+This is sentence number one'!) [This is sentence number 2.
+This is sentence number one'!) {This is sentence number 2.
+
+This is sentence number one!") This is sentence number 2.
+This is sentence number one!") (This is sentence number 2.
+This is sentence number one!") [This is sentence number 2.
+This is sentence number one!") {This is sentence number 2.
+
+This is sentence number one"!) This is sentence number 2.
+This is sentence number one"!) (This is sentence number 2.
+This is sentence number one"!) [This is sentence number 2.
+This is sentence number one"!) {This is sentence number 2.
+
+This is sentence number one?' 'This is sentence number 2.
+This is sentence number one?' "This is sentence number 2.
+This is sentence number one?" 'This is sentence number 2.
+This is sentence number one?" "This is sentence number 2.
+
+This is sentence number one'?) This is sentence number 2.
+This is sentence number one'?) (This is sentence number 2.
+This is sentence number one'?) [This is sentence number 2.
+This is sentence number one'?) {This is sentence number 2.
+
+This is sentence number one?") This is sentence number 2.
+This is sentence number one?") (This is sentence number 2.
+This is sentence number one?") [This is sentence number 2.
+This is sentence number one?") {This is sentence number 2.
+
+This is sentence number one"?) This is sentence number 2.
+This is sentence number one"?) (This is sentence number 2.
+This is sentence number one"?) [This is sentence number 2.
+This is sentence number one"?) {This is sentence number 2.
 
 1-year OS was similar between cohorts (58% vs. 56%, respectively) (p = 0.43).
 1-year OS was similar between cohorts [58% vs. 56%, respectively] [p = 0.43].
@@ -59,32 +159,32 @@ Genetic variation of the type described in this paper are "experiments of nature
 MIX -- QUOTES, CONTRACTIONS:
 ----------------------------
 
-Again. Yet again: "That's a fine example," she said!  "Dr. Stuart is correct!"  ... One, 'two,", "three," "four', 'five," 'six' ... "Well, then."  "Another quoted sentence, (Victoria's, again)." Apples apple's apples' apples. Apples. Apple's. Apples'.
+Again. Yet again: "That's a fine example," she said!  "Dr. Stuart is correct!"  ... One, 'two,", "three," "four', 'five," 'six', 'seven,' 'eight' ... "Another quoted sentence, (Victoria's, again)." Apples apple's apples' apples. Apples, Apple's, Apples'. ... Another ellipsis test! ... {More ellipses tests? ... [Yes, indeed, always more tests!!] ... This one >> ... should not split (i.e., no 'bananas' today -- Ha!! ;-)
 
 ------------------------------------------------------------------------------
 i.e. AND e.g. TESTS:
 --------------------
 
-Hello e.g. world. Hello e.g., world. Hello e.g. World. Hello e.g.,  World.
+Hello everyone, e.g. world. Hello everyone, e.g., world. Hello everyone, e.g. World. Hello everyone, e.g., World.
 
-Hello e.g.     world. Hello e.g.,   world. Hello e.g.    World. Hello e.g.,      World.
+Hello everyone, e.g.     world. Hello everyone, e.g.,   world. Hello everyone, e.g.    World. Hello everyone, e.g.,      World.
 
-E.g., apple. E.g. apple. E.g., apple.   E.g.    apple. E.g., Apple. E.g. Apple. E.g., Apple.   E.g.    Apple.
+E.g., give her an apple. E.g. give her an apple. E.g., give her an apple.   E.g.    give her an apple. E.g., give her another Apple. E.g. give her another Apple. E.g., give her another Apple.   E.g.    give her another Apple.
 
-Hello i.e. world. Hello i.e., world. Hello i.e. World. Hello i.e.,  World.
+Hello everyone, i.e. world. Hello everyone, i.e., world. Hello everyone, i.e. World. Hello everyone, i.e.,  World.
 
-Hello i.e.     world. Hello i.e.,   world. Hello i.e.    World. Hello i.e.,      World.
+Hello everyone, i.e.     world. Hello everyone, i.e.,   world. Hello everyone, i.e.    World. Hello everyone, i.e.,      World.
 
-I.e., apple. I.e. apple. I.e., apple.   I.e.    apple. I.e., Apple. I.e. Apple. I.e., Apple.   I.e.    Apple.
+I.e., give her an apple. I.e. give her an apple. I.e., give her an apple.   I.e.    give her an apple. I.e., give her an Apple. I.e. give her an Apple. I.e., give her an Apple.   I.e.    give her an Apple.
 
-Very good, i.e., excellent! E.g., another example. E.g. another one; e.g one more; i.e. that's the last one!
+Very good, i.e., excellent! E.g., yet another example. E.g. another one; e.g one more; i.e. that's the last one!
 
 
 ------------------------------------------------------------------------------
 COMPARISON:
 -----------
 
-This one cf this one.  This one, c.f. this one.  This one, c.f. This one.  This one, c.f., this one.  Cf. the previous.  Cf.: the previous.
+This one cf this one.  This one, c.f. this one.  This one, c.f. This one.  This one, c.f., this one.
 
 ------------------------------------------------------------------------------
 # ITEMIZED LISTS:

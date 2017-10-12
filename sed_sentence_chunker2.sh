@@ -56,9 +56,10 @@
 #
 #   This is sentence 4.
 
-# ----------------------------------------------------------------------------
+
+# ============================================================================
 # NOTES:
-# ------
+# ======
 
 # 1. If the script name is too long for convenient use, just rename it; e.g.: ssc
 
@@ -66,13 +67,58 @@
 #    (the \n\n part in the regex expressions, below).  If you want to avoid
 #    that, just delete one of the newlines (\n) in \n\n.
 
-# 3. Run this script on my "chunk_test_input.txt" file to get an idea of it's capability.
+# 3. Run this script on my "chunk_test_input.txt" file to get an idea of it's
+#    capability (or to run your own unit tests).
 
 # 4. If / as needed you can use the Linux "pwgen" command to generate alphanumeric
 #    UID.  E.g., "pwgen 6 2" will generate two (unique) 6-character alphanumeric
 #    strings.  Example:
 #                 $ pwgen 8 2
 #                 eej8Ae2p air4Coo2
+
+# 5. Expressions of the sort .{1,15}\.s\s* look complicated, but they are pretty
+#    simple!  Basically it says: match any character ( . ), appearing 1-15
+#    times ( {1,15}, that is followed by a period ( \.) and any space ( \s\s* ) ...
+#    Likewise: ^[A-Z].{1,5}\. says match any 1..5 preceding characters that are
+#    not capitals, followed by a period ...
+#
+#    sed -i -r "s/[.](.[^0-9]{1,15})[.]/Shah7a\1./g" tmp_file
+#
+#    likewise translates to: match, in place, a period [.] that is followed by
+#    any span of 1-15 characters {1,15}, that are not 0 through 9 [^0-9],
+#    followed by another period [.].  All of that is this bit: .[^0-9]{1,15})[.]
+#
+#    The second half of that regex expression states: replace replace THOSE
+#    periods (matched as described) with the unique alphanumeric string, Shah7a,
+#    followed by a period.
+#
+#    sed -i -r "s/.[^.]\{1,15\}.\s\s*/\n\n/g" tmp_file
+#
+#    Match any character ( . ), appearing 1-15 times ( {1,15} that is NOT a
+#    period ( !. ), but is followed by a period ( \.) and any space ( \s\s* ),
+#    and split ( \n\n ) at that position:
+
+# 6. Journal author name initials and journal title abbreviations are a huge
+#    programmatic, technical difficulty.  My approach, below, minimizes
+#    the disruptions of those viz-a-viz bone fide sentence chunking (which is
+#    quite excellent!), but some issues (will inevitably) remain.  E.g., some
+#    very short sentences will not get split from the others.  Overall, the
+#    journal title abbreviations are handled remarkably well; the authors
+#    initialization, much less so.  Fortunately, those mostly affect the
+#    citations, which are not that useful for most BioNLP work (e.g.,
+#    information extraction).  C'est la vie!!
+
+# 7. AS A CONSEQUENCE OF DEALING WITH SMALL ABBREVIATED WORDS (JOURNAL TITLE
+#    ABBREVIATIONS ...), NECESSARILY SOME SMALL SENTENCES WILL NOT GET SPLIT
+#    FROM THE OTHERS.  E.g.: "Robert O. Watson. More more added text." HERE,
+#    "WATSON." WAS PROCESSED AS AN ABBREVIATION AND THUS ESCAPED FROM SENTENCE
+#    SPLITTING.
+#
+#    It appears that Citations at the end of papers are mostly affected by this
+#    issue.  Again, given that these are mostly not utilized in most BioNLP,
+#    it is a trivial (remaining) issue.  [I may return to it, one day.]
+#
+#    Again, "Cest la vie!"
 
 # ============================================================================
 
@@ -90,36 +136,21 @@ input=$1
 outfile=""   ## output file
 OUTPUT=""    ## output variable
 
-# ----------------------------------------------------------------------------
-# CITATIONS - AUTHORS INITIALS:
-
-# Remove periods in authors initials:
-
-sed -r 's/([A-Z][\. ])([A-Z][\. ])/\1\2/g' $input > tmp_file
-
-# NOTE that this, above, is the first sed expression in this script; therefore
-# it needs to be declared outside the loop below (that iteratively does the
-# same thing):
-
-for i in {1..6}
-do
-    sed -i -r 's/([A-Z][\. ])([A-Z][\. ])/\1\2/g' tmp_file
-done
-
+# ============================================================================
 
 # ----------------------------------------------------------------------------
 # SPECIAL CASES -- COMMON ABBREVIATIONS:
+# --------------------------------------
 
 # ----------------------------------------
 # PAGE NUMBER ABBREVIATIONS:
-# --------------------------
 
 # Approach: substitute a unique alphanumeric string for "pp." (we will restore
 # it later).  Generated via the Linux command: pwgen 6 1
 
 # Page number abbreviation "pp.":
 
-sed -i -r 's/ pp\. ([ivx0-9])/Cho4Ph\1/g' tmp_file
+sed -r 's/ pp\. ([ivx0-9])/Cho4Ph\1/g' $input > tmp_file
 
 # NOTE: process "pp." BEFORE "p.", otherwise substitution of the "p." in "pp."
 # will incorrectly get substituted with "Cho4Ph".
@@ -129,7 +160,7 @@ sed -i -r 's/ pp\. ([ivx0-9])/Cho4Ph\1/g' tmp_file
 sed -i -r 's/ p\. ([ivx0-9])/Eiph2T\1/g' tmp_file
 
 # ----------------------------------------
-# versus (vs.) abbreviation:
+# versus (vs.) ABBREVIATION:
 
 sed -i 's/ vs\./Air5ah/g' tmp_file
 
@@ -145,21 +176,21 @@ sed -i 's/[iI]\.e\./Uchee4/g' tmp_file
 sed -i -r 's/[cC]\.f\./Ri9Ohk/g' tmp_file
 
 # ----------------------------------------
+# et al. ABBREVIATION:
+
+sed -i 's/et al\./et al/g' tmp_file
+
+# ----------------------------------------
 # PERSONAL TITLES (temporarily replace '.' with ','):
 
 # https://stackoverflow.com/questions/26568952/how-to-replace-multiple-patterns-at-once-with-sed
 
-sed -i 's/Dr\. /Dr, /g' tmp_file
-sed -i 's/Drs\. /Drs, /g' tmp_file
-sed -i 's/Mr\. /Mr, /g' tmp_file
-sed -i 's/Mrs\. /Mrs, /g' tmp_file
-sed -i 's/Ms\. /Ms, /g' tmp_file
-
-# This will prevent splitting on St. (Saint) abbreviation, but St. (Street) is
-# more likely (esp. in biomedical literature?), esp. at end of sentenced, so
-# I commented out this line:
-#
-# sed -i 's/St. /St, /g' tmp_file
+sed -i 's/Dr\./Dr,/g' tmp_file
+sed -i 's/Drs\./Drs,/g' tmp_file
+sed -i 's/Mr\./Mr,/g' tmp_file
+sed -i 's/Mrs\./Mrs,/g' tmp_file
+sed -i 's/Ms\./Ms,/g' tmp_file
+sed -i 's/St\./St,/g' tmp_file
 
 # ----------------------------------------
 # "Fig.", "fig.", "Figs.", "figs.":
@@ -180,7 +211,7 @@ done
 # ----------------------------------------
 # Ellipses (ellipsis: ...):
 
-sed -i -r 's/\.\.\.\s\s*([[({'"'"'"A-Z0-9])/...\n\n\1/g' tmp_file
+sed -i -r 's/\.\.\.\s\s*([[({'"'"'"A-Z0-9])/...\n\1/g' tmp_file
 
 # '"'"' = escaped single quotation, used internally in single-quoted sed expression
 
@@ -198,96 +229,91 @@ sed -i 's/  */ /g' tmp_file
 
 
 # ============================================================================
-# CITATIONS - JOURNAL TITLE ABBREVIATIONS:
-# ----------------------------------------
+# AUTHOR INITIALS; JOURNAL TITLE ABBREVIATIONS:
+# =============================================
 
-# Another very tricky 'problem' -- by far the greatest challenge!  I needed to approach
-# these as textual spans, presuming that most journal abbreviations are <= 15 characters
-#    "Gastroenterol."  : 14 char
-# This "span" can can be adjusted below, if / as needed.
+# NOTES:
+# 1. While I mainly mention journal title abbreviations, the same logic holds
+#    for authors initials.
+# 2. We will, in logical order, substitute periods in in abbreviations with
+#    "Shah7a", later replacing those "Shah7a" substitutions with periods.
 
-# https://stackoverflow.com/questions/29953042/limit-sed-to-certain-character-range-in-a-line
-# https://stackoverflow.com/questions/538664/using-sed-how-do-you-print-the-first-n-characters-of-a-line
-# https://www.gnu.org/software/sed/manual/html_node/Regular-Expressions.html
+# ----------------------------------------------------------------------------
+# FIRST, DEAL WITH TERMINAL / "ULTIMATE" ABBREVIATIONS; e.g., the last
+# abbreviation in U.S.A | U.S.S.R. ...
 
-# ----------------------------------------
-# APPROACH:
-# ---------
+# Matches [A-Z].space ( \s ) in (e.g) U.S.A.space:
 
-# Match periods followed by a span of .{x,y} characters (replace first period
-# with Shah7a; replace 2nd period with Aesh4s):
+sed -i -r 's/\.([A-Z])\.\s/.\1Shah7a /g' tmp_file
 
-# ----------------------------------------
-# LOGIC:
-# ------
+# Matches [A-Z].EOL (End of Line) in (e.g) U.S.A.EOL:
 
-# {._ _ _ _ _.}  -->  {i_ _ _ _ _.}
-# Repeat / iterate expression above as needed (see explanation, above),
-# then make final substitution (terminal period, in {x,y} span):
-# {i_ _ _ _ _.}  -->  {i_ _ _ _ _j}
-# Replace i, j substitutions later, restoring periods.
+sed -i -r 's/\.([A-Z])\.$/.\1Shah7a/g' tmp_file
 
-# We will need to iterate this a few more times, to catch longer abbreviated journal titles,
-# e.g.: Proc. Natl. Acad. Sci. U.S.A.
+# Matches [A-Z].[A-Z0-9] in (e.g.) U.S.A.The next sentence... ,
+# or: U.S.A.88: 7958–7962.  [Also adds the 'missing' space.]
+# Note: the "not space" expression ( [^ ] ) will capture the first character
+# AFTER that space, so here we need to add (also) the [a-z] part, also!
 
-# ----------------------------------------
-# IMPLEMENTATION:
-# ---------------
+sed -i -r 's/\.([A-Z])\.([^ ][a-zA-Z0-9])/.\1Shah7a \2/g' tmp_file
 
-for i in {1..10}
-do
-   sed -i -r "s/[.](.[^0-9]{1,15})[.]/Shah7a\1./g" tmp_file
-done
+# ----------------------------------------------------------------------------
+# CATCH HYPHENATED NAMES ABBREVIATIONS (e.g. Chen A.-B. Jiang):
 
-# NOW, substitute the second periods (that remain) in the journal title abbreviations:
+sed -i -r 's/\.-([A-Z])\./.-\1Shah7a/g' tmp_file
 
-sed -i -r "s/Shah7a(.[^0-9]{1,15})[.]/Shah7a\1Aesh4s/g" tmp_file
+# ----------------------------------------------------------------------------
+# NOW, DEAL WITH THE PENULTIMATE, ANTEPENULTIMATE, PREANTEPENULTIMATE ... ABBREVIATIONS:
 
-# Fortunately, journal titles very rarely contain numbers [0-9]; therefore, the negation
-# [^0-9] prevents the two regex expressions above from capturing (e.g.)
-#
-#   ... follow-up in PD. Overall, 64.1% of patients ...
-#
-# If that was allowed to occur, then the Shah7a / 1Aesh4s substitutions of that
-# period and that decimal point would prevent those two sentences from being split
-# i.e., when those substitutions are replaced with periods, again).
-# In this example, those periods (period / decimal point, actually) were within
-# the {1,15} span, and thus processed.  Negating numbers from those regex patterns
-# means that situations of that type are largely avoided (as much as is possible)!
+# Matches S. in (e.g) U.S.AShah7a :
 
-# To recap:
-#
-#   sed -i -r "s/[.](.[^0-9]{1,15})[.]/Shah7a\1./g" tmp_file
-#
-# translates to:
-#
-#   match, in place, A PERIOD [.] that is followed by any span of 1-15 characters {1,15},
-#   that are not 0 through 9 [^0-9], followed by another period [.].
-#
-# All of that is this bit: .[^0-9]{1,15})[.]
-#
-# The second half of that regex expression states:
-#
-#   replace replace THOSE periods (matched as described) with the unique alphanumeric
-#   string, Shah7a, followed by a period.
-#
-# We need to add that last period, to capture other, "adjacent"
-# (within the {1,15} span) journal title abbreviations.
-#
-# Whew!  :-p
+sed -i -r 's/([A-Z])\.([A-Z]Shah7a)/\1Shah7a\2/g' tmp_file
 
-# ----------------------------------------
+# Matches U. in (e.g) U.SShah7aAShah7a :
+
+sed -i -r 's/([A-Z])\.([A-Z]Shah7a[A-Z]Shah7a)/\1Shah7a\2/g' tmp_file
+
+# Extend that chain a few more times to capture longer sequences of 1-letter abbreviations:
+
+sed -i -r 's/([A-Z])\.([A-Z]Shah7a[A-Z]Shah7a[A-Z]Shah7a)/\1Shah7a\2/g' tmp_file
+sed -i -r 's/([A-Z])\.([A-Z]Shah7a[A-Z]Shah7a[A-Z]Shah7a[A-Z]Shah7a)/\1Shah7a\2/g' tmp_file
+
+# ----------------------------------------------------------------------------
+# NOW, DEAL WITH JOURNAL TITLE ANNOYANCES, in the order (e.g.) J., Am., Soc.,
+# Bact., Virol. ...; i.e. sequentially process abbreviations of the type
+# J. Am. Soc. Bact. Virol. ...  As this is done stepwise, it should capture
+# all permutations, e.g. J. Cdn. Med. Assoc. ...
+
+# To begin, match single-letter abbreviations preceded by a space OR at the
+# start of a line:
+
+sed -i -r 's/(^[A-Z])\./\1Shah7a/g' tmp_file
+sed -i -r 's/ ([A-Z])\./ \1Shah7a/g' tmp_file
+
+# ----------------------------------------------------------------------------
+# NOW, DEAL WITH INCREASING LONGER ABBREVIATIONS: Am.; Soc.; ... :
+# To capture parenthesized journal references, internally-quoted within
+# sentences, that contain title abbreviations, I added here the [[({ ]
+# bit.  That captures "[" (NOTE: that "[" MUST appear FIRST in the "[ ]"
+# character expression), "(", "{".
+# E.g.:  ... as quoted by Smith et al. (Phys. Rev. Lett. ...
+
+sed -i -r 's/([[({ ][A-Z][a-z].{0})\./\1Shah7a/g' tmp_file
+sed -i -r 's/([[({ ][A-Z][a-z].{1})\./ \1Shah7a/g' tmp_file
+sed -i -r 's/([[({ ][A-Z][a-z].{2})\./ \1Shah7a/g' tmp_file
+sed -i -r 's/([[({ ][A-Z][a-z].{3})\./ \1Shah7a/g' tmp_file
+sed -i -r 's/([[({ ][A-Z][a-z].{4})\./ \1Shah7a/g' tmp_file
+sed -i -r 's/([[({ ][A-Z][a-z].{5})\./ \1Shah7a/g' tmp_file
+sed -i -r 's/[[({ ]([A-Z][a-z].{6})\./ \1Shah7a/g' tmp_file
+sed -i -r 's/([[({ ][A-Z][a-z].{7})\./ \1Shah7a/g' tmp_file
+sed -i -r 's/([[({ ][A-Z][a-z].{8})\./ \1Shah7a/g' tmp_file
+sed -i -r 's/([[({ ][A-Z][a-z].{9})\./ \1Shah7a/g' tmp_file
+
+# ----------------------------------------------------------------------------
 # CAVEAT:
 # -------
 
-# Input strings " " with sentences of < length y (in the {x,y} span, above) will NOT be split.  E.g.,
-#
-#   "This is S1. This is S2."
-#
-# will not split, as those sentences are only 11 characters (including the periods).
-# These are expected to be relatively uncommon; if problematic, adjust the span length in {x,y}.
-
-# As I said, abbreviated journal titles complicate things.  :-/
+# Sentences of less than length y in the {y} span above will NOT be split.
 
 # ============================================================================
 
@@ -314,7 +340,7 @@ sed -i -r "s/Shah7a(.[^0-9]{1,15})[.]/Shah7a\1Aesh4s/g" tmp_file
 # https://serverfault.com/questions/466118/using-sed-to-remove-both-an-opening-and-closing-square-bracket-around-a-string
 #   ... all members of a character class lose special meaning (with a few
 #       exceptions). And ] loses its meaning if it is placed first.
-#
+
 # That observation is important re: the "([])}])" pattern below (that searches
 # for characters ")", "}" and ")").  You MUST list the "]" closing bracket
 # (within the "([  ])" character class), with the "]" square bracket listed FIRST:
@@ -325,60 +351,62 @@ sed -i -r "s/Shah7a(.[^0-9]{1,15})[.]/Shah7a\1Aesh4s/g" tmp_file
 # punctuation (".", "!", "?"), parentheses and brackets ("(", "{, "[", ")", "}",
 # "]", and any combination of quotation marks -- and split those sentences!
 
-sed -i -r 's/([a-zA-Z0-9])([\.!?])\s\s*([A-Z0-9])/\1\2\n\n\3/g
-           s/([a-zA-Z0-9])([\.!?])(['"'"'"])\s\s*([A-Z0-9])/\1\2\3\n\n\4/g
-           s/([a-zA-Z0-9])(['"'"'"])([\.!?)])\s\s*([A-Z0-9])/\1\2\3\n\n\4/g
-           s/([a-zA-Z0-9])([\.!?])([])}])\s\s*([A-Z0-9])/\1\2\3\n\n\4/g
-           s/([a-zA-Z0-9])([)'"]"'}])([\.!?])\s\s*([A-Z0-9])/\1\2\3\n\n\4/g
-           s/([a-zA-Z0-9])([\.!?])(['"'"'"])([]})])\s\s*([A-Z0-9])/\1\2\3\4\n\n\5/g
-           s/([a-zA-Z0-9])([\.!?])([)'"]"'}])(['"'"'"])\s\s*([A-Z0-9])/\1\2\3\4\n\n\5/g
-           s/([a-zA-Z0-9])([]})])(['"'"'"])([\.!?])\s\s*([A-Z0-9])/\1\2\3\4\n\n\5/g
-           s/([a-zA-Z0-9])(['"'"'"])([\.!?])([]})])\s\s*([A-Z0-9])/\1\2\3\4\n\n\5/g
-           s/([a-zA-Z0-9])(['"'"'"])([]})])([\.!?])\s\s*([A-Z0-9])/\1\2\3\4\n\n\5/g' tmp_file
+# sed -i -r 's/([A-Z]\.)\s\s*([A-Z])/\1\n\2/g' tmp_file
 
-sed -i -r 's/([a-zA-Z0-9])([\.!?])\s\s*(['"'"'"])([A-Z0-9])/\1\2\n\n\3\4/g
-           s/([a-zA-Z0-9])([\.!?])(['"'"'"])\s\s*(['"'"'"])([A-Z0-9])/\1\2\3\n\n\4\5/g
-           s/([a-zA-Z0-9])(['"'"'"])([\.!?)])\s\s*(['"'"'"])([A-Z0-9])/\1\2\3\n\n\4\5/g
-           s/([a-zA-Z0-9])([\.!?])([]})])\s\s*(['"'"'"])([A-Z0-9])/\1\2\3\n\n\4\5/g
-           s/([a-zA-Z0-9])([]})])([\.!?])\s\s*(['"'"'"])([A-Z0-9])/\1\2\3\n\n\4\5/g
-           s/([a-zA-Z0-9])([\.!?])(['"'"'"])([]})])\s\s*(['"'"'"])([A-Z0-9])/\1\2\3\4\n\n\5\6/g
-           s/([a-zA-Z0-9])([\.!?])([]})])(['"'"'"])\s\s*(['"'"'"])([A-Z0-9])/\1\2\3\4\n\n\5\6/g
-           s/([a-zA-Z0-9])([]})])(['"'"'"])([\.!?])\s\s*(['"'"'"])([A-Z0-9])/\1\2\3\4\n\n\5\6/g
-           s/([a-zA-Z0-9])(['"'"'"])([\.!?])([]})])\s\s*(['"'"'"])([A-Z0-9])/\1\2\3\4\n\n\5\6/g
-           s/([a-zA-Z0-9])(['"'"'"])([]})])([\.!?])\s\s*(['"'"'"])([A-Z0-9])/\1\2\3\4\n\n\5\6/g' tmp_file
+sed -i -r 's/([a-zA-Z0-9][\.!?])\s\s*([A-Z0-9])/\1\n\2/g
+           s/([a-zA-Z0-9][\.!?])(['"'"'"])\s\s*([A-Z0-9])/\1\2\n\3/g
+           s/([a-zA-Z0-9]['"'"'"])([\.!?)])\s\s*([A-Z0-9])/\1\2\n\3/g
+           s/([a-zA-Z0-9][\.!?])([])}])\s\s*([A-Z0-9])/\1\2\n\3/g
+           s/([a-zA-Z0-9][)'"]"'}])([\.!?])\s\s*([A-Z0-9])/\1\2\n\3/g
+           s/([a-zA-Z0-9][\.!?])(['"'"'"])([]})])\s\s*([A-Z0-9])/\1\2\3\n\4/g
+           s/([a-zA-Z0-9][\.!?])([)'"]"'}])(['"'"'"])\s\s*([A-Z0-9])/\1\2\3\n\4/g
+           s/([a-zA-Z0-9][]})])(['"'"'"])([\.!?])\s\s*([A-Z0-9])/\1\2\3\n\4/g
+           s/([a-zA-Z0-9]['"'"'"])([\.!?])([]})])\s\s*([A-Z0-9])/\1\2\3\n\4/g
+           s/([a-zA-Z0-9]['"'"'"])([]})])([\.!?])\s\s*([A-Z0-9])/\1\2\3\n\4/g' tmp_file
 
-sed -i -r 's/([a-zA-Z0-9])([\.!?])\s\s*([[{(])([A-Z0-9])/\1\2\n\n\3\4/g
-           s/([a-zA-Z0-9])([\.!?])(['"'"'"])\s\s*([[{(])([A-Z0-9])/\1\2\3\n\n\4\5/g
-           s/([a-zA-Z0-9])(['"'"'"])([\.!?)])\s\s*([[{(])([A-Z0-9])/\1\2\3\n\n\4\5/g
-           s/([a-zA-Z0-9])([\.!?])([]})])\s\s*([[{(])([A-Z0-9])/\1\2\3\n\n\4\5/g
-           s/([a-zA-Z0-9])([]})])([\.!?])\s\s*([[{(])([A-Z0-9])/\1\2\3\n\n\4\5/g
-           s/([a-zA-Z0-9])([\.!?])(['"'"'"])([]})])\s\s*([[{(])([A-Z0-9])/\1\2\3\4\n\n\5\6/g
-           s/([a-zA-Z0-9])([\.!?])([]})])(['"'"'"])\s\s*([[{(])([A-Z0-9])/\1\2\3\4\n\n\5\6/g
-           s/([a-zA-Z0-9])([]})])(['"'"'"])([\.!?])\s\s*([[{(])([A-Z0-9])/\1\2\3\4\n\n\5\6/g
-           s/([a-zA-Z0-9])(['"'"'"])([\.!?])([]})])\s\s*([[{(])([A-Z0-9])/\1\2\3\4\n\n\5\6/g
-           s/([a-zA-Z0-9])(['"'"'"])([]})])([\.!?])\s\s*([[{(])([A-Z0-9])/\1\2\3\4\n\n\5\6/g' tmp_file
+sed -i -r 's/([a-zA-Z0-9])([\.!?])\s\s*(['"'"'"])([A-Z0-9])/\1\2\n\3\4/g
+           s/([a-zA-Z0-9])([\.!?])(['"'"'"])\s\s*(['"'"'"])([A-Z0-9])/\1\2\3\n\4\5/g
+           s/([a-zA-Z0-9])(['"'"'"])([\.!?)])\s\s*(['"'"'"])([A-Z0-9])/\1\2\3\n\4\5/g
+           s/([a-zA-Z0-9])([\.!?])([]})])\s\s*(['"'"'"])([A-Z0-9])/\1\2\3\n\4\5/g
+           s/([a-zA-Z0-9])([]})])([\.!?])\s\s*(['"'"'"])([A-Z0-9])/\1\2\3\n\4\5/g
+           s/([a-zA-Z0-9])([\.!?])(['"'"'"])([]})])\s\s*(['"'"'"])([A-Z0-9])/\1\2\3\4\n\5\6/g
+           s/([a-zA-Z0-9])([\.!?])([]})])(['"'"'"])\s\s*(['"'"'"])([A-Z0-9])/\1\2\3\4\n\5\6/g
+           s/([a-zA-Z0-9])([]})])(['"'"'"])([\.!?])\s\s*(['"'"'"])([A-Z0-9])/\1\2\3\4\n\5\6/g
+           s/([a-zA-Z0-9])(['"'"'"])([\.!?])([]})])\s\s*(['"'"'"])([A-Z0-9])/\1\2\3\4\n\5\6/g
+           s/([a-zA-Z0-9])(['"'"'"])([]})])([\.!?])\s\s*(['"'"'"])([A-Z0-9])/\1\2\3\4\n\5\6/g' tmp_file
 
-sed -i -r 's/([a-zA-Z0-9])([\.!?])\s\s*(['"'"'"])([[{(])([A-Z0-9])/\1\2\n\n\3\4\5/g
-           s/([a-zA-Z0-9])([\.!?])(['"'"'"])\s\s*(['"'"'"])([[{(])([A-Z0-9])/\1\2\3\n\n\4\5\6/g
-           s/([a-zA-Z0-9])(['"'"'"])([\.!?)])\s\s*(['"'"'"])([[{(])([A-Z0-9])/\1\2\3\n\n\4\5\6/g
-           s/([a-zA-Z0-9])([\.!?])([]})])\s\s*(['"'"'"])([[{(])([A-Z0-9])/\1\2\3\n\n\4\5\6/g
-           s/([a-zA-Z0-9])([]})])([\.!?])\s\s*(['"'"'"])([[{(])([A-Z0-9])/\1\2\3\n\n\4\5\6/g
-           s/([a-zA-Z0-9])([\.!?])(['"'"'"])([]})])\s\s*(['"'"'"])([[{(])([A-Z0-9])/\1\2\3\4\n\n\5\6\7/g
-           s/([a-zA-Z0-9])([\.!?])([]})])(['"'"'"])\s\s*(['"'"'"])([[{(])([A-Z0-9])/\1\2\3\4\n\n\5\6\7/g
-           s/([a-zA-Z0-9])([]})])(['"'"'"])([\.!?])\s\s*(['"'"'"])([[{(])([A-Z0-9])/\1\2\3\4\n\n\5\6\7/g
-           s/([a-zA-Z0-9])(['"'"'"])([\.!?])([]})])\s\s*(['"'"'"])([[{(])([A-Z0-9])/\1\2\3\4\n\n\5\6\7/g
-           s/([a-zA-Z0-9])(['"'"'"])([]})])([\.!?])\s\s*(['"'"'"])([[{(])([A-Z0-9])/\1\2\3\4\n\n\5\6\7/g' tmp_file
+sed -i -r 's/([a-zA-Z0-9])([\.!?])\s\s*([[{(])([A-Z0-9])/\1\2\n\3\4/g
+           s/([a-zA-Z0-9])([\.!?])(['"'"'"])\s\s*([[{(])([A-Z0-9])/\1\2\3\n\4\5/g
+           s/([a-zA-Z0-9])(['"'"'"])([\.!?)])\s\s*([[{(])([A-Z0-9])/\1\2\3\n\4\5/g
+           s/([a-zA-Z0-9])([\.!?])([]})])\s\s*([[{(])([A-Z0-9])/\1\2\3\n\4\5/g
+           s/([a-zA-Z0-9])([]})])([\.!?])\s\s*([[{(])([A-Z0-9])/\1\2\3\n\4\5/g
+           s/([a-zA-Z0-9])([\.!?])(['"'"'"])([]})])\s\s*([[{(])([A-Z0-9])/\1\2\3\4\n\5\6/g
+           s/([a-zA-Z0-9])([\.!?])([]})])(['"'"'"])\s\s*([[{(])([A-Z0-9])/\1\2\3\4\n\5\6/g
+           s/([a-zA-Z0-9])([]})])(['"'"'"])([\.!?])\s\s*([[{(])([A-Z0-9])/\1\2\3\4\n\5\6/g
+           s/([a-zA-Z0-9])(['"'"'"])([\.!?])([]})])\s\s*([[{(])([A-Z0-9])/\1\2\3\4\n\5\6/g
+           s/([a-zA-Z0-9])(['"'"'"])([]})])([\.!?])\s\s*([[{(])([A-Z0-9])/\1\2\3\4\n\5\6/g' tmp_file
 
-sed -i -r 's/([a-zA-Z0-9])([\.!?])\s\s*([[{(])(['"'"'"])([A-Z0-9])/\1\2\n\n\3\4\5/g
-           s/([a-zA-Z0-9])([\.!?])(['"'"'"])\s\s*([[{(])(['"'"'"])([A-Z0-9])/\1\2\3\n\n\4\5\6/g
-           s/([a-zA-Z0-9])(['"'"'"])([\.!?)])\s\s*([[{(])(['"'"'"])([A-Z0-9])/\1\2\3\n\n\4\5\6/g
-           s/([a-zA-Z0-9])([\.!?])([]})])\s\s*([[{(])(['"'"'"])([A-Z0-9])/\1\2\3\n\n\4\5\6/g
-           s/([a-zA-Z0-9])([]})])([\.!?])\s\s*([[{(])(['"'"'"])([A-Z0-9])/\1\2\3\n\n\4\5\6/g
-           s/([a-zA-Z0-9])([\.!?])(['"'"'"])([]})])\s\s*([[{(])(['"'"'"])([A-Z0-9])/\1\2\3\4\n\n\5\6\7/g
-           s/([a-zA-Z0-9])([\.!?])([]})])(['"'"'"])\s\s*([[{(])(['"'"'"])([A-Z0-9])/\1\2\3\4\n\n\5\6\7/g
-           s/([a-zA-Z0-9])([]})])(['"'"'"])([\.!?])\s\s*([[{(])(['"'"'"])([A-Z0-9])/\1\2\3\4\n\n\5\6\7/g
-           s/([a-zA-Z0-9])(['"'"'"])([\.!?])([]})])\s\s*([[{(])(['"'"'"])([A-Z0-9])/\1\2\3\4\n\n\5\6\7/g
-           s/([a-zA-Z0-9])(['"'"'"])([]})])([\.!?])\s\s*([[{(])(['"'"'"])([A-Z0-9])/\1\2\3\4\n\n\5\6\7/g' tmp_file
+sed -i -r 's/([a-zA-Z0-9])([\.!?])\s\s*(['"'"'"])([[{(])([A-Z0-9])/\1\2\n\3\4\5/g
+           s/([a-zA-Z0-9])([\.!?])(['"'"'"])\s\s*(['"'"'"])([[{(])([A-Z0-9])/\1\2\3\n\4\5\6/g
+           s/([a-zA-Z0-9])(['"'"'"])([\.!?)])\s\s*(['"'"'"])([[{(])([A-Z0-9])/\1\2\3\n\4\5\6/g
+           s/([a-zA-Z0-9])([\.!?])([]})])\s\s*(['"'"'"])([[{(])([A-Z0-9])/\1\2\3\n\4\5\6/g
+           s/([a-zA-Z0-9])([]})])([\.!?])\s\s*(['"'"'"])([[{(])([A-Z0-9])/\1\2\3\n\4\5\6/g
+           s/([a-zA-Z0-9])([\.!?])(['"'"'"])([]})])\s\s*(['"'"'"])([[{(])([A-Z0-9])/\1\2\3\4\n\5\6\7/g
+           s/([a-zA-Z0-9])([\.!?])([]})])(['"'"'"])\s\s*(['"'"'"])([[{(])([A-Z0-9])/\1\2\3\4\n\5\6\7/g
+           s/([a-zA-Z0-9])([]})])(['"'"'"])([\.!?])\s\s*(['"'"'"])([[{(])([A-Z0-9])/\1\2\3\4\n\5\6\7/g
+           s/([a-zA-Z0-9])(['"'"'"])([\.!?])([]})])\s\s*(['"'"'"])([[{(])([A-Z0-9])/\1\2\3\4\n\5\6\7/g
+           s/([a-zA-Z0-9])(['"'"'"])([]})])([\.!?])\s\s*(['"'"'"])([[{(])([A-Z0-9])/\1\2\3\4\n\5\6\7/g' tmp_file
+
+sed -i -r 's/([a-zA-Z0-9])([\.!?])\s\s*([[{(])(['"'"'"])([A-Z0-9])/\1\2\n\3\4\5/g
+           s/([a-zA-Z0-9])([\.!?])(['"'"'"])\s\s*([[{(])(['"'"'"])([A-Z0-9])/\1\2\3\n\4\5\6/g
+           s/([a-zA-Z0-9])(['"'"'"])([\.!?)])\s\s*([[{(])(['"'"'"])([A-Z0-9])/\1\2\3\n\4\5\6/g
+           s/([a-zA-Z0-9])([\.!?])([]})])\s\s*([[{(])(['"'"'"])([A-Z0-9])/\1\2\3\n\4\5\6/g
+           s/([a-zA-Z0-9])([]})])([\.!?])\s\s*([[{(])(['"'"'"])([A-Z0-9])/\1\2\3\n\4\5\6/g
+           s/([a-zA-Z0-9])([\.!?])(['"'"'"])([]})])\s\s*([[{(])(['"'"'"])([A-Z0-9])/\1\2\3\4\n\5\6\7/g
+           s/([a-zA-Z0-9])([\.!?])([]})])(['"'"'"])\s\s*([[{(])(['"'"'"])([A-Z0-9])/\1\2\3\4\n\5\6\7/g
+           s/([a-zA-Z0-9])([]})])(['"'"'"])([\.!?])\s\s*([[{(])(['"'"'"])([A-Z0-9])/\1\2\3\4\n\5\6\7/g
+           s/([a-zA-Z0-9])(['"'"'"])([\.!?])([]})])\s\s*([[{(])(['"'"'"])([A-Z0-9])/\1\2\3\4\n\5\6\7/g
+           s/([a-zA-Z0-9])(['"'"'"])([]})])([\.!?])\s\s*([[{(])(['"'"'"])([A-Z0-9])/\1\2\3\4\n\5\6\7/g' tmp_file
 
 
 # ============================================================================
@@ -408,6 +436,11 @@ sed -i 's/Uchee4/i.e./g' tmp_file
 sed -i 's/Ri9Ohk/c.f./g' tmp_file
 
 # ----------------------------------------
+# Restore et al. :
+
+sed -i 's/et al/et al./g' tmp_file
+
+# ----------------------------------------
 # Capitalize restored "e.g.", "i.e." and "c.f." that appear at the start of a sentence:
 
 sed -i 's/^c\.f\./C.f./g' tmp_file
@@ -424,49 +457,62 @@ sed -i -r 's/([fF]ig[s]),/\1\./g' tmp_file
 
 sed -i 's/\b\.\./\./g' tmp_file
 
+# ----------------------------------------
 # Restore personal titles (replace ',' with '.'):
 
-# sed -i 's/St, /St. /g' tmp_file
-sed -i 's/Ms, /Ms. /g' tmp_file
-sed -i 's/Mrs, /Mrs. /g' tmp_file
-sed -i 's/Mr, /Mr. /g' tmp_file
-sed -i 's/Drs, /Drs. /g' tmp_file
+sed -i 's/St,/St./g' tmp_file
+sed -i 's/Ms,/Ms./g' tmp_file
+sed -i 's/Mrs,/Mrs./g' tmp_file
+sed -i 's/Mr,/Mr./g' tmp_file
+sed -i 's/Drs,/Drs./g' tmp_file
 
 # ----------------------------------------------------------------------------
-# CITATIONS - JOURNAL ABBREVIATIONS:
+# LASTLY (DO AFTER ALL OF THE ABOVE!):
+# RESTORE AUTHOR INITIALS, JOURNAL TITLE ABBREVIATIONS:
+# -----------------------------------------------------
 
 sed -i "s/Shah7a/./g" tmp_file
-sed -i "s/Aesh4s/./g" tmp_file
-
-# The journals abbreviations approach (earlier) is complicated; it captures
-# (and restores, here) some unintended non-journal abbreviations text, e.g.
-# "). " etc.  Therefore, we need  penultimate sed expression, here, to correct those:
-sed -i -r "s/\)\.\s\s*/).\n\n/g" tmp_file
-
-# This looks complicated: basically it says:
-# match any character ( . ), appearing 1-15 times ( {1,15} that is NOT a period ( !. ),
-# but followed by a period ( \.) and any space ( \s\s* ), and split ( \n\n ) at that position:
-sed -i -r "s/.[^.]\{1,15\}.\s\s*/\n\n/g" tmp_file
-
-# ----------------------------------------------------------------------------
-# FINAL SED OPERATION:
-
-# OUTPUT final (processed) file:
-sed 's/Dr, /Dr. /g' tmp_file > out_file     ## << note: "$output" in script that reads input file, outputs output file
-cat out_file
-
-OUTPUT=$(printf out_file)
-#OUTPUT=$(echo output)      ## either of these seem to work; I prefer 'printf'
-export $OUTPUT
 
 
 # ============================================================================
 # CLEAN UP:
 # =========
 
+# E.g. little bugs that variously remain (or have crept in during processing).
+
+# ----------------------------------------------------------------------------
+# Split ...). [A-Z]...; i.e.:  ). [A-Z]
+
+sed -i -r 's/\)\.\s\s*([A-Z0-9])/).\n\1/g' tmp_file
+
+# ----------------------------------------
+# Split sentences ending in "St.":
+
+sed -i -r 's/St\.\s\s*([A-Z])/St.\n\1/g' tmp_file
+
+# ----------------------------------------
+# Improperly terminated sentence:
+
+sed -i -r 's/!\.\s\s*([A-Z])/!. \n\1/g' tmp_file
+
+
+# ============================================================================
+# FINAL SED OPERATION:
+# ====================
+
+# Final sed operation; output to file:
+
+sed 's/Dr,/Dr./g' tmp_file > out_file   ## << note: this is "$output" in my script
+                                        ## that reads input file, outputs output file
+cat out_file
+
+OUTPUT=$(printf out_file)
+#OUTPUT=$(echo output)      ## either of these seem to work; I prefer 'printf'
+export $OUTPUT
+
 # ----------------------------------------
 # Remove temp files:
-#rm -f tmp*
+
 rm -f tmp*
 
 # ============================================================================

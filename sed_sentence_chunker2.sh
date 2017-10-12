@@ -14,7 +14,7 @@
 #   http://persagen.com/about/victoria/projects/sed_sentence_chunker.html
 
 #      Created: 2017-Sep-26 | Victoria Stuart | info@Persagen.com
-# Last updated: 2017-Oct-10
+# Last updated: 2017-Oct-12
 
 # ============================================================================
 # USAGE:

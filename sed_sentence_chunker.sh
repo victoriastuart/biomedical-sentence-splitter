@@ -9,7 +9,7 @@
 # /mnt/Vancouver/Programming/scripts/sed_sentence_chunker2.sh
 
 #      Created: 2017-Jul-20 | Victoria Stuart | "mail"..@t.."VictoriasJourney.com"
-# Last updated: 2017-Oct-12
+# Last updated: 2017-Nov-20
 
 # ============================================================================
 # USAGE:

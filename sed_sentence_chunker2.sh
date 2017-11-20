@@ -410,8 +410,45 @@ sed -i -r 's/([a-zA-Z0-9])([\.!?])\s\s*([[{(])(['"'"'"])([A-Z0-9])/\1\2\n\3\4\5/
 
 
 # ============================================================================
-# "RESTORATIONS:"
-# ===============
+# RESTORATIONS -- STAGE 1:
+# ========================
+
+# E.g. little bugs that variously remain (or have crept in during processing).
+
+# ----------------------------------------------------------------------------
+# Replace multiple (reintroduced; e.g. double) spaces with single space:
+
+sed -i 's/  */ /g' tmp_file
+
+# ----------------------------------------------------------------------------
+# Split otherwise normal but unsplit sentences:
+
+sed -i -r 's/(.[^\.]{1,5}[a-z])\.\s\s*([A-Z0-9])/\1.\n\2/g' tmp_file
+
+# ----------------------------------------------------------------------------
+# Split sentence ending in number from following sentence:
+
+sed -i -r 's/([0-9])\.\s\s*([A-Z0-9])/\1.\n\2/g' tmp_file
+
+# ----------------------------------------------------------------------------
+# Split ). [A-Z]
+
+sed -i -r 's/\)\.\s\s*([A-Z0-9])/).\n\1/g' tmp_file
+
+# ----------------------------------------
+# Split sentences ending in "St.":
+
+sed -i -r 's/St\.\s\s*([A-Z])/St.\n\1/g' tmp_file
+
+# ----------------------------------------
+# Improperly terminated sentence:
+
+sed -i -r 's/!\.\s\s*([A-Z])/! \n\1/g' tmp_file
+
+
+# ============================================================================
+# "RESTORATIONS -- STAGE 2:
+# ========================
 
 # ----------------------------------------
 # Restore "vs.":
@@ -475,25 +512,39 @@ sed -i "s/Shah7a/./g" tmp_file
 
 
 # ============================================================================
-# CLEAN UP:
-# =========
+# POSTPROCESSING:
+# ===============
 
-# E.g. little bugs that variously remain (or have crept in during processing).
+# ----------------------------------------
+# Delete { ---------- | ========== }-type lines:
+
+sed -i '/^[-=]*$/d' tmp_file
+# Deletes all of these:
+#  ---------------------
+#  =====================
+#  --------=====--------
+#  =====----------=====
+
+#sed -i '/^-*$/d' tmp_file
+#sed -i '/^=*$/d' tmp_file
+# Deletes these:
+#  --------------------
+#  ====================
+# not these:
+#  -------=====--------
+#  =====----------=====
+
+# ----------------------------------------
+# Delete empty (blank) lines:
+
+#sed -i '/^$/d' tmp_file
+sed -i '/^\s*$/d' tmp_file
 
 # ----------------------------------------------------------------------------
-# Split ...). [A-Z]...; i.e.:  ). [A-Z]
+# Split 's. [A-Z]       ## e.g.: Alzheimer's. The
+# Note: need to do this near the end of this script:
 
-sed -i -r 's/\)\.\s\s*([A-Z0-9])/).\n\1/g' tmp_file
-
-# ----------------------------------------
-# Split sentences ending in "St.":
-
-sed -i -r 's/St\.\s\s*([A-Z])/St.\n\1/g' tmp_file
-
-# ----------------------------------------
-# Improperly terminated sentence:
-
-sed -i -r 's/!\.\s\s*([A-Z])/!. \n\1/g' tmp_file
+sed -i -r "s/'s\. ([A-Z])/'s.\n\1/g" tmp_file
 
 
 # ============================================================================

@@ -7,11 +7,9 @@ Last updated: 2017-Oct-12
 
 NOTES:
 
-1. The following will often look VERY silly, but I am trying to functionally
-challenge / break my script.  ;-)
+1. The following will often look VERY silly, but I am trying to functionally challenge / break my script.  ;-)
 
-2. Sentences of length <= 15 may not be split, a consequence of dealing with
-journal title abbreviations (see comments in script code).
+2. Sentences of length <= 15 may not be split, a consequence of dealing with journal title abbreviations (see comments in script code).
 ==============================================================================
 
 Hello? Ms. Wilson is asking for the file!      a. b. e. k. l. m. s. t. u. ... as Dr. Stuart et al. proposed, yesterday. ...  Testing here, these contractions: Dr., Drs., St., that Mr., Mrs., Ms., they all found me on the St. Where, exactly, do you live?   I live on 1234 Baker St. That's where you can find me. They found nothing there? Yes, nothing! However, in v.3.4 (see Fig. 2, and fig 3, and Figs. 5-6), it clearly shows, ... on the last page..  Very good, i.e., excellent! E.g., another example. E.g. another one; e.g one more; i.e. that's the last one!
@@ -32,9 +30,10 @@ This versus that.  This vs, that; Stuart vss Stuart. This vs: that.
 
 You put it where??????????!
 
+The end of this sentence is improperly terminated!.  Then the next sentence continues here ...
 
 ------------------------------------------------------------------------------
-CAPITALIZATION.
+CAPITALIZATION TESTS.
 
 THIS IS SENTENCE 1.  THIS IS SENTENCE TWO.  THIS IS SENTENCE 3.  THIS is Sentence FOUR.  This IS SENTENCE FIVE.  This is Sentence siX.  This is sentence 7.  This sentence ends in 10.  1, begins this Sentence.
 

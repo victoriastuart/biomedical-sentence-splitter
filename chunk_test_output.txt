@@ -1,40 +1,32 @@
-==============================================================================
 ADDITIONAL TESTS -- BIOMEDICAL LITERATURE
 
 Created: 2017-Jul-20 | Victoria Stuart | "mail"..@t."VictoriasJourney.com"
+
 Last updated: 2017-Oct-12
-==============================================================================
 
 NOTES:
 
 1.
 
-The following will often look VERY silly, but I am trying to functionally
-challenge / break my script. ;-)
+The following will often look VERY silly, but I am trying to functionally challenge / break my script. ;-)
 
 2.
 
-Sentences of length <= 15 may not be split, a consequence of dealing with
-journal title abbreviations (see comments in script code).
-==============================================================================
+Sentences of length <= 15 may not be split, a consequence of dealing with journal title abbreviations (see comments in script code).
 
 Hello?
 
 Ms. Wilson is asking for the file! a. b. e. k. l. m. s. t. u. ... as Dr. Stuart et al. proposed, yesterday. ...
 
-Testing here, these contractions: Dr., Drs., St., that Mr., Mrs., Ms., they all found me on the St.
+Testing here, these contractions: Dr., Drs., St., that Mr., Mrs., Ms., they all found me on the St. Where, exactly, do you live?
 
-Where, exactly, do you live?
-
-I live on 1234 Baker St.
-
-That's where you can find me.
+I live on 1234 Baker St. That's where you can find me.
 
 They found nothing there?
 
 Yes, nothing!
 
-However, in v.3.4 (see  Fig. 2, and fig 3, and Figs. 5-6), it clearly shows, ... on the last page. Very good, i.e., excellent!
+However, in v.3.4 (see Fig. 2, and fig 3, and Figs. 5-6), it clearly shows, ... on the last page. Very good, i.e., excellent!
 
 E.g., another example.
 
@@ -50,7 +42,7 @@ The items found on p. 23.
 
 The items found on p. 9.
 
-Apples, bananas, carrots!. 
+Apples, bananas, carrots!
 
 The items found on p. 2.
 
@@ -64,25 +56,29 @@ Item, 2-3. The items on ppp.[ << sic] 23.
 
 This versus that versus those.
 
-This vs. that versus that vs. that Stuart vs  Stuart.
+This vs. that versus that vs. that Stuart vs Stuart.
 
 # Ignore incorrectly abbreviated "vs" abbreviation.
+
 This versus that.
 
 This vs that.
 
-Stuart vs  Stuart. THE FOLLOWING WILL NOT SPLIT AS IT IS SHORTER THAN 10 CHAR (SEE SCRIPT "span" COMMENTS) >> .  The end.
+Stuart vs Stuart. THE FOLLOWING WILL NOT SPLIT AS IT IS SHORTER THAN 10 CHAR (SEE SCRIPT "span" COMMENTS) >> . The end.
 
 # The "vs" in the following sentences should remain "as is."
+
 This versus that.
 
-This vs, that; Stuart vss  Stuart. This vs: that.
+This vs, that; Stuart vss Stuart. This vs: that.
 
 You put it where?!
 
+The end of this sentence is improperly terminated!
 
-------------------------------------------------------------------------------
-CAPITALIZATION.
+Then the next sentence continues here ...
+
+CAPITALIZATION TESTS.
 
 THIS IS SENTENCE 1.
 
@@ -102,19 +98,18 @@ This sentence ends in 10.
 
 1, begins this Sentence.
 
-
-==============================================================================
 PARENTHESES:
-============
 
 () {} [] <> (some) {more } [text ] <here>
 
 This is sentence number one.
 
 This is sentence number 2.
+
 This is sentence number one!
 
 This is sentence number 2.
+
 This is sentence number one?
 
 This is sentence number 2.
@@ -122,9 +117,11 @@ This is sentence number 2.
 This is sentence number one.)
 
 (This is sentence number 2.
+
 This is sentence number one.]
 
 [This is sentence number 2.
+
 This is sentence number one.}
 
 {This is sentence number 2.
@@ -132,9 +129,11 @@ This is sentence number one.}
 This is sentence number one.)
 
 This is sentence number 2.
+
 This is sentence number one.]
 
 This is sentence number 2.
+
 This is sentence number one.}
 
 This is sentence number 2.
@@ -142,9 +141,11 @@ This is sentence number 2.
 This is sentence number one.
 
 (This is sentence number 2.
+
 This is sentence number one.
 
 {This is sentence number 2.
+
 This is sentence number one.
 
 [This is sentence number 2.
@@ -152,6 +153,7 @@ This is sentence number one.
 This is sentence number one.)
 
 [This is sentence number 2.
+
 This is sentence number one.)
 
 {This is sentence number 2.
@@ -159,6 +161,7 @@ This is sentence number one.)
 This is sentence number one.]
 
 (This is sentence number 2.
+
 This is sentence number one.]
 
 {This is sentence number 2.
@@ -166,6 +169,7 @@ This is sentence number one.]
 This is sentence number one.}
 
 (This is sentence number 2.
+
 This is sentence number one.}
 
 [This is sentence number 2.
@@ -173,12 +177,15 @@ This is sentence number one.}
 This is sentence number one.'
 
 'This is sentence number 2.
+
 This is sentence number one.'
 
 "This is sentence number 2.
+
 This is sentence number one."
 
 'This is sentence number 2.
+
 This is sentence number one."
 
 "This is sentence number 2.
@@ -186,12 +193,15 @@ This is sentence number one."
 This is sentence number one.')
 
 This is sentence number 2.
+
 This is sentence number one.')
 
 (This is sentence number 2.
+
 This is sentence number one.')
 
 [This is sentence number 2.
+
 This is sentence number one.')
 
 {This is sentence number 2.
@@ -199,12 +209,15 @@ This is sentence number one.')
 This is sentence number one'.)
 
 This is sentence number 2.
+
 This is sentence number one'.)
 
 (This is sentence number 2.
+
 This is sentence number one'.)
 
 [This is sentence number 2.
+
 This is sentence number one'.)
 
 {This is sentence number 2.
@@ -212,12 +225,15 @@ This is sentence number one'.)
 This is sentence number one.")
 
 This is sentence number 2.
+
 This is sentence number one.")
 
 (This is sentence number 2.
+
 This is sentence number one.")
 
 [This is sentence number 2.
+
 This is sentence number one.")
 
 {This is sentence number 2.
@@ -225,12 +241,15 @@ This is sentence number one.")
 This is sentence number one".)
 
 This is sentence number 2.
+
 This is sentence number one".)
 
 (This is sentence number 2.
+
 This is sentence number one".)
 
 [This is sentence number 2.
+
 This is sentence number one".)
 
 {This is sentence number 2.
@@ -238,12 +257,15 @@ This is sentence number one".)
 This is sentence number one!'
 
 'This is sentence number 2.
+
 This is sentence number one!'
 
 "This is sentence number 2.
+
 This is sentence number one!"
 
 'This is sentence number 2.
+
 This is sentence number one!"
 
 "This is sentence number 2.
@@ -251,12 +273,15 @@ This is sentence number one!"
 This is sentence number one'!)
 
 This is sentence number 2.
+
 This is sentence number one'!)
 
 (This is sentence number 2.
+
 This is sentence number one'!)
 
 [This is sentence number 2.
+
 This is sentence number one'!)
 
 {This is sentence number 2.
@@ -264,12 +289,15 @@ This is sentence number one'!)
 This is sentence number one!")
 
 This is sentence number 2.
+
 This is sentence number one!")
 
 (This is sentence number 2.
+
 This is sentence number one!")
 
 [This is sentence number 2.
+
 This is sentence number one!")
 
 {This is sentence number 2.
@@ -277,12 +305,15 @@ This is sentence number one!")
 This is sentence number one"!)
 
 This is sentence number 2.
+
 This is sentence number one"!)
 
 (This is sentence number 2.
+
 This is sentence number one"!)
 
 [This is sentence number 2.
+
 This is sentence number one"!)
 
 {This is sentence number 2.
@@ -290,12 +321,15 @@ This is sentence number one"!)
 This is sentence number one?'
 
 'This is sentence number 2.
+
 This is sentence number one?'
 
 "This is sentence number 2.
+
 This is sentence number one?"
 
 'This is sentence number 2.
+
 This is sentence number one?"
 
 "This is sentence number 2.
@@ -303,12 +337,15 @@ This is sentence number one?"
 This is sentence number one'?)
 
 This is sentence number 2.
+
 This is sentence number one'?)
 
 (This is sentence number 2.
+
 This is sentence number one'?)
 
 [This is sentence number 2.
+
 This is sentence number one'?)
 
 {This is sentence number 2.
@@ -316,12 +353,15 @@ This is sentence number one'?)
 This is sentence number one?")
 
 This is sentence number 2.
+
 This is sentence number one?")
 
 (This is sentence number 2.
+
 This is sentence number one?")
 
 [This is sentence number 2.
+
 This is sentence number one?")
 
 {This is sentence number 2.
@@ -329,18 +369,23 @@ This is sentence number one?")
 This is sentence number one"?)
 
 This is sentence number 2.
+
 This is sentence number one"?)
 
 (This is sentence number 2.
+
 This is sentence number one"?)
 
 [This is sentence number 2.
+
 This is sentence number one"?)
 
 {This is sentence number 2.
 
 1-year OS was similar between cohorts (58% vs. 56%, respectively) (p = 0.43).
+
 1-year OS was similar between cohorts [58% vs. 56%, respectively] [p = 0.43].
+
 1-year OS was similar between cohorts {58% vs. 56%, respectively} {p = 0.43}.
 
 The objective of this study is to examine the frequency, development.
@@ -359,37 +404,33 @@ The objective of this study is to examine the frequency, development.
 
 (The objective of this study is to examine the frequency, development.)
 
-==============================================================================
 QUOTED SENTENCES:
-=================
 
-------------------------------------------------------------------------------
 DOUBLE-QUOTED:
---------------
 
 Genetic variation of the type described in this paper are "experiments of nature," of a sort, that reveal when a specific gene is altered, disease risk can be affected.
 
 "This is direct evidence that if drugs can be designed to target these proteins, we have a chance to alter disease risk in people," said senior author Gerard Schellenberg, PhD, a professor of Pathology and Laboratory Medicine, and director of the Alzheimer Disease Genetics Consortium (ADGC) at the Perelman School of Medicine at the University of Pennsylvania.
 
-"It's been known for decades that microglia -- a first-line-of-defense cell we are born with -- surround amyloid plaque deposits associated with  Alzheimer's. These multiple gene 'hits' all originating from microglia are the clearest demonstration that these cells are part of Alzheimer's pathology and, more importantly, provide clear protein targets where we can start to intervene with drugs."
+"It's been known for decades that microglia -- a first-line-of-defense cell we are born with -- surround amyloid plaque deposits associated with Alzheimer's.
+
+These multiple gene 'hits' all originating from microglia are the clearest demonstration that these cells are part of Alzheimer's pathology and, more importantly, provide clear protein targets where we can start to intervene with drugs."
 
 "The ADGC, supported by the National Institute on Aging (NIA) ..."
 
-------------------------------------------------------------------------------
 SINGLE-QUOTED:
---------------
 
 Genetic variation of the type described in this paper are "experiments of nature," of a sort, that reveal when a specific gene is altered, disease risk can be affected.
 
 'This is direct evidence that if drugs can be designed to target these proteins, we have a chance to alter disease risk in people,' said senior author Gerard Schellenberg, PhD, a professor of Pathology and Laboratory Medicine, and director of the Alzheimer Disease Genetics Consortium (ADGC) at the Perelman School of Medicine at the University of Pennsylvania.
 
-'It's been known for decades that microglia -- a first-line-of-defense cell we are born with -- surround amyloid plaque deposits associated with  Alzheimer's. These multiple gene 'hits' all originating from microglia are the clearest demonstration that these cells are part of Alzheimer's pathology and, more importantly, provide clear protein targets where we can start to intervene with drugs.'
+'It's been known for decades that microglia -- a first-line-of-defense cell we are born with -- surround amyloid plaque deposits associated with Alzheimer's.
+
+These multiple gene 'hits' all originating from microglia are the clearest demonstration that these cells are part of Alzheimer's pathology and, more importantly, provide clear protein targets where we can start to intervene with drugs.'
 
 'The ADGC, supported by the National Institute on Aging (NIA) ...'
 
-------------------------------------------------------------------------------
 MIX -- QUOTES, CONTRACTIONS:
-----------------------------
 
 Again.
 
@@ -401,7 +442,7 @@ One, 'two,", "three," "four', 'five," 'six', 'seven,' 'eight' ...
 
 "Another quoted sentence, (Victoria's, again)." Apples apple's apples' apples.
 
-Apples, Apple's,  Apples'. ...
+Apples, Apple's, Apples'. ...
 
 Another ellipsis test! ...
 
@@ -411,9 +452,7 @@ Another ellipsis test! ...
 
 This one >> ... should not split (i.e., no 'bananas' today -- Ha!! ;-)
 
-------------------------------------------------------------------------------
 I.e. AND e.g. TESTS:
---------------------
 
 # MANY OF THESE ARE NOT "REAL" SENTENCES, THEREFORE THEY WILL NOT BE SPLIT.
 
@@ -425,13 +464,13 @@ Hello everyone, e.g. world.
 
 Hello everyone, e.g., world.
 
-Hello everyone, e.g.  World. Hello everyone, e.g.,  World.
+Hello everyone, e.g. World. Hello everyone, e.g., World.
 
 Hello everyone, e.g. world.
 
 Hello everyone, e.g., world.
 
-Hello everyone, e.g.  World. Hello everyone, e.g.,  World.
+Hello everyone, e.g. World. Hello everyone, e.g., World.
 
 E.g., give her an apple.
 
@@ -441,19 +480,19 @@ E.g., give her an apple.
 
 E.g. give her an apple.
 
-E.g., give her another  Apple. e.g. give her another  Apple. e.g., give her another  Apple. e.g. give her another  Apple.
+E.g., give her another Apple. e.g. give her another Apple. e.g., give her another Apple. e.g. give her another Apple.
 
 Hello everyone, i.e. world.
 
 Hello everyone, i.e., world.
 
-Hello everyone, i.e.  World. Hello everyone, i.e.,  World.
+Hello everyone, i.e. World. Hello everyone, i.e., World.
 
 Hello everyone, i.e. world.
 
 Hello everyone, i.e., world.
 
-Hello everyone, i.e.  World. Hello everyone, i.e.,  World.
+Hello everyone, i.e. World. Hello everyone, i.e., World.
 
 I.e., give her an apple.
 
@@ -463,7 +502,7 @@ I.e., give her an apple.
 
 I.e. give her an apple.
 
-I.e., give her an  Apple. i.e. give her an  Apple. i.e., give her an  Apple. i.e. give her an  Apple.
+I.e., give her an Apple. i.e. give her an Apple. i.e., give her an Apple. i.e. give her an Apple.
 
 Very good, i.e., excellent!
 
@@ -471,10 +510,7 @@ E.g., yet another example.
 
 E.g. another one; e.g one more; i.e. that's the last one!
 
-
-------------------------------------------------------------------------------
 COMPARISON ABBREVIATION:
-------------------------
 
 This one cf this one.
 
@@ -482,19 +518,22 @@ This one, c.f. this one.
 
 This one, c.f. This one. This one, c.f., this one.
 
-------------------------------------------------------------------------------
 # ITEMIZED LISTS:
+
 # ---------------
 
 1.
 
 Studying an isolated population ...
+
 2.
 
 Analyzing missense variants with SKAT;
+
 3.
 
 Examining only regions known to be associated
+
 4.
 
 Final sentence.
@@ -502,12 +541,15 @@ Final sentence.
 a.
 
 Studying an isolated population ...
+
 b.
 
 Analyzing missense variants with SKAT;
+
 c.
 
 Examining only regions known to be associated
+
 d.
 
 Final sentence.
@@ -515,20 +557,20 @@ Final sentence.
 i.
 
 Studying an isolated population ...
+
 ii.
 
 Analyzing missense variants with SKAT;
+
 iii.
 
 Examining only regions known to be associated
+
 iv.
 
 Final sentence.
 
-
-==============================================================================
 MISC
-====
 
 The objective of this study is to examine the frequency, development, concomitants, and risk factors of falls in a population-based incident Parkinson's disease (PD) cohort.
 
@@ -550,10 +592,7 @@ Nearly two-thirds of patients in the general PD population experience falls with
 
 Patients with higher age at baseline and early PIGD have the greatest risk of falling and may, therefore, be the prime target of specialized assessment and treatment interventions.
 
-
-==============================================================================
 CITATIONS - AUTHOR NAME ABBREVIATIONS
-==============================================================================
 
 BRCA1.
 
@@ -561,15 +600,15 @@ Genes.
 
 Some additional text.
 
-Robert O.  Watson. More more added text.
+Robert O. Watson. More more added text.
 
 Some additional text.
 
-Roel P.J.  Bell. More more added text.
+Roel P.J. Bell. More more added text.
 
 Some additional text.
 
-Roel P. J.  Bell. More more added text.
+Roel P. J. Bell. More more added text.
 
 Some additional text.
 
@@ -577,19 +616,19 @@ Adam A.C. E. Franklin. More more added text.
 
 Some additional text.
 
-Tim D.D.  Somerville. More more added text.
+Tim D.D. Somerville. More more added text.
 
 Some additional text.
 
-William F.J.  McLeod. More more added text.
+William F.J. McLeod. More more added text.
 
 Some additional text.
 
-A. Smith, B. Smith, A.B. Smith, ABCD  Smith. More more added text.
+A. Smith, B. Smith, A.B. Smith, ABCD Smith. More more added text.
 
 Some additional text.
 
-A. Smith, A.B. Smith, A. B. Smith, A.B. C. Smith, A. B. C. Smith, A.B.C. D. Smith, A. B. C. D. Smith, ABCD  Smith, AB.CD.Smith, ABCD.
+A. Smith, A.B. Smith, A. B. Smith, A.B. C. Smith, A. B. C. Smith, A.B.C. D. Smith, A. B. C. D. Smith, ABCD Smith, AB.CD.Smith, ABCD.
 
 Smith, A. BCD.Smith.
 
@@ -597,245 +636,281 @@ More more added text.
 
 Some additional text.
 
-Chen A.-B.  Jiang. More more added text.
+Chen A.-B. Jiang. More more added text.
 
 Some additional text.
 
-Chen A-B.  Jiang. More more added text.
+Chen A-B. Jiang. More more added text.
 
-==============================================================================
 CITATIONS - JOURNAL TITLE ABBREVIATIONS
-==============================================================================
 
 We study the thermodiffusion behavior of spherical polystyrene beads with a diameter of 25 nm by infrared thermal diffusion Forced Rayleigh Scattering (IR-TDFRS).
 
 Similar beads were used to investigate the radial dependence of the Soret coefficient by different authors.
 
-While Duhr and Braun  (Proc.  Natl.  Acad.  Sci. U.S. A. 104, 9346 (2007)) observed a quadratic radial dependence, Braibanti et al.  (Phys.  Rev.  Lett. 100, 108303 (2008)) found a linear radial dependence of the Soret coefficient.
+While Duhr and Braun (Proc. Natl. Acad. Sci. U.S. A. 104, 9346 (2007)) observed a quadratic radial dependence, Braibanti et al. (Phys. Rev. Lett. 100, 108303 (2008)) found a linear radial dependence of the Soret coefficient.
 
 We demonstrated that special care needs to be taken to obtain reliable thermophoretic data, because the measurements are very sensitive to surface properties.
 
-------------------------------------------------------------------------------
-
-J. Am.  Soc.  Bact.  Virol. 61: 1–72.
+J. Am. Soc. Bact. Virol. 61: 1–72.
 
 Some random trailing text.
 
 Some random preceding text.
 
-J. Am.  Soc.  Bact. 61: 1–72.
+J. Am. Soc. Bact. 61: 1–72.
 
 Some random trailing text.
+
 Some random preceding text.
 
-Proc.  Natl.  Acad.  Sci. U.S. A. 88: 7958–7962.
+Proc. Natl. Acad. Sci. U.S. A. 88: 7958–7962.
 
 Some random trailing text.
+
 Some random preceding text.
 
-Proc.  Natl.  Acad.  Sci. U.S.A. 88: 7958–7962.
+Proc. Natl. Acad. Sci. U.S.A. 88: 7958–7962.
 
 Some random trailing text.
+
 Some random preceding text.
 
-Proc.  Natl.  Acad.  Sci. U.S.A. Some extraneous text!
+Proc. Natl. Acad. Sci. U.S.A. Some extraneous text!
 
 88: 7958–7962.
 
 Some random trailing text.
-Some random preceding text.
-
-Proc.  Natl.  Acad.  Sci. U.S. A.
 
 Some random preceding text.
 
-Adv.  Anat.  Embryol. Cell  Biol. 61: 1–72.
+Proc. Natl. Acad. Sci. U.S. A.
+
+Some random preceding text.
+
+Adv. Anat. Embryol. Cell Biol. 61: 1–72.
 
 Some random trailing text.
+
 Some random preceding text.
 
-Am. J.  Hum.  Genet. 47: 202–217.
+Am. J. Hum. Genet. 47: 202–217.
 
 Some random trailing text.
+
 Some random preceding text.
 
-Am. J.  Hum.  Genet. 47: 202–217.
+Am. J. Hum. Genet. 47: 202–217.
 
 Some random trailing text.
+
 Some random preceding text.
 
-Am. J.  Hum.  Genet. 47: 202–217.
+Am. J. Hum. Genet. 47: 202–217.
 
 Some random trailing text.
+
 Some random preceding text.
 
-Am. J.  Hum.  Genet. 47: 202–217.
+Am. J. Hum. Genet. 47: 202–217.
 
 Some random trailing text.
+
 Some random preceding text.
 
-Am.J.  Hum.Genet.
+Am.J. Hum.Genet.
 
 47: 202–217.
 
 Some random trailing text.
+
 Some random preceding text.
 
-Annu.  Rev.  Genet. 30: 441–464.
+Annu. Rev. Genet. 30: 441–464.
 
 Some random trailing text.
+
 Some random preceding text.
 
-Biochim.  Biophys. Acta 740: 212–219.
+Biochim. Biophys. Acta 740: 212–219.
 
 Some random trailing text.
+
 Some random preceding text.
 
-Brain  Res.  Mol. Brain  Res. 53: 317–320.
+Brain Res. Mol. Brain Res. 53: 317–320.
 
 Some random trailing text.
+
 Some random preceding text.
 
-Cancer  Res. 51: 3075–3079.
+Cancer Res. 51: 3075–3079.
 
 Some random trailing text.
+
 Some random preceding text.
 
-Cell Tissue  Kinet. 11: 241–249.
+Cell Tissue Kinet. 11: 241–249.
 
 Some random trailing text.
+
 Some random preceding text.
 
-Crit.  Rev.  Toxicol. 24: 255–280.
+Crit. Rev. Toxicol. 24: 255–280.
 
 Some random trailing text.
+
 Some random preceding text.
 
-Curr. Concepts  Nutr. 1: 49–97.
+Curr. Concepts Nutr. 1: 49–97.
 
 Some random trailing text.
+
 Some random preceding text.
 
-Drug  Metab.  Rev. 30: 327–338.
+Drug Metab. Rev. 30: 327–338.
 
 Some random trailing text.
+
 Some random preceding text.
 
-Environ. Health Perspect. 106  (Suppl. 1): 307–312.
+Environ. Health Perspect. 106 (Suppl. 1): 307–312.
 
 Some random trailing text.
+
 Some random preceding text.
 
-Environ.  Mol.  Mutagen. Some random trailing text.
+Environ. Mol. Mutagen. Some random trailing text.
+
 Some random preceding text.
 
 Exp. Gerontol. 30: 475–484.
 
 Some random trailing text.
+
 Some random preceding text.
 
-Fundam.  Appl.  Toxicol. 32: 159–167.
+Fundam. Appl. Toxicol. 32: 159–167.
 
 Some random trailing text.
+
 Some random preceding text.
 
-Hum.  Genet. 83: 181–188.
+Hum. Genet. 83: 181–188.
 
 Some random trailing text.
+
 Some random preceding text.
 
-Indian J.  Biochem.  Biophys. 29: 49–53.
+Indian J. Biochem. Biophys. 29: 49–53.
 
 Some random trailing text.
+
 Some random preceding text.
 
-Int. J.  Biochem. 12: 523–528.
+Int. J. Biochem. 12: 523–528.
 
 Some random trailing text.
+
 Some random preceding text.
 
-Int.  Rev.  Cytol. Some random trailing text.
+Int. Rev. Cytol. Some random trailing text.
+
 Some random preceding text.
 
-Int.  Rev.  Cytol. 25: 201–277.
+Int. Rev. Cytol. 25: 201–277.
 
 Some random trailing text.
+
 Some random preceding text.
 
-J.  Biol.  Chem. 262: 9948–9951.
+J. Biol. Chem. 262: 9948–9951.
 
 Some random trailing text.
+
 Some random preceding text.
 
-J.  Molec. Gastroenterol.
+J. Molec. Gastroenterol.
 
 Some random trailing text.
+
 Some random preceding text.
 
 J. Neurosci. Some random trailing text.
+
 Some random preceding text.
 
-J.  Theor.  Biol. 89: 557–571.
+J. Theor. Biol. 89: 557–571.
 
 Some random trailing text.
+
 Some random preceding text.
 
-Mech. Ageing  Dev. 41: 199–210.
+Mech. Ageing Dev. 41: 199–210.
 
 Some random trailing text.
+
 Some random preceding text.
 
-Mol.  Biol. 28: 11–31.
+Mol. Biol. 28: 11–31.
 
 Some random trailing text.
+
 Some random preceding text.
 
-Mol.  Cell.  Biol. 12: 767–772.
+Mol. Cell. Biol. 12: 767–772.
 
 Some random trailing text.
+
 Some random preceding text.
 
-Mol.  Phylogenet.  Evol. 5: 182–187.
+Mol. Phylogenet. Evol. 5: 182–187.
 
 Some random trailing text.
+
 Some random preceding text.
 
-Mutat.  Res. 352: 73–78.
+Mutat. Res. 352: 73–78.
 
 Some random trailing text.
+
 Some random preceding text.
 
-Nucleic Acids  Res. Some random trailing text.
+Nucleic Acids Res. Some random trailing text.
+
 Some random preceding text.
 
-Nucleic Acids  Res. 25: 3007–3013.
+Nucleic Acids Res. 25: 3007–3013.
 
 Some random trailing text.
+
 Some random preceding text.
 
-Proc.  Natl.  Acad.  Sci. U.S. A. 88: 7958–7962.
+Proc. Natl. Acad. Sci. U.S. A. 88: 7958–7962.
 
 Some random trailing text.
+
 Some random preceding text.
 
-Proc.  Natl.  Acad.  Sci. USA.
+Proc. Natl. Acad. Sci. USA.
 
 91: 6564–6568.
 
 Some random trailing text.
+
 Some random preceding text.
 
-Somat. Cell  Mol.  Genet. 19: 543–555.
-
-Some random trailing text.
-Some random preceding text.
-
-Toxicol.  Lett. 82–83: 131–134.
+Somat. Cell Mol. Genet. 19: 543–555.
 
 Some random trailing text.
 
-------------------------------------------------------------------------------
-Full references, with Authors,  Titles ..
+Some random preceding text.
+
+Toxicol. Lett. 82–83: 131–134.
+
+Some random trailing text.
+
+Full references, with Authors, Titles ..
 
 Stuart, G. R., & Glickman, B. W. (2000).
 
@@ -844,33 +919,26 @@ Through a glass, darkly: reflections of mutation from lacI transgenic mice.
 Genetics, 155(3), 1359-1367.
 
 Cited by 32
---------------------------------------------------------------
 
-==============================================================================
 [CITATIONS] SAMPLED REFERENCES
-==============================================================================
 
-Yun J., Huan Yang, Michael A Lizzio, Chunlai Wu, Zu-Hang Sheng & Ming  Guo (2014).
+Yun J., Huan Yang, Michael A Lizzio, Chunlai Wu, Zu-Hang Sheng & Ming Guo (2014). MUL1 acts in parallel to the PINK1/parkin pathway in regulating mitofusin and compensates for loss of PINK1/parkin.
 
-MUL1 acts in parallel to the PINK1/parkin pathway in regulating mitofusin and compensates for loss of PINK1/parkin.
+Diedrich M., Grit Nebrich, Andrea Koppelstaetter, Jie Shen, Claus Zabel, Joachim Klose & Lei Mao (2011). Brain region specific mitophagy capacity could contribute to selective neuronal vulnerability in Parkinson's disease.
 
-Diedrich M., Grit Nebrich, Andrea Koppelstaetter, Jie Shen, Claus Zabel, Joachim Klose & Lei  Mao (2011).
+Reference: Gian-Luca McLelland, Vincent Soubannier, Carol X Chen, Heidi M McBride, Edward A Fon. Parkin and PINK1 function in a vesicular trafficking pathway regulating mitochondrial quality control.
 
-Brain region specific mitophagy capacity could contribute to selective neuronal vulnerability in Parkinson's disease.
+Reference: Nicholas T. Hertz, Amandine Berthet, Martin L. Sos, Kurt S. Thorn, Al L. Burlingame, Ken Nakamura, Kevan M. Shokat. A Neo-Substrate that Amplifies Catalytic Activity of Parkinson's-Disease-Related Kinase PINK1.
 
-Reference: Gian-Luca McLelland, Vincent Soubannier, Carol X Chen, Heidi M McBride, Edward A  Fon. Parkin and PINK1 function in a vesicular trafficking pathway regulating mitochondrial quality control.
+Reference: Shusaku Uchida, Kumiko Hara, Ayumi Kobayashi, Koji Otsuki, Hirotaka Yamagata, Teruyuki Hobara, Takayoshi Suzuki, Naoki Miyata, Yoshifumi Watanabe. Epigenetic Status of Gdnf in the Ventral Striatum Determines Susceptibility and Adaptation to Daily Stressful Events.
 
-Reference: Nicholas T. Hertz, Amandine Berthet, Martin L. Sos, Kurt S. Thorn, Al L. Burlingame, Ken Nakamura, Kevan M.  Shokat. A Neo-Substrate that Amplifies Catalytic Activity of Parkinson's-Disease-Related Kinase PINK1.
+Reference: Paolo S. Manzanillo, Janelle S. Ayres, Robert O. Watson, Angela C. Collins, Gianne Souza, Chris S. Rae, David S. Schneider, Ken Nakamura, Michael U. Shiloh, Jeffery S. Cox. The ubiquitin ligase parkin mediates resistance to intracellular pathogens.
 
-Reference: Shusaku Uchida, Kumiko Hara, Ayumi Kobayashi, Koji Otsuki, Hirotaka Yamagata, Teruyuki Hobara, Takayoshi Suzuki, Naoki Miyata, Yoshifumi Watanabe. Epigenetic Status of Gdnf in the Ventral Striatum Determines Susceptibility and Adaptation to Daily Stressful  Events.
+Journal Reference: X. Edward Zhou, Yuanzheng He, Parker W. de Waal, Xiang Gao, Yanyong Kang, Ned Van Eps, Yanting Yin, Kuntal Pal, Devrishi Goswami, Thomas A. White, Anton Barty, Naomi R. Latorraca, Henry N. Chapman, Wayne L. Hubbell, Ron O. Dror, Raymond C. Stevens, Vadim Cherezov, Vsevolod V. Gurevich, Patrick R. Griffin, Oliver P. Ernst, Karsten Melcher, H. Eric Xu. Identification of Phosphorylation Codes for Arrestin Recruitment by G Protein-Coupled Receptors. Cell, 2017; 170 (3): 457 DOI: 10.1016/j.cell.2017.07.002
 
-Reference: Paolo S. Manzanillo, Janelle S. Ayres, Robert O. Watson, Angela C. Collins, Gianne Souza, Chris S. Rae, David S. Schneider, Ken Nakamura, Michael U. Shiloh, Jeffery S.  Cox. The ubiquitin ligase parkin mediates resistance to intracellular pathogens.
+Reference: Gauri Dixit, Joshua B. Kelley, John R. Houser, Timothy C. Elston, Henrik G. Dohlman. Cellular Noise Suppression by the Regulator of G Protein Signaling Sst2. Molecular Cell, 2014; 55 (1): 85 DOI: 10.1016/j.molcel.2014.05.019
 
-Journal Reference: X. Edward Zhou, Yuanzheng He, Parker W. de Waal, Xiang Gao, Yanyong Kang, Ned Van Eps, Yanting Yin, Kuntal Pal, Devrishi Goswami, Thomas A. White, Anton Barty, Naomi R. Latorraca, Henry N. Chapman, Wayne L. Hubbell, Ron O. Dror, Raymond C. Stevens, Vadim Cherezov, Vsevolod V. Gurevich, Patrick R. Griffin, Oliver P. Ernst, Karsten Melcher, H. Eric Xu. Identification of Phosphorylation Codes for Arrestin Recruitment by G Protein-Coupled  Receptors. Cell, 2017; 170 (3): 457 DOI: 10.1016/j.cell.2017.07.002
-
-Reference: Gauri Dixit, Joshua B. Kelley, John R. Houser, Timothy C. Elston, Henrik G.  Dohlman. Cellular Noise Suppression by the Regulator of G Protein Signaling  Sst2. Molecular Cell, 2014; 55 (1): 85 DOI: 10.1016/j.molcel.2014.05.019
-
-Reference: Arun K. Shukla, Gerwin H. Westfield, Kunhong Xiao, Rosana I. Reis, Li-Yin Huang, Prachi Tripathi-Shukla, Jiang Qian, Sheng Li, Adi Blanc, Austin N. Oleskie, Anne M. Dosey, Min Su, Cui-Rong Liang, Ling-Ling Gu, Jin-Ming Shan, Xin Chen, Rachel Hanna, Minjung Choi, Xiao Jie Yao, Bjoern U. Klink, Alem W. Kahsai, Sachdev S. Sidhu, Shohei Koide, Pawel A. Penczek, Anthony A. Kossiakoff, Virgil L. Woods Jr, Brian K. Kobilka, Georgios Skiniotis, Robert J.  Lefkowitz. Visualization of arrestin recruitment by a G-protein-coupled receptor.
+Reference: Arun K. Shukla, Gerwin H. Westfield, Kunhong Xiao, Rosana I. Reis, Li-Yin Huang, Prachi Tripathi-Shukla, Jiang Qian, Sheng Li, Adi Blanc, Austin N. Oleskie, Anne M. Dosey, Min Su, Cui-Rong Liang, Ling-Ling Gu, Jin-Ming Shan, Xin Chen, Rachel Hanna, Minjung Choi, Xiao Jie Yao, Bjoern U. Klink, Alem W. Kahsai, Sachdev S. Sidhu, Shohei Koide, Pawel A. Penczek, Anthony A. Kossiakoff, Virgil L. Woods Jr, Brian K. Kobilka, Georgios Skiniotis, Robert J. Lefkowitz. Visualization of arrestin recruitment by a G-protein-coupled receptor.
 
 Nature, 2014; DOI: 10.1038/nature13430
 
@@ -880,33 +948,33 @@ Nature, 2011; DOI: 10.1038/nature10368
 
 Reference:
 
-Aaron F. McDaid, Peter K. Joshi, Eleonora Porcu, Andrea Komljenovic, Hao Li, Vincenzo Sorrentino, Maria Litovchenko, Roel P. J. Bevers, Sina Rüeger, Alexandre Reymond, Murielle Bochud, Bart Deplancke, Robert W. Williams, Marc Robinson-Rechavi, Fred Paccaud, Valentin Rousson, Johan Auwerx, James F. Wilson, Zoltán  Kutalik. Bayesian association scan reveals loci associated with human lifespan and linked biomarkers.
+Aaron F. McDaid, Peter K. Joshi, Eleonora Porcu, Andrea Komljenovic, Hao Li, Vincenzo Sorrentino, Maria Litovchenko, Roel P. J. Bevers, Sina Rüeger, Alexandre Reymond, Murielle Bochud, Bart Deplancke, Robert W. Williams, Marc Robinson-Rechavi, Fred Paccaud, Valentin Rousson, Johan Auwerx, James F. Wilson, Zoltán Kutalik. Bayesian association scan reveals loci associated with human lifespan and linked biomarkers.
 
 Nature Communications, 2017; 8: 15842 DOI: 10.1038/NCOMMS15842
 
-More information: "Aurora-B kinase pathway controls the lateral to end-on conversion of kinetochore-microtubule attachments in human cells", by Roshan L. Shrestha, Duccio Conti, Naoka Tamura, Dominique Braun, Revathy A. Ramalingam, Konstanty Cieslinski, Jonas Ries & Viji M.  Draviam. Nature Communications, DOI: 10.1038/10.1038/s41467-017-00209-z
+More information: "Aurora-B kinase pathway controls the lateral to end-on conversion of kinetochore-microtubule attachments in human cells", by Roshan L. Shrestha, Duccio Conti, Naoka Tamura, Dominique Braun, Revathy A. Ramalingam, Konstanty Cieslinski, Jonas Ries & Viji M. Draviam. Nature Communications, DOI: 10.1038/10.1038/s41467-017-00209-z
 
-Reference: Yashi Mi, Guoyuan Qi, Rong Fan, Qinglian Qiao, Yali Sun, Yuqi Gao, Xuebo  Liu. EGCG ameliorates high-fat- and high-fructose-induced cognitive defects by regulating the IRS/AKT and ERK/CREB/BDNF.
+Reference: Yashi Mi, Guoyuan Qi, Rong Fan, Qinglian Qiao, Yali Sun, Yuqi Gao, Xuebo Liu. EGCG ameliorates high-fat- and high-fructose-induced cognitive defects by regulating the IRS/AKT and ERK/CREB/BDNF.
 
 The FASEB Journal, 2017; fj.201700400RR DOI: 10.1096/fj.201700400RR
 
-Reference: Jae-Seok Roe, Chang-Il Hwang, Tim D.D. Somerville, Joseph P. Milazzo, Eun Jung Lee, Brandon Da Silva, Laura Maiorino, Hervé Tiriac, C. Megan Young, Koji Miyabayashi, Dea Filippini, Brianna Creighton, Richard A. Burkhart, Jonathan M. Buscaglia, Edward J. Kim, Jean L. Grem, Audrey J. Lazenby, James A. Grunkemeyer, Michael A. Hollingsworth, Paul M. Grandgenett, Mikala Egeblad, Youngkyu Park, David A. Tuveson, Christopher R.  Vakoc. Enhancer Reprogramming Promotes Pancreatic Cancer  Metastasis. Cell, 2017; DOI: 10.1016/j.cell.2017.07.007
+Reference: Jae-Seok Roe, Chang-Il Hwang, Tim D.D. Somerville, Joseph P. Milazzo, Eun Jung Lee, Brandon Da Silva, Laura Maiorino, Hervé Tiriac, C. Megan Young, Koji Miyabayashi, Dea Filippini, Brianna Creighton, Richard A. Burkhart, Jonathan M. Buscaglia, Edward J. Kim, Jean L. Grem, Audrey J. Lazenby, James A. Grunkemeyer, Michael A. Hollingsworth, Paul M. Grandgenett, Mikala Egeblad, Youngkyu Park, David A. Tuveson, Christopher R. Vakoc. Enhancer Reprogramming Promotes Pancreatic Cancer Metastasis. Cell, 2017; DOI: 10.1016/j.cell.2017.07.007
 
 Liu T, Ortiz JA, Taing L, Meyer CA, Lee B, Zhang Y, Shin H, Wong SS, Ma J, Lei Y, Pape UJ, Poidinger M, Chen Y, Yeung K, Brown M, Turpaz Y, Liu XS (2011).
 
 "Cistrome: an integrative platform for transcriptional regulation studies".
 
-Genome  Biol. 12 (8): R83. doi:10.1186/gb-2011-12-8-r83.
+Genome Biol. 12 (8): R83. doi:10.1186/gb-2011-12-8-r83.
 
 PMC 3245621.
 
 PMID 21859476.
 
-"cistrome /  FrontPage". PBWiki,   Inc..
+"cistrome / FrontPage". PBWiki, Inc..
 
 Further reading
 
-Lupien M, Eeckhoute J, Meyer CA, Wang Q, Zhang Y, Li W, Carroll JS, Liu XS, Brown M  (March 2008). "FoxA1 translates epigenetic signatures into enhancer-driven lineage-specific transcription".
+Lupien M, Eeckhoute J, Meyer CA, Wang Q, Zhang Y, Li W, Carroll JS, Liu XS, Brown M (March 2008). "FoxA1 translates epigenetic signatures into enhancer-driven lineage-specific transcription".
 
 Cell 132 (6): 958–70. doi:10.1016/j.cell.2008.01.018.
 
@@ -914,29 +982,29 @@ PMC 2323438.
 
 PMID 18358809.
 
-Lupien M, Brown M  (June 2009). "Cistromics of hormone-dependent cancer".
+Lupien M, Brown M (June 2009). "Cistromics of hormone-dependent cancer".
 
-Endocr.  Relat. Cancer 16 (2): 381–9. doi:10.1677/ERC-09-0038.
+Endocr. Relat. Cancer 16 (2): 381–9. doi:10.1677/ERC-09-0038.
 
 PMID 19369485.
 
-Reference: Richard Cowper-Sal·lari, Xiaoyang Zhang, Jason B Wright, Swneke D Bailey, Michael D Cole, Jerome Eeckhoute, Jason H Moore, Mathieu  Lupien. Breast cancer risk–associated SNPs modulate the affinity of chromatin for FOXA1 and alter gene expression.
+Reference: Richard Cowper-Sal·lari, Xiaoyang Zhang, Jason B Wright, Swneke D Bailey, Michael D Cole, Jerome Eeckhoute, Jason H Moore, Mathieu Lupien. Breast cancer risk–associated SNPs modulate the affinity of chromatin for FOXA1 and alter gene expression.
 
 Nature Genetics, 2012; 44 (11): 1191 DOI: 10.1038/ng.2416
 
-Reference: Kayleigh R. McGovern-Gooch, Nivedita S. Mahajani, Ariana Garagozzo, Anthony J. Schramm, Lauren G. Hannah, Michelle A. Sieburg, John D. Chisholm, James L. Hougland. Synthetic Triterpenoid Inhibition of Human Ghrelin O-Acyltransferase: The Involvement of a Functionally Required Cysteine Provides Mechanistic Insight into Ghrelin  Acylation. Biochemistry, 2017; 56 (7): 919 DOI: 10.1021/acs.biochem.6b01008
+Reference: Kayleigh R. McGovern-Gooch, Nivedita S. Mahajani, Ariana Garagozzo, Anthony J. Schramm, Lauren G. Hannah, Michelle A. Sieburg, John D. Chisholm, James L. Hougland. Synthetic Triterpenoid Inhibition of Human Ghrelin O-Acyltransferase: The Involvement of a Functionally Required Cysteine Provides Mechanistic Insight into Ghrelin Acylation. Biochemistry, 2017; 56 (7): 919 DOI: 10.1021/acs.biochem.6b01008
 
-Reference: Aviad Tsherniak, Francisca Vazquez, Phil G. Montgomery, Barbara A. Weir, Gregory Kryukov, Glenn S. Cowley, Stanley Gill, William F. Harrington, Sasha Pantel, John M. Krill-Burger, Robin M. Meyers, Levi Ali, Amy Goodale, Yenarae Lee, Guozhi Jiang, Jessica Hsiao, William F.J. Gerath, Sara Howell, Erin Merkel, Mahmoud Ghandi, Levi A. Garraway, David E. Root, Todd R. Golub, Jesse S. Boehm, William C.  Hahn. Defining a Cancer Dependency  Map. Cell, 2017; 170 (3): 564 DOI: 10.1016/j.cell.2017.06.010
+Reference: Aviad Tsherniak, Francisca Vazquez, Phil G. Montgomery, Barbara A. Weir, Gregory Kryukov, Glenn S. Cowley, Stanley Gill, William F. Harrington, Sasha Pantel, John M. Krill-Burger, Robin M. Meyers, Levi Ali, Amy Goodale, Yenarae Lee, Guozhi Jiang, Jessica Hsiao, William F.J. Gerath, Sara Howell, Erin Merkel, Mahmoud Ghandi, Levi A. Garraway, David E. Root, Todd R. Golub, Jesse S. Boehm, William C. Hahn. Defining a Cancer Dependency Map. Cell, 2017; 170 (3): 564 DOI: 10.1016/j.cell.2017.06.010
 
-Journal Reference: X. Edward Zhou, Yuanzheng He, Parker W. de Waal, Xiang Gao, Yanyong Kang, Ned Van Eps, Yanting Yin, Kuntal Pal, Devrishi Goswami, Thomas A. White, Anton Barty, Naomi R. Latorraca, Henry N. Chapman, Wayne L. Hubbell, Ron O. Dror, Raymond C. Stevens, Vadim Cherezov, Vsevolod V. Gurevich, Patrick R. Griffin, Oliver P. Ernst, Karsten Melcher, H. Eric Xu. Identification of Phosphorylation Codes for Arrestin Recruitment by G Protein-Coupled  Receptors. Cell, 2017; 170 (3): 457 DOI: 10.1016/j.cell.2017.07.002
+Journal Reference: X. Edward Zhou, Yuanzheng He, Parker W. de Waal, Xiang Gao, Yanyong Kang, Ned Van Eps, Yanting Yin, Kuntal Pal, Devrishi Goswami, Thomas A. White, Anton Barty, Naomi R. Latorraca, Henry N. Chapman, Wayne L. Hubbell, Ron O. Dror, Raymond C. Stevens, Vadim Cherezov, Vsevolod V. Gurevich, Patrick R. Griffin, Oliver P. Ernst, Karsten Melcher, H. Eric Xu. Identification of Phosphorylation Codes for Arrestin Recruitment by G Protein-Coupled Receptors. Cell, 2017; 170 (3): 457 DOI: 10.1016/j.cell.2017.07.002
 
-Reference: Gauri Dixit, Joshua B. Kelley, John R. Houser, Timothy C. Elston, Henrik G.  Dohlman. Cellular Noise Suppression by the Regulator of G Protein Signaling  Sst2. Molecular Cell, 2014; 55 (1): 85 DOI: 10.1016/j.molcel.2014.05.019
+Reference: Gauri Dixit, Joshua B. Kelley, John R. Houser, Timothy C. Elston, Henrik G. Dohlman. Cellular Noise Suppression by the Regulator of G Protein Signaling Sst2. Molecular Cell, 2014; 55 (1): 85 DOI: 10.1016/j.molcel.2014.05.019
 
-Reference: Arun K. Shukla, Gerwin H. Westfield, Kunhong Xiao, Rosana I. Reis, Li-Yin Huang, Prachi Tripathi-Shukla, Jiang Qian, Sheng Li, Adi Blanc, Austin N. Oleskie, Anne M. Dosey, Min Su, Cui-Rong Liang, Ling-Ling Gu, Jin-Ming Shan, Xin Chen, Rachel Hanna, Minjung Choi, Xiao Jie Yao, Bjoern U. Klink, Alem W. Kahsai, Sachdev S. Sidhu, Shohei Koide, Pawel A. Penczek, Anthony A. Kossiakoff, Virgil L. Woods Jr, Brian K. Kobilka, Georgios Skiniotis, Robert J.  Lefkowitz. Visualization of arrestin recruitment by a G-protein-coupled receptor.
+Reference: Arun K. Shukla, Gerwin H. Westfield, Kunhong Xiao, Rosana I. Reis, Li-Yin Huang, Prachi Tripathi-Shukla, Jiang Qian, Sheng Li, Adi Blanc, Austin N. Oleskie, Anne M. Dosey, Min Su, Cui-Rong Liang, Ling-Ling Gu, Jin-Ming Shan, Xin Chen, Rachel Hanna, Minjung Choi, Xiao Jie Yao, Bjoern U. Klink, Alem W. Kahsai, Sachdev S. Sidhu, Shohei Koide, Pawel A. Penczek, Anthony A. Kossiakoff, Virgil L. Woods Jr, Brian K. Kobilka, Georgios Skiniotis, Robert J. Lefkowitz. Visualization of arrestin recruitment by a G-protein-coupled receptor.
 
 Nature, 2014; DOI: 10.1038/nature13430
 
-Reference: Shai Bel, Mihir Pendse, Yuhao Wang, Yun Li, Kelly A. Ruhn, Brian Hassell, Tess Leal, Sebastian E. Winter, Ramnik J. Xavier, Lora V.  Hooper. Paneth cells secrete lysozyme via secretory autophagy during bacterial infection of the intestine.
+Reference: Shai Bel, Mihir Pendse, Yuhao Wang, Yun Li, Kelly A. Ruhn, Brian Hassell, Tess Leal, Sebastian E. Winter, Ramnik J. Xavier, Lora V. Hooper. Paneth cells secrete lysozyme via secretory autophagy during bacterial infection of the intestine.
 
 Science, July 2017 DOI: 10.1126/science.aal4677
 
@@ -958,7 +1026,7 @@ Nature, 2013; DOI: 10.1038/nature12599
 
 Reference - Scientific Reports: http://nature.com/articles/doi:10.1038/s41598-017-05649-7
 
-Reference: Fran Supek, Ben  Lehner. Clustered Mutation Signatures Reveal that Error-Prone DNA Repair Targets Mutations to Active  Genes. Cell, 2017; 170 (3): 534 DOI: 10.1016/j.cell.2017.07.003
+Reference: Fran Supek, Ben Lehner. Clustered Mutation Signatures Reveal that Error-Prone DNA Repair Targets Mutations to Active Genes. Cell, 2017; 170 (3): 534 DOI: 10.1016/j.cell.2017.07.003
 
 More information: H.D. Ou el al., "ChromEMT: Visualizing 3D chromatin structure and compaction of the human genome in interphase and mitotic cells," Science (2017). science.sciencemag.org/cgi/doi ...
 
@@ -976,22 +1044,21 @@ More information: Moussy A, Cosette J, Parmentier R, da Silva C, Corre G, Richar
 
 PLoS Biol 15(7): e2001867. doi.org/10.1371/journal.pbio.2001867
 
-Reference: TaChung Yu et al. Fusobacterium nucleatum Promotes Chemoresistance to Colorectal Cancer by Modulating  Autophagy. Cell, July 2017 DOI: 10.1016/j.cell.2017.07.008
+Reference: TaChung Yu et al. Fusobacterium nucleatum Promotes Chemoresistance to Colorectal Cancer by Modulating Autophagy. Cell, July 2017 DOI: 10.1016/j.cell.2017.07.008
 
-Reference: Dallas R. Donohoe, Nikhil Garge, Xinxin Zhang, Wei Sun, Thomas M. O'Connell, Maureen K. Bunger, Scott J.  Bultman. The Microbiome and Butyrate Regulate Energy Metabolism and Autophagy in the Mammalian  Colon. Cell Metabolism, 2011; 13 (5): 517-526 DOI: 10.1016/j.cmet.2011.02.018
+Reference: Dallas R. Donohoe, Nikhil Garge, Xinxin Zhang, Wei Sun, Thomas M. O'Connell, Maureen K. Bunger, Scott J. Bultman. The Microbiome and Butyrate Regulate Energy Metabolism and Autophagy in the Mammalian Colon. Cell Metabolism, 2011; 13 (5): 517-526 DOI: 10.1016/j.cmet.2011.02.018
 
-Reference: Isabel Gonçalves Silva, Inna M. Yasinska, Svetlana S. Sakhnevych, Walter Fiedler, Jasmin Wellbrock, Marco Bardelli, Luca Varani, Rohanah Hussain, Giuliano Siligardi, Giacomo Ceccone, Steffen M. Berger, Yuri A. Ushkaryov, Bernhard F. Gibbs, Elizaveta Fasler-Kan, Vadim V. Sumbayev. The Tim-3-galectin-9 Secretory Pathway is Involved in the Immune Escape of Human Acute Myeloid Leukemia  Cells. EBioMedicine, 2017; DOI: 10.1016/j.ebiom.2017.07.018
+Reference: Isabel Gonçalves Silva, Inna M. Yasinska, Svetlana S. Sakhnevych, Walter Fiedler, Jasmin Wellbrock, Marco Bardelli, Luca Varani, Rohanah Hussain, Giuliano Siligardi, Giacomo Ceccone, Steffen M. Berger, Yuri A. Ushkaryov, Bernhard F. Gibbs, Elizaveta Fasler-Kan, Vadim V. Sumbayev. The Tim-3-galectin-9 Secretory Pathway is Involved in the Immune Escape of Human Acute Myeloid Leukemia Cells. EBioMedicine, 2017; DOI: 10.1016/j.ebiom.2017.07.018
 
-Reference: Huijie Feng, Benita Sjögren, Behirda Karaj, Vincent Shaw, Aysegul Gezer, Richard R.  Neubig. Movement disorder in GNAO1 encephalopathy associated with gain-of-function mutations.
+Reference: Huijie Feng, Benita Sjögren, Behirda Karaj, Vincent Shaw, Aysegul Gezer, Richard R. Neubig. Movement disorder in GNAO1 encephalopathy associated with gain-of-function mutations.
 
 Neurology, 2017; 10.1212/WNL.0000000000004262 DOI: 10.1212/WNL.0000000000004262
 
-
-Reference: Ville Kytola, Umit Topaloglu, Lance D. Miller, Rhonda L. Bitting, Michael M. Goodman, Ralph B. D`Agostino, Rodwige J. Desnoyers, Carol Albright, George Yacoub, Shadi A. Qasem, Barry DeYoung, Vesteinn Thorsson, Ilya Shmulevich, Meng Yang, Anastasia Shcherban, Matthew Pagni, Liang Liu, Matti Nykter, Kexin Chen, Gregory A. Hawkins, Stefan C. Grant, W. Jeffrey Petty, Angela Tatiana Alistar, Edward A. Levine, Edgar D. Staren, Carl D. Langefeld, Vincent Miller, Gaurav Singal, Robin M. Petro, Mac Robinson, William Blackstock, Bayard L. Powell, Lynne I. Wagner, Kristie L. Foley, Edward Abraham, Boris Pasche, Wei  Zhang. Mutational Landscapes of Smoking-Related Cancers in Caucasians and African Americans: Precision Oncology Perspectives at Wake Forest Baptist Comprehensive Cancer  Center. Theranostics, July 2017 DOI: 10.7150/thno.20355
+Reference: Ville Kytola, Umit Topaloglu, Lance D. Miller, Rhonda L. Bitting, Michael M. Goodman, Ralph B. D`Agostino, Rodwige J. Desnoyers, Carol Albright, George Yacoub, Shadi A. Qasem, Barry DeYoung, Vesteinn Thorsson, Ilya Shmulevich, Meng Yang, Anastasia Shcherban, Matthew Pagni, Liang Liu, Matti Nykter, Kexin Chen, Gregory A. Hawkins, Stefan C. Grant, W. Jeffrey Petty, Angela Tatiana Alistar, Edward A. Levine, Edgar D. Staren, Carl D. Langefeld, Vincent Miller, Gaurav Singal, Robin M. Petro, Mac Robinson, William Blackstock, Bayard L. Powell, Lynne I. Wagner, Kristie L. Foley, Edward Abraham, Boris Pasche, Wei Zhang. Mutational Landscapes of Smoking-Related Cancers in Caucasians and African Americans: Precision Oncology Perspectives at Wake Forest Baptist Comprehensive Cancer Center. Theranostics, July 2017 DOI: 10.7150/thno.20355
 
 Reference: Zhang, Y. et al. Nature http://dx.doi.org/10.1038/nature23282 (2017).
 
-Reference: Yalin Zhang, Min Soo Kim, Baosen Jia, Jingqi Yan, Juan Pablo Zuniga-Hertz, Cheng Han, Dongsheng  Cai. Hypothalamic stem cells control ageing speed partly through exosomal miRNAs.
+Reference: Yalin Zhang, Min Soo Kim, Baosen Jia, Jingqi Yan, Juan Pablo Zuniga-Hertz, Cheng Han, Dongsheng Cai. Hypothalamic stem cells control ageing speed partly through exosomal miRNAs.
 
 Nature, 2017; DOI: 10.1038/nature23282
 
@@ -999,13 +1066,11 @@ Explore further: Synthesizing the human genome from scratch: https://phys.org/ne
 
 Explore further: Polymerases pause to help mediate the flow of genetic information: https://medicalxpress.com/news/2017-05-polymerases-genetic.html
 
-More information: Arnaud R. Krebs et al. Genome-wide Single-Molecule Footprinting Reveals High RNA Polymerase II Turnover at Paused Promoters, Molecular  Cell (2017).
+More information: Arnaud R. Krebs et al. Genome-wide Single-Molecule Footprinting Reveals High RNA Polymerase II Turnover at Paused Promoters, Molecular Cell (2017). DOI: 10.1016/j.molcel.2017.06.027. http://linkinghub.elsevier.com/retrieve/pii/S1097276517304616
 
-DOI: 10.1016/j.molcel.2017.06.027. http://linkinghub.elsevier.com/retrieve/pii/S1097276517304616
+Reference: Michael D. Gregory, J. Shane Kippenhan, Daniel P. Eisenberg, Philip D. Kohn, Dwight Dickinson, Venkata S. Mattay, Qiang Chen, Daniel R. Weinberger, Ziad S. Saad, Karen F. Berman. Neanderthal-Derived Genetic Variation Shapes Modern Human Cranium and Brain. Scientific Reports, 2017; 7 (1) DOI: 10.1038/s41598-017-06587-0
 
-Reference: Michael D. Gregory, J. Shane Kippenhan, Daniel P. Eisenberg, Philip D. Kohn, Dwight Dickinson, Venkata S. Mattay, Qiang Chen, Daniel R. Weinberger, Ziad S. Saad, Karen F.  Berman. Neanderthal-Derived Genetic Variation Shapes Modern Human Cranium and  Brain. Scientific Reports, 2017; 7 (1) DOI: 10.1038/s41598-017-06587-0
-
-Reference: Manav Korpal, Xiaoling Puyang, Zhenhua Jeremy Wu, Roland Seiler, Craig Furman, Htoo Z. Oo, Michael Seiler, Sean Irwin, Vanitha Subramanian, Jaya Julie Joshi, Chris K. Wang, Victoria Rimkunas, Davide Tortora, Hua Yang, Namita Kumar, Galina Kuznetsov, Mark Matijevic, Jesse Chow, Pavan Kumar, Jian Zou, Jacob Feala, Laura Corson, Ryan Henry, Anand Selvaraj, Allison Davis, Kristjan Bloudoff, James Douglas, Bernhard Kiss, Morgan Roberts, Ladan Fazli, Peter C. Black, Peter Fekkes, Peter G. Smith, Markus Warmuth, Lihua Yu, Ming-Hong Hao, Nicholas Larsen, Mads Daugaard, Ping  Zhu. Evasion of immunosurveillance by genomic alterations of PPARγ/RXRα in bladder cancer.
+Reference: Manav Korpal, Xiaoling Puyang, Zhenhua Jeremy Wu, Roland Seiler, Craig Furman, Htoo Z. Oo, Michael Seiler, Sean Irwin, Vanitha Subramanian, Jaya Julie Joshi, Chris K. Wang, Victoria Rimkunas, Davide Tortora, Hua Yang, Namita Kumar, Galina Kuznetsov, Mark Matijevic, Jesse Chow, Pavan Kumar, Jian Zou, Jacob Feala, Laura Corson, Ryan Henry, Anand Selvaraj, Allison Davis, Kristjan Bloudoff, James Douglas, Bernhard Kiss, Morgan Roberts, Ladan Fazli, Peter C. Black, Peter Fekkes, Peter G. Smith, Markus Warmuth, Lihua Yu, Ming-Hong Hao, Nicholas Larsen, Mads Daugaard, Ping Zhu. Evasion of immunosurveillance by genomic alterations of PPARγ/RXRα in bladder cancer.
 
 Nature Communications, 2017; 8 (1) DOI: 10.1038/s41467-017-00147-w
 
@@ -1023,20 +1088,21 @@ REFERENCES
 
 1.
 
-Sandler L, Novitski E. Meotic Drive as an Evolutionary  Force. The American  Naturalist. 1957;91(857):105-10.
+Sandler L, Novitski E. Meotic Drive as an Evolutionary Force. The American Naturalist. 1957;91(857):105-10.
 
 2.
 
-Hickey WA, Craig GB. Distortion of Sex Ratio in Populations of Aedes  Aegypti. Canadian Journal of Genetics and Cytology. Journal Canadien De Génétique Et De  Cytologie. 1966;8(2):260-78. pmid:5960416
+Hickey WA, Craig GB. Distortion of Sex Ratio in Populations of Aedes Aegypti. Canadian Journal of Genetics and Cytology. Journal Canadien De Génétique Et De Cytologie. 1966;8(2):260-78. pmid:5960416
+
 Google Scholar
 
 3.
 
-Chesley P,  Dunn LC. The Inheritance of Taillessness (Anury) in the House  Mouse. Genetics. 1936;21(5):525-36. pmid:17246810
+Chesley P, Dunn LC. The Inheritance of Taillessness (Anury) in the House Mouse. Genetics. 1936;21(5):525-36. pmid:17246810
 
 4.
 
-Dunn LC. Variations in the Segregation Ratio as Causes of Variations in Gene  Frequency. Acta Genetica Et Statistica  Medica. 1953;4(2-3):139-47. pmid:13137882
+Dunn LC. Variations in the Segregation Ratio as Causes of Variations in Gene Frequency. Acta Genetica Et Statistica Medica. 1953;4(2-3):139-47. pmid:13137882
 
 5.
 
@@ -1048,19 +1114,19 @@ Genetics. 1959;44(2):233-50. pmid:17247821
 
 6.
 
-Prout T. Some Effects of Variations in the Segregation Ratio and of Selection on the Frequency of Alleles under Random  Mating. Acta Genetica Et Statistica  Medica. 1953;4(2-3):148-51. pmid:13137883
+Prout T. Some Effects of Variations in the Segregation Ratio and of Selection on the Frequency of Alleles under Random Mating. Acta Genetica Et Statistica Medica. 1953;4(2-3):148-51. pmid:13137883
 
 7.
 
-Bruck D. Male Segregation Ratio Advantage as a Factor in Maintaining Lethal Alleles in Wild Populations of House  Mice. Proceedings of the National Academy of Sciences of the United States of  America. 1957;43(1):152-58. pmid:16589989
+Bruck D. Male Segregation Ratio Advantage as a Factor in Maintaining Lethal Alleles in Wild Populations of House Mice. Proceedings of the National Academy of Sciences of the United States of America. 1957;43(1):152-58. pmid:16589989
 
 8.
 
-Lewontin RC. A General Method for Investigating the Equilibrium of Gene Frequency in a  Population. Genetics. 1958;43(3):419-34. pmid:17247767
+Lewontin RC. A General Method for Investigating the Equilibrium of Gene Frequency in a Population. Genetics. 1958;43(3):419-34. pmid:17247767
 
 9.
 
-Burt A. Site-Specific Selfish Genes as Tools for the Control and Genetic Engineering of Natural  Populations.  Proceedings. Biological Sciences / The Royal  Society. 2003;270(1518):921-28. pmid:12803906
+Burt A. Site-Specific Selfish Genes as Tools for the Control and Genetic Engineering of Natural Populations. Proceedings. Biological Sciences / The Royal Society. 2003;270(1518):921-28. pmid:12803906
 
 10.
 
@@ -1070,17 +1136,17 @@ Galizi R, Doyle LA, Menichelli M, Bernardini F, Deredec A, Burt A, et al. A Synt
 
 11.
 
-Windbichler N, Menichelli M, Papathanos PA, Thyme SB, Li H, Ulge UY, et al. A Synthetic Homing Endonuclease-Based Gene Drive System in the Human Malaria Mosquito.  Nature. 2011;473(7346):212-15. pmid:21508956
+Windbichler N, Menichelli M, Papathanos PA, Thyme SB, Li H, Ulge UY, et al. A Synthetic Homing Endonuclease-Based Gene Drive System in the Human Malaria Mosquito. Nature. 2011;473(7346):212-15. pmid:21508956
 
 12.
 
-Gantz VM, Bier E. Genome  Editing. The Mutagenic Chain Reaction: A Method for Converting Heterozygous to Homozygous  Mutations. Science (New York, N.Y.).
+Gantz VM, Bier E. Genome Editing. The Mutagenic Chain Reaction: A Method for Converting Heterozygous to Homozygous Mutations. Science (New York, N.Y.).
 
 2015;348(6233):442-44. pmid:25908821
 
 13.
 
-Deredec A, Burt A,  Godfray HCJ. The Population Genetics of Using Homing Endonuclease Genes in Vector and Pest  Management. Genetics. 2008;179(4):2013-26. pmid:18660532
+Deredec A, Burt A, Godfray HCJ. The Population Genetics of Using Homing Endonuclease Genes in Vector and Pest Management. Genetics. 2008;179(4):2013-26. pmid:18660532
 
 14.
 
@@ -1088,66 +1154,66 @@ Unckless RL, Messer PW, Connallon T, Clark AG. Modeling the Manipulation of Natu
 
 15.
 
-Unckless RL, Clark AG and  Messer PW. Evolution of Resistance Against CRISPR/Cas9 Gene  Drive. Genetics. 2017;205(2):827-41. pmid:27941126
+Unckless RL, Clark AG and Messer PW. Evolution of Resistance Against CRISPR/Cas9 Gene Drive. Genetics. 2017;205(2):827-41. pmid:27941126
 
 16.
 
-Leigh EG Jr. Adaptation and Diversity: Natural History and the Mathematics of  Evolution. 1st  Edition. edition.
+Leigh EG Jr. Adaptation and Diversity: Natural History and the Mathematics of Evolution. 1st Edition. edition.
 
 San Francisco: Freeman, Cooper; 1971.
 
 17.
 
-Lyttle TW. Experimental Population Genetics of Meiotic Drive  Systems. I. Pseudo-Y Chromosomal Drive as a Means of Eliminating Cage Populations of Drosophila Melanogaster.
+Lyttle TW. Experimental Population Genetics of Meiotic Drive Systems. I. Pseudo-Y Chromosomal Drive as a Means of Eliminating Cage Populations of Drosophila Melanogaster.
 
 Genetics. 1977;86(2 Pt. 1):413-45.
 
 18.
 
-Lyttle TW. Experimental Population Genetics of Meiotic Drive  Systems II. Accumulation of Genetic Modifiers of Segregation Distorter (SD) in Laboratory  Populations. Genetics. 1979;91(2):339-57. pmid:17248888
+Lyttle TW. Experimental Population Genetics of Meiotic Drive Systems II. Accumulation of Genetic Modifiers of Segregation Distorter (SD) in Laboratory Populations. Genetics. 1979;91(2):339-57. pmid:17248888
 
 19.
 
-Lyttle TW. Experimental Population Genetics of Meiotic Drive  Systems. III.
+Lyttle TW. Experimental Population Genetics of Meiotic Drive Systems. III.
 
-Neutralization of Sex-Ratio Distortion in Drosophila through Sex-Chromosome  Aneuploidy. Genetics. 1981;98(2):317-34. pmid:6799357
+Neutralization of Sex-Ratio Distortion in Drosophila through Sex-Chromosome Aneuploidy. Genetics. 1981;98(2):317-34. pmid:6799357
 
 20.
 
-Champer JR, Reeves R, Oh SY, Liu C, Liu J, Clark AG, et al. Novel CRISPR/Cas9 Gene Drive Constructs Reveal Insights into Mechanisms of Resistance Allele Formation and Drive Efficiency in Genetically Diverse  Populations. PLoS  Genet. 2017;13(7):e1006796.
+Champer JR, Reeves R, Oh SY, Liu C, Liu J, Clark AG, et al. Novel CRISPR/Cas9 Gene Drive Constructs Reveal Insights into Mechanisms of Resistance Allele Formation and Drive Efficiency in Genetically Diverse Populations. PLoS Genet. 2017;13(7):e1006796.
 
 21.
 
-Drury DW, Dapper AL, Siniard DJ, Zentner GE,  Wade MJ. CRISPR/Cas9 Gene Drives in Genetically Variable and Nonrandomly Mating Wild  Populations. Science Advances. 2017;3:e1601910. pmid:28560324
+Drury DW, Dapper AL, Siniard DJ, Zentner GE, Wade MJ. CRISPR/Cas9 Gene Drives in Genetically Variable and Nonrandomly Mating Wild Populations. Science Advances. 2017;3:e1601910. pmid:28560324
 
 22.
 
-Bull JJ. Lethal Gene Drive Selects  Inbreeding. Evolution, Medicine, and Public  Health. 2017;(1):1-16. pmid:28013241
+Bull JJ. Lethal Gene Drive Selects Inbreeding. Evolution, Medicine, and Public Health. 2017;(1):1-16. pmid:28013241
 
-Reference: Chen-Song Zhang, Simon A. Hawley, Yue Zong, Mengqi Li, Zhichao Wang, Alexander Gray, Teng Ma, Jiwen Cui, Jin-Wei Feng, Mingjiang Zhu, Yu-Qing Wu, Terytty Yang Li, Zhiyun Ye, Shu-Yong Lin, Huiyong Yin, Hai-Long Piao, D. Grahame Hardie, Sheng-Cai  Lin. Fructose-1,6-bisphosphate and aldolase mediate glucose sensing by AMPK.
+Reference: Chen-Song Zhang, Simon A. Hawley, Yue Zong, Mengqi Li, Zhichao Wang, Alexander Gray, Teng Ma, Jiwen Cui, Jin-Wei Feng, Mingjiang Zhu, Yu-Qing Wu, Terytty Yang Li, Zhiyun Ye, Shu-Yong Lin, Huiyong Yin, Hai-Long Piao, D. Grahame Hardie, Sheng-Cai Lin. Fructose-1,6-bisphosphate and aldolase mediate glucose sensing by AMPK.
 
 Nature, 2017; DOI: 10.1038/nature23275
 
-Reference: R. Magnus N. Friis, John Paul Glaves, Tao Huan, Liang Li, Brian D. Sykes, Michael C.  Schultz. Rewiring AMPK and Mitochondrial Retrograde Signaling for Metabolic Control of Aging and Histone Acetylation in Respiratory-Defective  Cells. Cell Reports, April 2014 DOI: 10.1016/j.celrep.2014.03.029
+Reference: R. Magnus N. Friis, John Paul Glaves, Tao Huan, Liang Li, Brian D. Sykes, Michael C. Schultz. Rewiring AMPK and Mitochondrial Retrograde Signaling for Metabolic Control of Aging and Histone Acetylation in Respiratory-Defective Cells. Cell Reports, April 2014 DOI: 10.1016/j.celrep.2014.03.029
 
 Reference: Xiaowen Zhang, Huai-Chin Chiang, Yao Wang, Chi Zhang, Sabrina Smith, Xiayan Zhao, Sreejith J. Nair, Joel Michalek, Ismail Jatoi, Meeghan Lautner, Boyce Oliver, Howard Wang, Anna Petit, Teresa Soler, Joan Brunet, Francesca Mateo, Miguel Angel Pujana, Elizabeth Poggi, Krysta Chaldekas, Claudine Isaacs, Beth N. Peshkin, Oscar Ochoa, Frederic Chedin, Constantine Theoharis, Lu-Zhe Sun, Tyler J. Curiel, Richard Elledge, Victor X. Jin, Yanfen Hu, Rong Li. Attenuation of RNA polymerase II pausing mitigates BRCA1-associated R-loop accumulation and tumorigenesis.
 
 Nature Communications, 2017; 8: 15908 DOI: 10.1038/ncomms15908
 
-Reference: Weijun Feng, Muhammad Amir Khan, Pablo Bellvis, Zhe Zhu, Olga Bernhardt, Christel Herold-Mende, Hai-Kun  Liu. The Chromatin Remodeler CHD7 Regulates Adult Neurogenesis via Activation of SoxC Transcription  Factors. Cell Stem Cell, 2013; 13 (1): 62 DOI: 10.1016/j.stem.2013.05.002
+Reference: Weijun Feng, Muhammad Amir Khan, Pablo Bellvis, Zhe Zhu, Olga Bernhardt, Christel Herold-Mende, Hai-Kun Liu. The Chromatin Remodeler CHD7 Regulates Adult Neurogenesis via Activation of SoxC Transcription Factors. Cell Stem Cell, 2013; 13 (1): 62 DOI: 10.1016/j.stem.2013.05.002
 
-Reference: Hyung-Goo  Kim [  ... snip ... ] Lawrence C.  Layman. WDR11, a WD Protein that Interacts with Transcription Factor EMX1, Is Mutated in Idiopathic Hypogonadotropic Hypogonadism and Kallmann Syndrome. American Journal of Human Genetics, 2010 DOI: 10.1016/j.ajhg.2010.08.018
+Reference: Hyung-Goo Kim [ ... snip ... ] Lawrence C. Layman. WDR11, a WD Protein that Interacts with Transcription Factor EMX1, Is Mutated in Idiopathic Hypogonadotropic Hypogonadism and Kallmann Syndrome. American Journal of Human Genetics, 2010 DOI: 10.1016/j.ajhg.2010.08.018
 
-
-==============================================================================
 BIOMEDICAL TEXT
-==============================================================================
 
 From: "Victoria Stuart (VictoriasJourney.com)"
+
 To: "Victoria Stuart"
+
 Subject: [PLCG2; ABI3; TREM2] Newly discovered gene variants link innate immunity and Alzheimer's disease.
 
 Findings give neurologists fresh ideas for enlisting immune system to fight Alzheimer's [Rare coding variants in PLCG2, ABI3, and TREM2 implicate microglial-mediated innate immunity in Alzheimer's disease] [Re: Two new genes linked to Alzheimer's risk [Rare coding variants in PLCG2, ABI3, and TREM2 implicate microglial-mediated innate immunity in Alzheimer's disease]]
+
 Date: Tue, 18 Jul 2017 11:36:11 -0700
 
 https://www.sciencedaily.com/releases/2017/07/170717110511.htm
@@ -1157,6 +1223,7 @@ https://www.sciencedaily.com/releases/2017/07/170717110511.htm
 Findings give neurologists fresh ideas for enlisting immune system to fight Alzheimer's [Rare coding variants in PLCG2, ABI3, and TREM2 implicate microglial-mediated innate immunity in Alzheimer's disease]
 
 Date: July 17, 2017
+
 Source: University of Pennsylvania School of Medicine
 
 Three new gene variants, found in a genome wide association study of Alzheimer's disease (AD), point to the brain's immune cells in the onset of the disorder.
@@ -1171,7 +1238,9 @@ Genetic variation of the type described in this paper are "experiments of nature
 
 "This is direct evidence that if drugs can be designed to target these proteins, we have a chance to alter disease risk in people," said senior author Gerard Schellenberg, PhD, a professor of Pathology and Laboratory Medicine, and director of the Alzheimer Disease Genetics Consortium (ADGC) at the Perelman School of Medicine at the University of Pennsylvania.
 
-"It's been known for decades that microglia -- a first-line-of-defense cell we are born with -- surround amyloid plaque deposits associated with  Alzheimer's. These multiple gene 'hits' all originating from microglia are the clearest demonstration that these cells are part of Alzheimer's pathology and, more importantly, provide clear protein targets where we can start to intervene with drugs."
+"It's been known for decades that microglia -- a first-line-of-defense cell we are born with -- surround amyloid plaque deposits associated with Alzheimer's.
+
+These multiple gene 'hits' all originating from microglia are the clearest demonstration that these cells are part of Alzheimer's pathology and, more importantly, provide clear protein targets where we can start to intervene with drugs."
 
 The ADGC, supported by the National Institute on Aging (NIA) at the National Institutes of Health, is one of the four consortia of the International Genomics of Alzheimer's Project on this study.
 
@@ -1201,8 +1270,6 @@ Image: Beta-amyloid plaques from an AD mouse model.
 
 Pink represents beta-amyloid deposits (plaques), brown represents microglia cells and blue/purple is nuclei of neurons and glial cells.
 
-------------------------------------------------------------------------------
-
 https://www.nature.com/ng/journal/vaop/ncurrent/full/ng.3916.html
 
 Rare coding variants in PLCG2, ABI3, and TREM2 implicate microglial-mediated innate immunity in Alzheimer's disease
@@ -1210,6 +1277,7 @@ Rare coding variants in PLCG2, ABI3, and TREM2 implicate microglial-mediated inn
 Rebecca Sims, Sven J van der Lee, Adam C Naj, Céline Bellenguez, Nandini Badarinarayan, Johanna Jakobsdottir, Brian W Kunkle, Anne Boland, Rachel Raybould, Joshua C Bis, Eden R Martin, Benjamin Grenier-Boley, Stefanie Heilmann-Heimbach, Vincent Chouraki, Amanda B Kuzma, Kristel Sleegers, Maria Vronskaya, Agustin Ruiz, Robert R Graham, Robert Olaso, Per Hoffmann, Megan L Grove, Badri N Vardarajan, Mikko Hiltunen, Markus M Nöthen et al.
 
 Nature Genetics (2017)
+
 doi:10.1038/ng.3916
 
 We identified rare coding variants associated with Alzheimer's disease in a three-stage case-control study of 85,133 subjects.
@@ -1226,13 +1294,12 @@ These protein-altering changes are in genes highly expressed in microglia and hi
 
 These genetic findings provide additional evidence that the microglia-mediated innate immune response contributes directly to the development of Alzheimer's disease.
 
-==============================================================================
-
 https://www.sciencedaily.com/releases/2017/07/170717115356.htm
 
 Two new genes linked to Alzheimer's risk [Rare coding variants in PLCG2, ABI3, and TREM2 implicate microglial-mediated innate immunity in Alzheimer's disease]
 
 Date: July 17, 2017
+
 Source: Cardiff University
 
 A team of researchers led by Cardiff University has identified two genes that influence a person's risk of developing Alzheimer's disease.
@@ -1251,7 +1318,9 @@ There are currently no treatments to slow the progression of Alzheimer's and inc
 
 The two novel genes, which were not previously considered candidates for Alzheimer's risk, were identified during a study which compared the DNA of tens of thousands of individuals with Alzheimer's with aged-matched people who are free from the disease.
 
-There are currently around 850,000 people in the UK with  Alzheimer's. During the course of the disease, proteins build up in the brain to form structures called plaques and tangles.
+There are currently around 850,000 people in the UK with Alzheimer's.
+
+During the course of the disease, proteins build up in the brain to form structures called plaques and tangles.
 
 The connections between nerve cells are lost, and eventually the nerve cells die and brain tissue volume is reduced.
 
@@ -1277,8 +1346,6 @@ Reference: Gerard D Schellenberg et al. Rare coding variants in PLCG2, ABI3, and
 
 Nature Genetics, 2017; DOI: 10.1038/ng.3916
 
-------------------------------------------------------------------------------
-
 https://www.nature.com/ng/journal/vaop/ncurrent/full/ng.3916.html
 
 Rare coding variants in PLCG2, ABI3, and TREM2 implicate microglial-mediated innate immunity in Alzheimer's disease
@@ -1286,6 +1353,7 @@ Rare coding variants in PLCG2, ABI3, and TREM2 implicate microglial-mediated inn
 Rebecca Sims, Sven J van der Lee, Adam C Naj, Céline Bellenguez, Nandini Badarinarayan, Johanna Jakobsdottir, Brian W Kunkle, Anne Boland, Rachel Raybould, Joshua C Bis, Eden R Martin, Benjamin Grenier-Boley, Stefanie Heilmann-Heimbach, Vincent Chouraki, Amanda B Kuzma, Kristel Sleegers, Maria Vronskaya, Agustin Ruiz, Robert R Graham, Robert Olaso, Per Hoffmann, Megan L Grove, Badri N Vardarajan, Mikko Hiltunen, Markus M Nöthen et al.
 
 Nature Genetics (2017)
+
 doi:10.1038/ng.3916
 
 We identified rare coding variants associated with Alzheimer's disease in a three-stage case-control study of 85,133 subjects.
@@ -1304,11 +1372,12 @@ These genetic findings provide additional evidence that the microglia-mediated i
 
 [170717110511_1_900x600.jpg image/jpeg (50557 bytes)]
 
-==============================================================================
-
 From: "Victoria Stuart (VictoriasJourney.com)"
+
 To: "Victoria Stuart"
+
 Subject: Rare Variants in Complex Disease: ABCA7 and Alzheimer’s [Loss-of-function variants in ABCA7 confer risk of Alzheimer’s disease] [Re: [deCODE] Warn people of genetic health risks, says deCODE boss [re: One thousand genes you could live without]]
+
 Date: Mon, 6 Apr 2015 09:50:42 -0700
 
 http://massgenomics.org/2015/04/rare-variants-complex-disease-abca7-alzheimers.html
@@ -1382,6 +1451,7 @@ These are usually quite rare, and so the authors collapsed them to a single “m
 Missense variants: nonsynonymous variants or splice region variants.
 
 This latter one is an interesting choice, and not necessarily one I’d have thought to make at the discovery stage.
+
 The burden tests included only variants with MAF<1% and information (call rate) >0.80.
 
 The authors tested about 80 genes across the 17 loci, and the top-scoring hit was ABCA7 (p=0.00020).
@@ -1402,7 +1472,7 @@ But the authors had another NGS tool to look at this: RNA-seq.
 
 When they looked at the transcript sequences of c.5570+5G>C carriers, they included a retained intron that eventually included a stop codon.
 
-Image: splicing variant in ABCA7 in Alzheimers - Intron retention in carriers (Steinberg et al.,  Nat.  Gen. 2015, Fig S1)
+Image: splicing variant in ABCA7 in Alzheimers - Intron retention in carriers (Steinberg et al., Nat. Gen. 2015, Fig S1)
 
 The image here is from Supplemental Figure 1 (the main text had no figures) and shows the intron retention in c.5570+5G>C carriers.
 
@@ -1442,10 +1512,8 @@ Loss-of-function variants in ABCA7 confer risk of Alzheimer’s disease.
 
 Nature genetics PMID: 25807283 : http://www.ncbi.nlm.nih.gov/pubmed/25807283
 
-
-==============================================================================
 GENOMIC VARIANTS [NOMENCLATURE]
-==============================================================================
+
 http://varnomen.hgvs.org/recommendations/general/
 
 SEQUENCE variant nomenclature
@@ -1454,7 +1522,7 @@ GENERAL
 
 Since references to web sites are not yet acknowledged as citations, please mention Den Dunnen et al. (2016) HGVS recommendations for the description of sequence variants: 2016 update.
 
-Hum.  Mutat. 25: 37: 564-569 when referring to these pages.
+Hum. Mutat. 25: 37: 564-569 when referring to these pages.
 
 Note that although the examples on these pages mainly give examples for human (Homo sapiens), the recommendations can be applied to all species.
 
@@ -1463,30 +1531,53 @@ GENERAL RECOMMENDATIONS
 all variants should be described at the most basic level, the DNA level.
 
 Descriptions at the RNA and/or protein level may be given in addition.
+
 descriptions should make clear whether the change was experimentally determined or theoretically deduced by giving predicted consequences in parentheses.
-all variants should be described in relation to an accepted reference sequence (see Reference  Sequences).
+
+all variants should be described in relation to an accepted reference sequence (see Reference Sequences).
+
 the reference sequence file used should be public and clearly described, e.g. NC_000023.10, LRG_199, NG_012232.1, ENST00000357033, NM_004006.2, NR_002196.1, NP_003997.1, etc.
+
 when variants are not reported in relation to a genomic reference sequence from a recent genome build, the preferred reference sequence is a Locus Reference Genomic sequence (LRG)
-when no LRG is available, one should be requested (see Reference  Sequences).
+
+when no LRG is available, one should be requested (see Reference Sequences).
+
 the reference sequence used must contain the residue(s) described to be changed.
+
 a letter prefix should be used to indicate the type of reference sequence used.
 
 Accepted prefixes are;
+
 "g." for a genomic reference sequence
+
 "c." for a coding DNA reference sequence
+
 "n." for a non-coding DNA reference sequence
+
 "r." for an RNA reference sequence (transcript)
+
 "p." for a protein reference sequence
+
 numbering of the residues (nucleotide or amino acid) in relation to the reference sequence used should follow the approved scheme (see Numbering)
+
 3'rule: for all descriptions the most 3' position possible of the reference sequence is arbitrarily assigned to have been changed
+
 the 3'rule also applies for changes in single residue stretches and tandem repeats (nucleotide or amino acid)
+
 the 3'rule applies to ALL descriptions (genome, gene, transcript and protein) of a given variant
+
 descriptions at DNA, RNA and protein level are clearly different:
+
 DNA-level 123456A>T (see Details): number(s) referring to the nucleotide(s) affected, nucleotides in CAPITALS using IUPAC-IUBMB assigned nucleotide symbols
+
 RNA-level 76a>u (see Details): number(s) referring to the nucleotide(s) affected, nucleotides in lower case using IUPAC-IUBMB assigned nucleotide symbols
+
 protein level Lys76Asn (see Details): the amino acid(s) affected in 3- or 1-letter followed by a number IUPAC-IUBMB assigned amino acid symbols * three-letter amino acid code is preferred (see Standards)
+
 prioritisation: when a description is possible according to several types, the preferred description is: (1) deletion, (2) inversion, (3) duplication, (4) conversion, (5) insertion
+
 when a variant can be described as a duplication or an insertion, prioritisation determines it should be described as a duplication
+
 only approved HGNC gene symbols should be used to describe genes or proteins
 
 CHARACTERS USED
@@ -1494,21 +1585,37 @@ CHARACTERS USED
 In HGVS nomenclature some characters have a specific meaning
 
 "+" (plus) is used in nucleotide numbering; c.123+45A>G
+
 "-" (minus) is used in nucleotide numbering; c.124-56C>T
+
 "*" (asterisk) is used in nucleotide numbering and to indicate a translation termination (stop) codon (see Standards); c.*32G>A and P.Trp41*
+
 "_" (underscore) is used to indicate a range; g.12345_12678del
+
 "[ ]" (angled brackets) are used for alleles (see DNA, RNA, protein)
+
 ";" (semi colon) is used to separate variants and alleles; g.[123456A>G;345678G>C] or g.[123456A>G];[345678G>C]
+
 "," (comma) is used to separate different transcripts/proteins derived from one allele; r.[123a>t, 122_154del]
+
 ":" (colon) is used to separate the reference sequence file identifier (accession.version_number) from the actual description of a variant; NC_000011.9:g.12345611G>A
+
 "( )" (parentheses) are used to indicate uncertainties; g.(123456_234567)_(345678_456789)del
+
 NOTE: the range of the uncertainty should be described as precisely as possible (see below)
+
 "?" (question mark) is used to indicate unknown positions (nucleotide or amino acid); g.(?_234567)_(345678_?)del
+
 "^" (caret) is used as "or"; c.(370A>C^372C>R) as back translation of p.Ser124Arg
+
 ">" (greater than) is used to describe substitution variants (DNA and RNA level); g.12345A>T, r.123a>u (see DNA, RNA)
-"{ }" (curly braces) suggested for the description of variants in otherwise perfect copy sequences (see Open  Issues); g.24_65dup{46G>T}
+
+"{ }" (curly braces) suggested for the description of variants in otherwise perfect copy sequences (see Open Issues); g.24_65dup{46G>T}
+
 "=" (equals) is used to indicate a sequence was tested but found unchanged; p.(Arg234=)
+
 "/" (forward slash) is used to indicate mosaicism (see Complex (HGVS/ISCN))
+
 "//" (double forward slash) is used to indicate chimerism (see Complex (HGVS/ISCN))
 
 ABBREVIATIONS IN VARIANT DESCRIPTIONS
@@ -1516,31 +1623,47 @@ ABBREVIATIONS IN VARIANT DESCRIPTIONS
 Specific abbreviations are used to describe different variant types.
 
 ">" (greater then) indicates a substitution (DNA and RNA level); g.123456G>A, r.123c>u (see DNA, RNA)
+
 a substitution at the protein level is described as p.Ser321Arg (see protein)
+
 "del" indicates a deletion; c.76delA (see DNA, RNA, protein)
+
 "dup" indicates a duplication; c.76dupA (see DNA, RNA, protein)
+
 "ins" indicates an insertion; c.76_77insG (see DNA, RNA, protein)
+
 duplicating insertions are described as duplications, not as insertions
+
 "inv" indicates an inversion; c.76_83inv (see DNA, RNA)
+
 "con" indicates a conversion; NC_000022.10:g.42522624_42522669con42536337_42536382 (see DNA, RNA)
+
 "fs" indicates a frame shift; p.Arg456GlyfsTer17 (or p.Arg456Glyfs*17, see Frame shifts)
 
 "ext" indicates an extension; p.Met1ext-5 (see Frame shifts)
+
 HGVS/ISCN (see Community Consultation)
+
 "add" indicates an additional chromosome (marker chromosome)
+
 "cen" indicates the centromere of a chromosome
+
 "chr" indicates a chromosome; chr11:g.12345611G>A (NC_000011.9)
+
 "pter indicates the first nucleotide of a chromosome
+
 "qter" indicates the last nucleotide of a chromosome
 
 QUESTIONS
 
 Some papers and web sites use a "-" (minus) to indicate a range, is this correct?
+
 The sign used to indicate a range is "_" (underscore) and not a "-" (minus).
 
 The minus sign should only be used as a minus in the description of variants based on a coding DNA reference sequence. c.12-14del describes a deletion of nucleotide -14 in the intron directly preceding coding DNA nucleotide 12, not a deletion of nucleotides c.12 to c.14.
 
 Why is it recommended to use three-letter amino acid code to describe protein variants?
+
 Several amino acids start with the same initial letter (Ala, Arg, Asn, Asp start with A, Gln, Glu, Gly with G, Leu, Lys with L, Phe, Pro with P and Thr, Tyr with T) but in one-letter amino acid code this letter is used as abbreviation for only one.
 
 In practice this leads to many mistakes.
@@ -1548,13 +1671,13 @@ In practice this leads to many mistakes.
 It is therefore recommended to use three-letter amino acid code abbreviations.
 
 When I want to report a variant on DNA, RNA and protein level do I need to use a specific separator?
+
 No, best is to report the variant using the format c.124G>A r.(?) p.
 
-(Val42Met).
-
-NOTE: needles to say, always mention the reference sequence file used
+(Val42Met). NOTE: needles to say, always mention the reference sequence file used
 
 Is it correct that when I apply the 3'rule for genes that are on the minus strand of a chromosome, the "g." and "c." variant descriptions differ regarding the nucleotide that I describe as deleted?
+
 Yes, when a gene is on the minus strand of a chromosome (opposite transcriptional orientation) and the change is located in a repeated sequence (mono-, di-, tri-, etc. nucleotide stretches) the 3'rule has this as a consequence.
 
 When the chromosome sequence is -TGGGGCAT- and one of the G's is deleted (change to -TGGG_CAT-) the description based on chromosome coordinates is g.5delG.
@@ -1564,14 +1687,12 @@ When the annotated coding DNA reference sequence is on the minus strand (ATGCCCC
 Not only is the deleted nucleotide different (delG vs. delC), in fact the descriptions also point to another nucleotide, g.5 vs. g.2 (equivalent to c.7delC).
 
 Can I describe a deletion when I have not yet sequenced the break point?
+
 Yes, using the characters to indicate uncertainties, i.e. the question mark ("?") and brackets ("( )"), such cases can be described.
 
 Describe the range of uncertainty as precise as possible.
 
-For details see  Uncertain.
+For details see Uncertain.
 
-==============================================================================
-==============================================================================
 END OF FILE
-==============================================================================
-==============================================================================
+

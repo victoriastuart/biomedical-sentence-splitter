@@ -60,10 +60,9 @@ This is sentence 4.
 ----------
 **USAGE -- `sed_sentence_chunker3.sh`:**
 
-*Processes text files in `input` dir; outputs to `output` dir; suitable for Python scripts.*
+*Processes text files in input dir; suitable for Python scripts.*
 
-* For use (e.g.) in Python scripts; run this script, `sed_sentence_chunker3.sh`, in a directory with your input (text) files in an `input/` directory; also be sure to make an `output/` directory.
-* This script processes text files in the `input/` directory, and outputs to the *pre-existing* `output/` directory.
+* This script, `sed_sentence_chunker3.sh`, processes text files in the `input/` directory, and outputs to a (*pre-existing*) `output/` directory.
 * Otherwise, this script is identical to `sed_sentence_chunker{1|2}.sh` ...
 * Here is an example of how I called `sed_sentence_chunker3.sh` in one of my Python 3 scripts:
 ```

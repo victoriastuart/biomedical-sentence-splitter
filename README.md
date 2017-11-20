@@ -62,12 +62,11 @@ This is sentence 4.
 
 *Processes command-line input strings; outputs to terminal and bash environment variable.*
 * For use (e.g.) in Python scripts; run this script, `sed_sentence_chunker3.sh`, in a directory with your input (text) files in an `input/` directory; also be sure to make an `output/` directory.
-* This script processes text files in the `input/` directory, and outputs to the `output/` directory.
+* This script processes text files in the `input/` directory, and outputs to the *pre-existing* `output/` directory.
 * Otherwise, this script is identical to `sed_sentence_chunker{1|2}.sh` ...
 * Here is how I called `sed_sentence_chunker3.sh` in one of my Python 3 scripts:
 ```
 import subprocess
-/nlp/keywords/input/text3.txt /home/victoria/projects/nlp/keywords/input/text3.split.txt', shell=True)
 
 ssc = '/mnt/Vancouver/Programming/scripts/sed_sentence_chunker/sed_sentence_chunker3.sh'
 

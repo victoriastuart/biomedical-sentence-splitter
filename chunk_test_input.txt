@@ -12,7 +12,15 @@ NOTES:
 2. Sentences of length <= 15 may not be split, a consequence of dealing with journal title abbreviations (see comments in script code).
 ==============================================================================
 
-Hello? Ms. Wilson is asking for the file!      a. b. e. k. l. m. s. t. u. ... as Dr. Stuart et al. proposed, yesterday. ...  Testing here, these contractions: Dr., Drs., St., that Mr., Mrs., Ms., they all found me on the St. Where, exactly, do you live?   I live on 1234 Baker St. That's where you can find me. They found nothing there? Yes, nothing! However, in v.3.4 (see Fig. 2, and fig 3, and Figs. 5-6), it clearly shows, ... on the last page..  Very good, i.e., excellent! E.g., another example. E.g. another one; e.g one more; i.e. that's the last one!
+# CHARACTER SET TO TEST MY "SED CHARACTER REPLACEMENT" CODE (REPLACES SOME LIGATURES, VARIOUS QUOTATION MARKS, OTHER ANNOYANCES ...):
+
+ﬃ | ﬁ | ﬀ | ﬂ | ﬄ | � | ␮ | ௡ | ␣ | ␤ | ␦ | 5Ј- | -3Ј | þ | ¼ | ϭ | Ɛ | Ͻ | Ͼ | ␥ | ␧ | ␨ | Ϫ | À | OLD: | ‫؍‬ . | ␹ | Ն | Ն | Յ | Ã | Â | ¥ |  | ™ | ® | → | – | Ϯ | ؉ | ϫ | ϳ | ʽ | ʻ | “ | ˮ | ” | ״ | ʺ | ′′ | 〃 | ’ | ʼ | ‘ | ′ | ` | ׳ | ʹ | ꞌ | ˊ | ˋ | ˌ | — | ؊ | ϩ | ϫ
+
+==============================================================================
+
+Hello? Ms. Wilson is asking for the file!      a. b. e. k. l. m. s. t. u. ... as Dr. Stuart et alSt. Where, exactly, do you live?   I live on 1234 Baker St. That's where you can find me. They found nothing there? Yes, nothing! However, in v.3.4 (see Fig. 2, and fig 3, and Figs. 5-6), it clearly shows, ... on the last page..  Very good, i.e., excellent! E.g., another example. E.g. another one; e.g one more; i.e. that's the last one!
+
+As indicated in v.1, and in v. 2, and in v3.
 
 The items found on p. 2. The items found on p. 1.  The items found on 2-3. The items found on p. 23. The items found on p. 9. Apples, bananas, carrots!. The items found on p. 2.
 
@@ -175,7 +183,7 @@ i.e. AND e.g. TESTS:
 # MANY OF THESE ARE NOT "REAL" SENTENCES, THEREFORE THEY WILL NOT BE SPLIT.  MANY ARE JUST TOO SHORT.  I JUST WANT TO SEE WHAT HAPPENS.
 
 Hello everyone, e.g. world. Hello everyone, e.g., world. Hello everyone, e.g. World. Hello everyone, e.g., World.
-
+j
 Hello everyone, e.g.     world. Hello everyone, e.g.,   world. Hello everyone, e.g.    World. Hello everyone, e.g.,      World.
 
 E.g., give her an apple. E.g. give her an apple. E.g., give her an apple.   E.g.    give her an apple. E.g., give her another Apple. E.g. give her another Apple. E.g., give her another Apple.   E.g.    give her another Apple.
@@ -252,56 +260,58 @@ Some additional text. Chen A-B. Jiang. More more added text.
 CITATIONS - JOURNAL TITLE ABBREVIATIONS
 ==============================================================================
 
-We study the thermodiffusion behavior of spherical polystyrene beads with a diameter of 25 nm by infrared thermal diffusion Forced Rayleigh Scattering (IR-TDFRS). Similar beads were used to investigate the radial dependence of the Soret coefficient by different authors. While Duhr and Braun (Proc. Natl. Acad. Sci. U.S.A. 104, 9346 (2007)) observed a quadratic radial dependence, Braibanti et al. (Phys. Rev. Lett. 100, 108303 (2008)) found a linear radial dependence of the Soret coefficient. We demonstrated that special care needs to be taken to obtain reliable thermophoretic data, because the measurements are very sensitive to surface properties.
+We study the thermodiffusion behavior of spherical polystyrene beads with a diameter of 25 nm by infrared thermal diffusion Forced Rayleigh Scattering (IR-TDFRS). Similar beads were used to investigate the radial dependence of the Soret coefficient by different authors. While Duhr and Braun (Proc. Natl. Acad. Sci. U.S.A. 104, 9346 (2007)) observed a quadratic radial dependence Braibanti et al. (Phys. Rev. Lett. 100, 108303 (2008)) found a linear radial dependence of the Soret coefficient. We demonstrated that special care needs to be taken to obtain reliable thermophoretic data, because the measurements are very sensitive to surface properties. The colloidal particles were characterized by transmission electron microscopy and dynamic light scattering (DLS) experiments were performed. We carried out systematic thermophoretic measurements as a function of temperature, buffer and surfactant concentration. The temperature dependence was analyzed using an empirical formula. To describe the Debye length dependence we used a theoretical model by Dhont. The resulting surface charge density is in agreement with previous literature results. Finally, we analyze the dependence of the Soret coefficient on the concentration of the anionic surfactant sodium dodecyl sulfate (SDS), applying an empirical thermodynamic approach accounting for chemical contributions.
+
+To describe the Debye length dependence we used. A theoretical model. By Dhont. The resulting surface charge density is in agreement with previous literature results.
 
 ------------------------------------------------------------------------------
 
-J. Am. Soc. Bact. Virol. 61: 1–72. Some random trailing text.
+J. Am. Soc. Bact. Virol. 61: 1-72. Some random trailing text.
 
-Some random preceding text. J. Am. Soc. Bact. 61: 1–72. Some random trailing text.
-Some random preceding text. Proc. Natl. Acad. Sci. U.S.A. 88: 7958–7962. Some random trailing text.
-Some random preceding text. Proc. Natl. Acad. Sci. U.S.A.88: 7958–7962. Some random trailing text.
-Some random preceding text. Proc. Natl. Acad. Sci. U.S.A.Some extraneous text! 88: 7958–7962. Some random trailing text.
+Some random preceding text. J. Am. Soc. Bact. 61: 1-72. Some random trailing text.
+Some random preceding text. Proc. Natl. Acad. Sci. U.S.A. 88: 7958-7962. Some random trailing text.
+Some random preceding text. Proc. Natl. Acad. Sci. U.S.A.88: 7958-7962. Some random trailing text.
+Some random preceding text. Proc. Natl. Acad. Sci. U.S.A.Some extraneous text! 88: 7958-7962. Some random trailing text.
 Some random preceding text. Proc. Natl. Acad. Sci. U.S.A.
 
-Some random preceding text. Adv.  Anat. Embryol. Cell Biol. 61: 1–72. Some random trailing text.
-Some random preceding text. Am. J. Hum. Genet. 47: 202–217. Some random trailing text.
-Some random preceding text. Am.  J. Hum. Genet. 47: 202–217. Some random trailing text.
-Some random preceding text. Am.  J.    Hum. Genet. 47: 202–217. Some random trailing text.
-Some random preceding text. Am.    J.                 Hum.   Genet. 47: 202–217. Some random trailing text.
-Some random preceding text. Am.J.Hum.Genet. 47: 202–217. Some random trailing text.
-Some random preceding text. Annu. Rev. Genet. 30: 441–464. Some random trailing text.
-Some random preceding text. Biochim. Biophys. Acta 740: 212–219. Some random trailing text.
-Some random preceding text. Brain Res. Mol. Brain Res. 53: 317–320. Some random trailing text.
-Some random preceding text. Cancer Res. 51: 3075–3079. Some random trailing text.
-Some random preceding text. Cell Tissue Kinet. 11: 241–249. Some random trailing text.
-Some random preceding text. Crit. Rev. Toxicol.  24: 255–280. Some random trailing text.
-Some random preceding text. Curr. Concepts Nutr. 1: 49–97. Some random trailing text.
-Some random preceding text. Drug Metab. Rev. 30: 327–338. Some random trailing text.
-Some random preceding text. Environ. Health Perspect. 106 (Suppl. 1): 307–312. Some random trailing text.
+Some random preceding text. Adv.  Anat. Embryol. Cell Biol. 61: 1-72. Some random trailing text.
+Some random preceding text. Am. J. Hum. Genet. 47: 202-217. Some random trailing text.
+Some random preceding text. Am.  J. Hum. Genet. 47: 202-217. Some random trailing text.
+Some random preceding text. Am.  J.    Hum. Genet. 47: 202-217. Some random trailing text.
+Some random preceding text. Am.    J.                 Hum.   Genet. 47: 202-217. Some random trailing text.
+Some random preceding text. Am.J.Hum.Genet. 47: 202-217. Some random trailing text.
+Some random preceding text. Annu. Rev. Genet. 30: 441-464. Some random trailing text.
+Some random preceding text. Biochim. Biophys. Acta 740: 212-219. Some random trailing text.
+Some random preceding text. Brain Res. Mol. Brain Res. 53: 317-320. Some random trailing text.
+Some random preceding text. Cancer Res. 51: 3075-3079. Some random trailing text.
+Some random preceding text. Cell Tissue Kinet. 11: 241-249. Some random trailing text.
+Some random preceding text. Crit. Rev. Toxicol.  24: 255-280. Some random trailing text.
+Some random preceding text. Curr. Concepts Nutr. 1: 49-97. Some random trailing text.
+Some random preceding text. Drug Metab. Rev. 30: 327-338. Some random trailing text.
+Some random preceding text. Environ. Health Perspect. 106 (Suppl. 1): 307-312. Some random trailing text.
 Some random preceding text. Environ. Mol. Mutagen. Some random trailing text.
-Some random preceding text. Exp. Gerontol. 30: 475–484. Some random trailing text.
-Some random preceding text. Fundam. Appl.  Toxicol. 32: 159–167. Some random trailing text.
-Some random preceding text. Hum.  Genet. 83: 181–188. Some random trailing text.
-Some random preceding text. Indian J. Biochem. Biophys.  29: 49–53. Some random trailing text.
-Some random preceding text. Int. J. Biochem. 12: 523–528. Some random trailing text.
+Some random preceding text. Exp. Gerontol. 30: 475-484. Some random trailing text.
+Some random preceding text. Fundam. Appl.  Toxicol. 32: 159-167. Some random trailing text.
+Some random preceding text. Hum.  Genet. 83: 181-188. Some random trailing text.
+Some random preceding text. Indian J. Biochem. Biophys.  29: 49-53. Some random trailing text.
+Some random preceding text. Int. J. Biochem. 12: 523-528. Some random trailing text.
 Some random preceding text. Int.   Rev.         Cytol. Some random trailing text.
-Some random preceding text. Int. Rev. Cytol. 25: 201–277. Some random trailing text.
-Some random preceding text. J. Biol. Chem. 262: 9948–9951. Some random trailing text.
+Some random preceding text. Int. Rev. Cytol. 25: 201-277. Some random trailing text.
+Some random preceding text. J. Biol. Chem. 262: 9948-9951. Some random trailing text.
 Some random preceding text. J. Molec. Gastroenterol. Some random trailing text.
 Some random preceding text. J. Neurosci. Some random trailing text.
-Some random preceding text. J. Theor. Biol. 89: 557–571. Some random trailing text.
-Some random preceding text. Mech. Ageing Dev. 41: 199–210. Some random trailing text.
-Some random preceding text. Mol. Biol. 28: 11–31. Some random trailing text.
-Some random preceding text. Mol. Cell. Biol. 12: 767–772. Some random trailing text.
-Some random preceding text. Mol. Phylogenet. Evol. 5: 182–187. Some random trailing text.
-Some random preceding text. Mutat. Res. 352: 73–78. Some random trailing text.
+Some random preceding text. J. Theor. Biol. 89: 557-571. Some random trailing text.
+Some random preceding text. Mech. Ageing Dev. 41: 199-210. Some random trailing text.
+Some random preceding text. Mol. Biol. 28: 11-31. Some random trailing text.
+Some random preceding text. Mol. Cell. Biol. 12: 767-772. Some random trailing text.
+Some random preceding text. Mol. Phylogenet. Evol. 5: 182-187. Some random trailing text.
+Some random preceding text. Mutat. Res. 352: 73-78. Some random trailing text.
 Some random preceding text. Nucleic     Acids Res.          Some random trailing text.
-Some random preceding text. Nucleic Acids Res.  25: 3007–3013. Some random trailing text.
-Some random preceding text. Proc. Natl. Acad. Sci. U.S.A. 88: 7958–7962. Some random trailing text.
-Some random preceding text. Proc. Natl. Acad. Sci. USA. 91: 6564–6568. Some random trailing text.
-Some random preceding text. Somat. Cell Mol. Genet. 19: 543–555. Some random trailing text.
-Some random preceding text. Toxicol. Lett. 82–83: 131–134. Some random trailing text.
+Some random preceding text. Nucleic Acids Res.  25: 3007-3013. Some random trailing text.
+Some random preceding text. Proc. Natl. Acad. Sci. U.S.A. 88: 7958-7962. Some random trailing text.
+Some random preceding text. Proc. Natl. Acad. Sci. USA. 91: 6564-6568. Some random trailing text.
+Some random preceding text. Somat. Cell Mol. Genet. 19: 543-555. Some random trailing text.
+Some random preceding text. Toxicol. Lett. 82-83: 131-134. Some random trailing text.
 
 ------------------------------------------------------------------------------
 Full references, with Authors, Titles ...
@@ -331,7 +341,7 @@ Reference: Gauri Dixit, Joshua B. Kelley, John R. Houser, Timothy C. Elston, Hen
 
 Reference: Arun K. Shukla, Gerwin H. Westfield, Kunhong Xiao, Rosana I. Reis, Li-Yin Huang, Prachi Tripathi-Shukla, Jiang Qian, Sheng Li, Adi Blanc, Austin N. Oleskie, Anne M. Dosey, Min Su, Cui-Rong Liang, Ling-Ling Gu, Jin-Ming Shan, Xin Chen, Rachel Hanna, Minjung Choi, Xiao Jie Yao, Bjoern U. Klink, Alem W. Kahsai, Sachdev S. Sidhu, Shohei Koide, Pawel A. Penczek, Anthony A. Kossiakoff, Virgil L. Woods Jr, Brian K. Kobilka, Georgios Skiniotis, Robert J. Lefkowitz. Visualization of arrestin recruitment by a G-protein-coupled receptor. Nature, 2014; DOI: 10.1038/nature13430
 
-Reference: Makoto R. Hara et al. A stress response pathway regulates DNA damage through β2-adrenoreceptors and β-arrestin-1. Nature, 2011; DOI: 10.1038/nature10368
+Reference: Makoto R. Hara et alure10368
 
 Reference:
 
@@ -349,11 +359,13 @@ Liu T, Ortiz JA, Taing L, Meyer CA, Lee B, Zhang Y, Shin H, Wong SS, Ma J, Lei Y
 
 Further reading
 
-Lupien M, Eeckhoute J, Meyer CA, Wang Q, Zhang Y, Li W, Carroll JS, Liu XS, Brown M (March 2008). "FoxA1 translates epigenetic signatures into enhancer-driven lineage-specific transcription". Cell 132 (6): 958–70. doi:10.1016/j.cell.2008.01.018. PMC 2323438. PMID 18358809.
+Lupien M, Eeckhoute J, Meyer CA, Wang Q, Zhang Y, Li W, Carroll JS, Liu XS, Brown M (March 2008). "FoxA1 translates epigenetic signatures into enhancer-driven lineage-specific transcription". Cell 132 (6): 958-70. doi:10.1016/j.cell.2008.01.018. PMC 2323438. PMID 18358809.
 
-Lupien M, Brown M (June 2009). "Cistromics of hormone-dependent cancer". Endocr. Relat. Cancer 16 (2): 381–9. doi:10.1677/ERC-09-0038. PMID 19369485.
+Lupien M, Eeckhoute J, Meyer CA, Wang Q, Zhang Y, Li W, Carroll JS, Liu XS, Brown M [March 2008]. "FoxA1 translates epigenetic signatures into enhancer-driven lineage-specific transcription". Cell 132 (6): 958-70. doi:10.1016/j.cell.2008.01.018. PMC 2323438. PMID 18358809.
 
-Reference: Richard Cowper-Sal·lari, Xiaoyang Zhang, Jason B Wright, Swneke D Bailey, Michael D Cole, Jerome Eeckhoute, Jason H Moore, Mathieu Lupien. Breast cancer risk–associated SNPs modulate the affinity of chromatin for FOXA1 and alter gene expression. Nature Genetics, 2012; 44 (11): 1191 DOI: 10.1038/ng.2416
+Lupien M, Brown M (June 2009). "Cistromics of hormone-dependent cancer". Endocr. Relat. Cancer 16 (2): 381-9. doi:10.1677/ERC-09-0038. PMID 19369485.
+
+Reference: Richard Cowper-Sal·lari, Xiaoyang Zhang, Jason B Wright, Swneke D Bailey, Michael D Cole, Jerome Eeckhoute, Jason H Moore, Mathieu Lupien. Breast cancer risk-associated SNPs modulate the affinity of chromatin for FOXA1 and alter gene expression. Nature Genetics, 2012; 44 (11): 1191 DOI: 10.1038/ng.2416
 
 Reference: Kayleigh R. McGovern-Gooch, Nivedita S. Mahajani, Ariana Garagozzo, Anthony J. Schramm, Lauren G. Hannah, Michelle A. Sieburg, John D. Chisholm, James L. Hougland. Synthetic Triterpenoid Inhibition of Human Ghrelin O-Acyltransferase: The Involvement of a Functionally Required Cysteine Provides Mechanistic Insight into Ghrelin Acylation. Biochemistry, 2017; 56 (7): 919 DOI: 10.1021/acs.biochem.6b01008
 
@@ -381,13 +393,13 @@ More information: H.D. Ou el al., "ChromEMT: Visualizing 3D chromatin structure 
 
 Explore further: Tardigrades use unique protein to protect themselves from desiccation: https://phys.org/news/2017-03-tardigrades-unique-protein-desiccation.html
 
-More information: Yoshida Y, Koutsovoulos G, Laetsch DR, Stevens L, Kumar S, Horikawa DD, et al. (2017) Comparative genomics of the tardigrades Hypsibius dujardini and Ramazzottius varieornatus. PLoS Biol 15(7): e2002266. doi.org/10.1371/journal.pbio.2002266
+More information: Yoshida Y, Koutsovoulos G, Laetsch DR, Stevens L, Kumar S, Horikawa DD, et al6. doi.org/10.1371/journal.pbio.2002266
 
 Explore further: How the first blood cells form during human development: https://phys.org/news/2017-04-blood-cells-human.html
 
-More information: Moussy A, Cosette J, Parmentier R, da Silva C, Corre G, Richard A, et al. (2017) Integrated time-lapse and single-cell transcription studies highlight the variable and dynamic nature of human hematopoietic cell fate commitment. PLoS Biol 15(7): e2001867. doi.org/10.1371/journal.pbio.2001867
+More information: Moussy A, Cosette J, Parmentier R, da Silva C, Corre G, Richard A, et altopoietic cell fate commitment. PLoS Biol 15(7): e2001867. doi.org/10.1371/journal.pbio.2001867
 
-Reference: TaChung Yu et al. Fusobacterium nucleatum Promotes Chemoresistance to Colorectal Cancer by Modulating Autophagy. Cell, July 2017 DOI: 10.1016/j.cell.2017.07.008
+Reference: TaChung Yu et al6/j.cell.2017.07.008
 
 Reference: Dallas R. Donohoe, Nikhil Garge, Xinxin Zhang, Wei Sun, Thomas M. O'Connell, Maureen K. Bunger, Scott J. Bultman. The Microbiome and Butyrate Regulate Energy Metabolism and Autophagy in the Mammalian Colon. Cell Metabolism, 2011; 13 (5): 517-526 DOI: 10.1016/j.cmet.2011.02.018
 
@@ -396,9 +408,9 @@ Reference: Isabel Gonçalves Silva, Inna M. Yasinska, Svetlana S. Sakhnevych, Wa
 Reference: Huijie Feng, Benita Sjögren, Behirda Karaj, Vincent Shaw, Aysegul Gezer, Richard R. Neubig. Movement disorder in GNAO1 encephalopathy associated with gain-of-function mutations. Neurology, 2017; 10.1212/WNL.0000000000004262 DOI: 10.1212/WNL.0000000000004262
 
 
-Reference: Ville Kytola, Umit Topaloglu, Lance D. Miller, Rhonda L. Bitting, Michael M. Goodman, Ralph B. D`Agostino, Rodwige J. Desnoyers, Carol Albright, George Yacoub, Shadi A. Qasem, Barry DeYoung, Vesteinn Thorsson, Ilya Shmulevich, Meng Yang, Anastasia Shcherban, Matthew Pagni, Liang Liu, Matti Nykter, Kexin Chen, Gregory A. Hawkins, Stefan C. Grant, W. Jeffrey Petty, Angela Tatiana Alistar, Edward A. Levine, Edgar D. Staren, Carl D. Langefeld, Vincent Miller, Gaurav Singal, Robin M. Petro, Mac Robinson, William Blackstock, Bayard L. Powell, Lynne I. Wagner, Kristie L. Foley, Edward Abraham, Boris Pasche, Wei Zhang. Mutational Landscapes of Smoking-Related Cancers in Caucasians and African Americans: Precision Oncology Perspectives at Wake Forest Baptist Comprehensive Cancer Center. Theranostics, July 2017 DOI: 10.7150/thno.20355
+Reference: Ville Kytola, Umit Topaloglu, Lance D. Miller, Rhonda L. Bitting, Michael M. Goodman, Ralph B. D'Agostino, Rodwige J. Desnoyers, Carol Albright, George Yacoub, Shadi A. Qasem, Barry DeYoung, Vesteinn Thorsson, Ilya Shmulevich, Meng Yang, Anastasia Shcherban, Matthew Pagni, Liang Liu, Matti Nykter, Kexin Chen, Gregory A. Hawkins, Stefan C. Grant, W. Jeffrey Petty, Angela Tatiana Alistar, Edward A. Levine, Edgar D. Staren, Carl D. Langefeld, Vincent Miller, Gaurav Singal, Robin M. Petro, Mac Robinson, William Blackstock, Bayard L. Powell, Lynne I. Wagner, Kristie L. Foley, Edward Abraham, Boris Pasche, Wei Zhang. Mutational Landscapes of Smoking-Related Cancers in Caucasians and African Americans: Precision Oncology Perspectives at Wake Forest Baptist Comprehensive Cancer Center. Theranostics, July 2017 DOI: 10.7150/thno.20355
 
-Reference: Zhang, Y. et al. Nature http://dx.doi.org/10.1038/nature23282 (2017).
+Reference: Zhang, Y. et al
 
 Reference: Yalin Zhang, Min Soo Kim, Baosen Jia, Jingqi Yan, Juan Pablo Zuniga-Hertz, Cheng Han, Dongsheng Cai. Hypothalamic stem cells control ageing speed partly through exosomal miRNAs. Nature, 2017; DOI: 10.1038/nature23282
 
@@ -406,7 +418,7 @@ Explore further: Synthesizing the human genome from scratch: https://phys.org/ne
 
 Explore further: Polymerases pause to help mediate the flow of genetic information: https://medicalxpress.com/news/2017-05-polymerases-genetic.html
 
-More information: Arnaud R. Krebs et al. Genome-wide Single-Molecule Footprinting Reveals High RNA Polymerase II Turnover at Paused Promoters, Molecular Cell (2017). DOI: 10.1016/j.molcel.2017.06.027. http://linkinghub.elsevier.com/retrieve/pii/S1097276517304616
+More information: Arnaud R. Krebs et al). DOI: 10.1016/j.molcel.2017.06.027. http://linkinghub.elsevier.com/retrieve/pii/S1097276517304616
 
 Reference: Michael D. Gregory, J. Shane Kippenhan, Daniel P. Eisenberg, Philip D. Kohn, Dwight Dickinson, Venkata S. Mattay, Qiang Chen, Daniel R. Weinberger, Ziad S. Saad, Karen F. Berman. Neanderthal-Derived Genetic Variation Shapes Modern Human Cranium and Brain. Scientific Reports, 2017; 7 (1) DOI: 10.1038/s41598-017-06587-0
 
@@ -414,7 +426,7 @@ Reference: Manav Korpal, Xiaoling Puyang, Zhenhua Jeremy Wu, Roland Seiler, Crai
 
 Explore further: New gene-editing technique could drive out mosquito-borne disease: https://phys.org/news/2017-06-gene-editing-technique-mosquito-borne-disease.html
 
-More information: Champer J, Reeves R, Oh SY, Liu C, Liu J, Clark AG, et al. (2017) Novel CRISPR/Cas9 gene drive constructs reveal insights into mechanisms of resistance allele formation and drive efficiency in genetically diverse populations. PLoS Genet 13(7): e1006796. doi.org/10.1371/journal.pgen.1006796
+More information: Champer J, Reeves R, Oh SY, Liu C, Liu J, Clark AG, et alficiency in genetically diverse populations. PLoS Genet 13(7): e1006796. doi.org/10.1371/journal.pgen.1006796
 
 Bull JJ, Malik HS (2017) The gene drive bubble: New realities. PLoS Genet 13(7): e1006850. doi.org/10.1371/journal.pgen.1006850
 
@@ -439,9 +451,9 @@ Google Scholar
 
 9. Burt A. Site-Specific Selfish Genes as Tools for the Control and Genetic Engineering of Natural Populations. Proceedings. Biological Sciences / The Royal Society. 2003;270(1518):921-28. pmid:12803906
 
-10. Galizi R, Doyle LA, Menichelli M, Bernardini F, Deredec A, Burt A, et al. A Synthetic Sex Ratio Distortion System for the Control of the Human Malaria Mosquito. Nature Communications. 2014;5:3977. pmid:24915045
+10. Galizi R, Doyle LA, Menichelli M, Bernardini F, Deredec A, Burt A, et al pmid:24915045
 
-11. Windbichler N, Menichelli M, Papathanos PA, Thyme SB, Li H, Ulge UY, et al. A Synthetic Homing Endonuclease-Based Gene Drive System in the Human Malaria Mosquito. Nature. 2011;473(7346):212-15. pmid:21508956
+11. Windbichler N, Menichelli M, Papathanos PA, Thyme SB, Li H, Ulge UY, et al:21508956
 
 12. Gantz VM, Bier E. Genome Editing. The Mutagenic Chain Reaction: A Method for Converting Heterozygous to Homozygous Mutations. Science (New York, N.Y.). 2015;348(6233):442-44. pmid:25908821
 
@@ -459,7 +471,7 @@ Google Scholar
 
 19. Lyttle TW. Experimental Population Genetics of Meiotic Drive Systems. III. Neutralization of Sex-Ratio Distortion in Drosophila through Sex-Chromosome Aneuploidy. Genetics. 1981;98(2):317-34. pmid:6799357
 
-20. Champer JR, Reeves R, Oh SY, Liu C, Liu J, Clark AG, et al. Novel CRISPR/Cas9 Gene Drive Constructs Reveal Insights into Mechanisms of Resistance Allele Formation and Drive Efficiency in Genetically Diverse Populations. PLoS Genet. 2017;13(7):e1006796.
+20. Champer JR, Reeves R, Oh SY, Liu C, Liu J, Clark AG, et aly in Genetically Diverse Populations. PLoS Genet. 2017;13(7):e1006796.
 
 21. Drury DW, Dapper AL, Siniard DJ, Zentner GE, Wade MJ. CRISPR/Cas9 Gene Drives in Genetically Variable and Nonrandomly Mating Wild Populations. Science Advances. 2017;3:e1601910. pmid:28560324
 
@@ -500,7 +512,7 @@ The variants the team found -- PLCG2, ABI3, and TREM2 -- are all protein-coding 
 
 The three variants they identified are fairly rare and he accounts for their success in finding them to their three-stage study. In the first stage, the entire protein coding regions of 34,290 samples were sequenced. In the second and third stages, the team further refined the sequences of variants and verified the significant hits against untested samples from AD patients.  "Our findings show that microglia and the innate immune system -- via microglia -- directly contribute to susceptibility of late-onset Alzheimer's disease, and are not just a down-stream 'after-the-fact' consequence of damage to the brain," Schellenberg said.
 
-Reference: Gerard D Schellenberg et al. Rare coding variants in PLCG2, ABI3, and TREM2 implicate microglial-mediated innate immunity in Alzheimer's disease. Nature Genetics, 2017; DOI: 10.1038/ng.3916
+Reference: Gerard D Schellenberg et ale Genetics, 2017; DOI: 10.1038/ng.3916
 
 Image: Beta-amyloid plaques from an AD mouse model. Pink represents beta-amyloid deposits (plaques), brown represents microglia cells and blue/purple is nuclei of neurons and glial cells.
 
@@ -510,7 +522,7 @@ https://www.nature.com/ng/journal/vaop/ncurrent/full/ng.3916.html
 
 Rare coding variants in PLCG2, ABI3, and TREM2 implicate microglial-mediated innate immunity in Alzheimer's disease
 
-Rebecca Sims, Sven J van der Lee, Adam C Naj, Céline Bellenguez, Nandini Badarinarayan, Johanna Jakobsdottir, Brian W Kunkle, Anne Boland, Rachel Raybould, Joshua C Bis, Eden R Martin, Benjamin Grenier-Boley, Stefanie Heilmann-Heimbach, Vincent Chouraki, Amanda B Kuzma, Kristel Sleegers, Maria Vronskaya, Agustin Ruiz, Robert R Graham, Robert Olaso, Per Hoffmann, Megan L Grove, Badri N Vardarajan, Mikko Hiltunen, Markus M Nöthen et al.
+Rebecca Sims, Sven J van der Lee, Adam C Naj, Céline Bellenguez, Nandini Badarinarayan, Johanna Jakobsdottir, Brian W Kunkle, Anne Boland, Rachel Raybould, Joshua C Bis, Eden R Martin, Benjamin Grenier-Boley, Stefanie Heilmann-Heimbach, Vincent Chouraki, Amanda B Kuzma, Kristel Sleegers, Maria Vronskaya, Agustin Ruiz, Robert R Graham, Robert Olaso, Per Hoffmann, Megan L Grove, Badri N Vardarajan, Mikko Hiltunen, Markus M Nöthen et al
 
 Nature Genetics (2017)
 doi:10.1038/ng.3916
@@ -532,7 +544,7 @@ The two novel genes, which were not previously considered candidates for Alzheim
 
 Dr Doug Brown, Director of Research and Development at Alzheimer's Society, said: "Over 60% of people with dementia have Alzheimer's disease, yet despite its prevalence we still don't fully understand the complex causes of the disease.  "The discovery of two new risk genes for Alzheimer's is an exciting advance that could help to deepen our understanding of what happens in the brains of people with the disease. These genes reinforce a critical role for special cells in the brain -- called microglia -- that are responsible for clearing up debris including damaged cells and proteins. Insights like this are vital to help unravel the complexities of Alzheimer's disease and show researchers where to focus their efforts in the search for new, effective treatments.  "As a funder of this research, we're delighted to see important progress being made. The UK Dementia Research Institute centre at Cardiff will now build on this discovery to investigate in detail the role of microglia in dementia and ultimately accelerate our progress towards finding a cure."
 
-Reference: Gerard D Schellenberg et al. Rare coding variants in PLCG2, ABI3, and TREM2 implicate microglial-mediated innate immunity in Alzheimer's disease. Nature Genetics, 2017; DOI: 10.1038/ng.3916
+Reference: Gerard D Schellenberg et ale Genetics, 2017; DOI: 10.1038/ng.3916
 
 ------------------------------------------------------------------------------
 
@@ -540,7 +552,7 @@ https://www.nature.com/ng/journal/vaop/ncurrent/full/ng.3916.html
 
 Rare coding variants in PLCG2, ABI3, and TREM2 implicate microglial-mediated innate immunity in Alzheimer's disease
 
-Rebecca Sims, Sven J van der Lee, Adam C Naj, Céline Bellenguez, Nandini Badarinarayan, Johanna Jakobsdottir, Brian W Kunkle, Anne Boland, Rachel Raybould, Joshua C Bis, Eden R Martin, Benjamin Grenier-Boley, Stefanie Heilmann-Heimbach, Vincent Chouraki, Amanda B Kuzma, Kristel Sleegers, Maria Vronskaya, Agustin Ruiz, Robert R Graham, Robert Olaso, Per Hoffmann, Megan L Grove, Badri N Vardarajan, Mikko Hiltunen, Markus M Nöthen et al.
+Rebecca Sims, Sven J van der Lee, Adam C Naj, Céline Bellenguez, Nandini Badarinarayan, Johanna Jakobsdottir, Brian W Kunkle, Anne Boland, Rachel Raybould, Joshua C Bis, Eden R Martin, Benjamin Grenier-Boley, Stefanie Heilmann-Heimbach, Vincent Chouraki, Amanda B Kuzma, Kristel Sleegers, Maria Vronskaya, Agustin Ruiz, Robert R Graham, Robert Olaso, Per Hoffmann, Megan L Grove, Badri N Vardarajan, Mikko Hiltunen, Markus M Nöthen et al
 
 Nature Genetics (2017)
 doi:10.1038/ng.3916
@@ -553,18 +565,18 @@ We identified rare coding variants associated with Alzheimer's disease in a thre
 
 From: "Victoria Stuart (VictoriasJourney.com)"
 To: "Victoria Stuart"
-Subject: Rare Variants in Complex Disease: ABCA7 and Alzheimer’s [Loss-of-function variants in ABCA7 confer risk of  Alzheimer’s disease] [Re: [deCODE] Warn people of  genetic health risks, says deCODE boss [re: One thousand genes you could  live without]]
+Subject: Rare Variants in Complex Disease: ABCA7 and Alzheimer's [Loss-of-function variants in ABCA7 confer risk of  Alzheimer's disease] [Re: [deCODE] Warn people of  genetic health risks, says deCODE boss [re: One thousand genes you could  live without]]
 Date: Mon, 6 Apr 2015 09:50:42 -0700
 
 http://massgenomics.org/2015/04/rare-variants-complex-disease-abca7-alzheimers.html
 
-RARE VARIANTS IN COMPLEX DISEASE: ABCA7 AND ALZHEIMER’S [LOSS-OF-FUNCTION VARIANTS IN ABCA7 CONFER RISK OF ALZHEIMER’S DISEASE]
+RARE VARIANTS IN COMPLEX DISEASE: ABCA7 AND ALZHEIMER'S [LOSS-OF-FUNCTION VARIANTS IN ABCA7 CONFER RISK OF ALZHEIMER'S DISEASE]
 
-[April 6, 2015]  Although the cost of sequencing continues to fall precipitously (cue the NIH sequencing-versus-Moore’s-Law figure), it’s still expensive relative to high-throughput genotyping. Whole-genome sequencing on the X Ten costs around $2500 per sample by the time you account for basic analysis and data storage. This means that a well-powered genetic association study for complex disease (10,000 samples) would cost over $20 million just for data generation. The same cohort genotyped on a high-density SNP array might only cost about $1 million. Undoubtedly, that’s why most large scale genome-wide association studies to date (>50,000 samples) have relied primarily on SNP array data.
+[April 6, 2015]  Although the cost of sequencing continues to fall precipitously (cue the NIH sequencing-versus-Moore's-Law figure), it's still expensive relative to high-throughput genotyping. Whole-genome sequencing on the X Ten costs around $2500 per sample by the time you account for basic analysis and data storage. This means that a well-powered genetic association study for complex disease (10,000 samples) would cost over $20 million just for data generation. The same cohort genotyped on a high-density SNP array might only cost about $1 million. Undoubtedly, that's why most large scale genome-wide association studies to date (>50,000 samples) have relied primarily on SNP array data.
 
 There is a growing body of evidence, however, that rare variants (especially ones not present on SNP arrays) might confer a significant proportion of the genetic risk for complex disease. In age-related macular degeneration (AMD), for example, sequencing studies of moderate size (~5,000 samples) were able to identify rare coding variants in C3 and CFH associated with risk of disease. An important advantage of a sequencing approach is the ability to perform aggregation tests of private and rare coding variants (e.g. with the sequence kernel association test, SKAT) to boost the power to detect association.
 
-A recent paper in Nature Genetics illustrates the feasibility of this approach for sequencing studies of complex disease. Stacy Steinberg and colleagues from deCODE Genetics conducted a search for rare functional variants in the known risk loci for Alzheimer’s disease (AD) [http://www.nature.com/ng/journal/vaop/ncurrent/full/ng.3246.html] using a unique resource: whole-genome sequences of 2,636 Icelanders imputed into 104,220 long-range phased individuals and their relatives.
+A recent paper in Nature Genetics illustrates the feasibility of this approach for sequencing studies of complex disease. Stacy Steinberg and colleagues from deCODE Genetics conducted a search for rare functional variants in the known risk loci for Alzheimer's disease (AD) [http://www.nature.com/ng/journal/vaop/ncurrent/full/ng.3246.html] using a unique resource: whole-genome sequences of 2,636 Icelanders imputed into 104,220 long-range phased individuals and their relatives.
 
 So here we have a rare variant association study (RVAS) that employs several strategies for an efficient design:
 
@@ -572,42 +584,42 @@ So here we have a rare variant association study (RVAS) that employs several str
 
   2. Analyzing missense variants with SKAT, which aggregates rare variants (i.e. collapses them at the level of the gene) to boost power for association but allows for multiple directions of effect.
 
-  3. Examining only regions known to be associated with AD — which seem likely to harbor [rare] functional variants — to reduce the multiple testing penalty.
+  3. Examining only regions known to be associated with AD - which seem likely to harbor [rare] functional variants - to reduce the multiple testing penalty.
 
 TARGETED ASSOCIATION STUDIES
 
-There are, of course, disadvantages to limiting the scope of association testing to known regions. Obviously you won’t be discovering any new associations, especially ones that sequencing (but not genotyping) might be able to uncover. Even so, you’re stacking the deck in your favor because the known GWAS loci almost certainly harbor some functional variation that hasn’t yet been fully interrogated.
+There are, of course, disadvantages to limiting the scope of association testing to known regions. Obviously you won't be discovering any new associations, especially ones that sequencing (but not genotyping) might be able to uncover. Even so, you're stacking the deck in your favor because the known GWAS loci almost certainly harbor some functional variation that hasn't yet been fully interrogated.
 
-Sometimes, sequencing will only serve to replicate the common variant association signal (i.e. not find anything new). Yet these targeted approaches might help narrow the boundaries of the associated region — which could encompass dozens or hundreds of genes — or, even better, identify disruptive variants whose LD with the lead SNP makes them good candidates for causal variants. Thirdly, one might uncover secondary independent association signals in GWAS loci, implicating that there are multiple haplotypes that influence disease risk.
+Sometimes, sequencing will only serve to replicate the common variant association signal (i.e. not find anything new). Yet these targeted approaches might help narrow the boundaries of the associated region - which could encompass dozens or hundreds of genes - or, even better, identify disruptive variants whose LD with the lead SNP makes them good candidates for causal variants. Thirdly, one might uncover secondary independent association signals in GWAS loci, implicating that there are multiple haplotypes that influence disease risk.
 
 VARIANT ANNOTATION AND AGGREGATION
 
-As anyone who has done aggregation/burden testing in association studies can tell you, the analysis choices can have a significant impact on results. The annotation tool/source, MAF threshold, and variant mask (definition of what’s deleterious and should be included) can introduce a lot of variability. In this case, the authors tried two variant masks:
+As anyone who has done aggregation/burden testing in association studies can tell you, the analysis choices can have a significant impact on results. The annotation tool/source, MAF threshold, and variant mask (definition of what's deleterious and should be included) can introduce a lot of variability. In this case, the authors tried two variant masks:
 
-  1. Loss of function variants: nonsense, frameshift or canonical splice site variants. These are usually quite rare, and so the authors collapsed them to a single “meta variant” at the level of the gene.
+  1. Loss of function variants: nonsense, frameshift or canonical splice site variants. These are usually quite rare, and so the authors collapsed them to a single "meta variant" at the level of the gene.
 
-  2. Missense variants: nonsynonymous variants or splice region variants. This latter one is an interesting choice, and not necessarily one I’d have thought to make at the discovery stage.
+  2. Missense variants: nonsynonymous variants or splice region variants. This latter one is an interesting choice, and not necessarily one I'd have thought to make at the discovery stage.
 The burden tests included only variants with MAF<1% and information (call rate) >0.80. The authors tested about 80 genes across the 17 loci, and the top-scoring hit was ABCA7 (p=0.00020).
 
 SPLICE REGION VARIATION IN ABCA7
 
-ABCA7 encodes ATP-binding cassette transporter A7, a member of ABC transporters that move lipids across membranes. The SKAT result was primarily driven by a single variant, c.5570+5G>C. Without it, the test had a p-value of 0.46. If you’re familiar with the notation, then you know that c.5570+5 indicates a noncoding variant 5 bases into an intron. We call this the “splice region” and, unlike the canonical splice site (+/- 2bp) it’s not clear that variants here affect splicing.
+ABCA7 encodes ATP-binding cassette transporter A7, a member of ABC transporters that move lipids across membranes. The SKAT result was primarily driven by a single variant, c.5570+5G>C. Without it, the test had a p-value of 0.46. If you're familiar with the notation, then you know that c.5570+5 indicates a noncoding variant 5 bases into an intron. We call this the "splice region" and, unlike the canonical splice site (+/- 2bp) it's not clear that variants here affect splicing.
 
 But the authors had another NGS tool to look at this: RNA-seq. When they looked at the transcript sequences of c.5570+5G>C carriers, they included a retained intron that eventually included a stop codon.
 
-    Image: splicing variant in ABCA7 in Alzheimers - Intron retention in carriers (Steinberg et al, Nat. Gen. 2015, Fig S1)
+    Image: splicing variant in ABCA7 in Alzheimers - Intron retention in carriers (Steinberg et al
 
 The image here is from Supplemental Figure 1 (the main text had no figures) and shows the intron retention in c.5570+5G>C carriers. Side note: according to the legend, the coordinates are on NCBI build 36, which practically a crime. But moving on, the RNA-seq results justified including the variant in the loss-of-function test (mask #1), which then yielded a p-value of 5.3e-10 with odds ratio of 1.97.
 
 FOLLOW-UP AND REPLICATION OF ASSOCIATION
 
-With a possible causal variant in hand, the authors next examined the long-range haplotypes to see if this variant was on the same background as rs4147929, the common variant previously associated with AD by GWAS. It was never on the same allele, which is a fascinating result; the common variant signal and this rare variant association appear to be independent. It’s possible, therefore, that the mechanisms are different as well. To replicate the association, the authors genotyped ABCA7 loss-of-function variants in study groups from Europe and the United States, finding a p-value of 0.0056 with OR of 1.73. When combined with the Icelandic data by meta-analysis, the OR was 2.03 and the p-value 6.8e-15.
+With a possible causal variant in hand, the authors next examined the long-range haplotypes to see if this variant was on the same background as rs4147929, the common variant previously associated with AD by GWAS. It was never on the same allele, which is a fascinating result; the common variant signal and this rare variant association appear to be independent. It's possible, therefore, that the mechanisms are different as well. To replicate the association, the authors genotyped ABCA7 loss-of-function variants in study groups from Europe and the United States, finding a p-value of 0.0056 with OR of 1.73. When combined with the Icelandic data by meta-analysis, the OR was 2.03 and the p-value 6.8e-15.
 
-WHAT’S NEXT FOR AD AND COMMON DISEASE
+WHAT'S NEXT FOR AD AND COMMON DISEASE
 
-ABCA7 certainly merits future studies, both in the genetics realm and in the laboratory for functional evaluation. It’s strongly expressed in the brain, where it promotes the efflux of phospholipids and cholesterol to apoA-I and apoE. But the ortholog of ABCA7 in C. elegans and results from mouse models suggest that regulation of phagocytosis might be the primary function of the gene. The authors tested for correlation between variants in ABCA7 and two disease-associated alleles (in APOE and TREM2), but found none. Thus, the mechanism by which ABCA7 loss-of-function confers susceptibility to AD will need further investigation. Still, it’s a promising start to detangling the etiology of a complex human disease, and a demonstration of the power of genome sequencing to uncover promising new leads.
+ABCA7 certainly merits future studies, both in the genetics realm and in the laboratory for functional evaluation. It's strongly expressed in the brain, where it promotes the efflux of phospholipids and cholesterol to apoA-I and apoE. But the ortholog of ABCA7 in C. elegans and results from mouse models suggest that regulation of phagocytosis might be the primary function of the gene. The authors tested for correlation between variants in ABCA7 and two disease-associated alleles (in APOE and TREM2), but found none. Thus, the mechanism by which ABCA7 loss-of-function confers susceptibility to AD will need further investigation. Still, it's a promising start to detangling the etiology of a complex human disease, and a demonstration of the power of genome sequencing to uncover promising new leads.
 
-REFERENCE: Steinberg S, Stefansson H, Jonsson T, Johannsdottir H, Ingason A, Helgason H, Sulem P, Magnusson OT, Gudjonsson SA, Unnsteinsdottir U, Kong A, Helisalmi S, Soininen H, Lah JJ, DemGene, Aarsland D, Fladby T, Ulstein ID, Djurovic S, Sando SB, White LR, Knudsen GP, Westlye LT, Selbæk G, Giegling I, Hampel H, Hiltunen M, Levey AI, Andreassen OA, Rujescu D, Jonsson PV, Bjornsson S, Snaedal J, & Stefansson K (2015). Loss-of-function variants in ABCA7 confer risk of Alzheimer’s disease. Nature genetics PMID: 25807283 : http://www.ncbi.nlm.nih.gov/pubmed/25807283
+REFERENCE: Steinberg S, Stefansson H, Jonsson T, Johannsdottir H, Ingason A, Helgason H, Sulem P, Magnusson OT, Gudjonsson SA, Unnsteinsdottir U, Kong A, Helisalmi S, Soininen H, Lah JJ, DemGene, Aarsland D, Fladby T, Ulstein ID, Djurovic S, Sando SB, White LR, Knudsen GP, Westlye LT, Selbæk G, Giegling I, Hampel H, Hiltunen M, Levey AI, Andreassen OA, Rujescu D, Jonsson PV, Bjornsson S, Snaedal J, & Stefansson K (2015). Loss-of-function variants in ABCA7 confer risk of Alzheimer's disease. Nature genetics PMID: 25807283 : http://www.ncbi.nlm.nih.gov/pubmed/25807283
 
 
 ==============================================================================
@@ -619,7 +631,7 @@ SEQUENCE variant nomenclature
 
 GENERAL
 
-Since references to web sites are not yet acknowledged as citations, please mention Den Dunnen et al. (2016) HGVS recommendations for the description of sequence variants: 2016 update. Hum. Mutat. 25: 37: 564-569 when referring to these pages. Note that although the examples on these pages mainly give examples for human (Homo sapiens), the recommendations can be applied to all species.
+Since references to web sites are not yet acknowledged as citations, please mention Den Dunnen et aling to these pages. Note that although the examples on these pages mainly give examples for human (Homo sapiens), the recommendations can be applied to all species.
 
 GENERAL RECOMMENDATIONS
 

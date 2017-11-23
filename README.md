@@ -72,6 +72,8 @@ ssc = '/mnt/Vancouver/Programming/scripts/sed_sentence_chunker/sed_sentence_chun
 
 subprocess.call(ssc, shell=True)
 ```
+* Update [2017.11.23]: added `sed`-based text preprocessing code, to replace annoyances (some ligatures; various quotation marks and accents; etc.) prior to sentence chunking.
+
 ----------
 
 **Update (Sep 26, 2017) -- `sed_sentence_chunker2.sh`:**

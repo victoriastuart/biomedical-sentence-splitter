@@ -521,8 +521,8 @@ for f in $FILES
                 s/—/-/g
                 s/؊/-/g
                 s/ϩ/+/g
-                #s/ϫ/x/g' $f
                 s/ϫ/x/g' g
+                #s/ϫ/x/g' $f
 
       # ============================================================================
       # SPECIAL CASES -- COMMON ABBREVIATIONS:

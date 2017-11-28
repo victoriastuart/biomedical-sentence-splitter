@@ -449,7 +449,7 @@ FILES=$(find ./input -type f -iname "*")                ## ALL files, recursivel
 
 for f in $FILES
     do
-      cp $f g     ## work on a copy so that the input file $f is not modified
+      cp $f gahBaex1     ## work on a copy so that the input file $f is not modified
       # ----------------------------------------------------------------------
       # Preprocessing step -- replace various annoyances (different types of quotation marks; ligatures; ...):
       # https://stackoverflow.com/questions/26568952/how-to-replace-multiple-patterns-at-once-with-sed
@@ -521,7 +521,7 @@ for f in $FILES
                 s/—/-/g
                 s/؊/-/g
                 s/ϩ/+/g
-                s/ϫ/x/g' g
+                s/ϫ/x/g' gahBaex1
                 #s/ϫ/x/g' $f
 
       # ============================================================================
@@ -544,7 +544,7 @@ for f in $FILES
       # pp. followed by a space; unlikely to appear at EOL, so do simple substitution:
 
       #sed 's/pp\.\s/Cho4Ph/g' $f > tmp_file     ## again, not sed -i ...: this line only
-      sed 's/pp\.\s/Cho4Ph/g' g > tmp_file     ## again, not sed -i ...: this line only
+      sed 's/pp\.\s/Cho4Ph/g' gahBaex1 > tmp_file     ## again, not sed -i ...: this line only
 
       # [ in character expression [] must appear first: [[]; -r regex, therefore
 
@@ -1104,6 +1104,8 @@ for f in $FILES
       outname=$(basename $f)
 
       mv tmp_file output/$outname
+      
+      rm gahBaex1       ## remove temporary input file
 
       # ============================================================================
       # Q.E.D.!  :-D

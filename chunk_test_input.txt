@@ -2,7 +2,7 @@
 ADDITIONAL TESTS -- BIOMEDICAL LITERATURE
 
      Created: 2017-Jul-20 | Victoria Stuart | "mail"..@t.."VictoriasJourney.com"
-Last updated: 2017-Oct-12
+Last updated: 2017-Nov-27
 ==============================================================================
 
 NOTES:
@@ -17,16 +17,32 @@ NOTES:
 ﬃ | ﬁ | ﬀ | ﬂ | ﬄ | � | ␮ | ௡ | ␣ | ␤ | ␦ | 5Ј- | -3Ј | þ | ¼ | ϭ | Ɛ | Ͻ | Ͼ | ␥ | ␧ | ␨ | Ϫ | À | OLD: | ‫؍‬ . | ␹ | Ն | Ն | Յ | Ã | Â | ¥ |  | ™ | ® | → | – | Ϯ | ؉ | ϫ | ϳ | ʽ | ʻ | “ | ˮ | ” | ״ | ʺ | ′′ | 〃 | ’ | ʼ | ‘ | ′ | ` | ׳ | ʹ | ꞌ | ˊ | ˋ | ˌ | — | ؊ | ϩ | ϫ
 
 ==============================================================================
+1' 2' 3' 4' 5' 6' 7' 8' 9'
+5'-ACGT
+ACGT-3'
+3.1 x 10e-4
+p.Arg62His
+"one"
+'two'
+"This is sentence number one."
+'This is sentence number one.'
 
-Hello? Ms. Wilson is asking for the file!      a. b. e. k. l. m. s. t. u. ... as Dr. Stuart et alSt. Where, exactly, do you live?   I live on 1234 Baker St. That's where you can find me. They found nothing there? Yes, nothing! However, in v.3.4 (see Fig. 2, and fig 3, and Figs. 5-6), it clearly shows, ... on the last page..  Very good, i.e., excellent! E.g., another example. E.g. another one; e.g one more; i.e. that's the last one!
+The girls' dresses.
+The Wilsons' house.
+The women's room.
+
+==============================================================================
+
+Hello? Ms. Wilson is asking for the file!      a. b. e. k. l. m. s. t. u. ... as Dr. Stuart et al
+Where, exactly, do you live?  Main St.  I live on 1234 Main St. That's where you can find me. They found nothing there? Yes, nothing! However, in v.3.4 (see Fig. 2, and fig 3, and Figs. 5-6), it clearly shows, ... on the last page..  Very good, i.e., excellent! E.g., another example. E.g. another one; e.g one more; i.e. that's the last one!
 
 As indicated in v.1, and in v. 2, and in v3.
 
-The items found on p. 2. The items found on p. 1.  The items found on 2-3. The items found on p. 23. The items found on p. 9. Apples, bananas, carrots!. The items found on p. 2.
+The items found on p. 2. The items found on p. 1.  The items found on pp.2-3 and pp. 6-19. The items found on p. 23. The items found on p. 9. Apples, bananas, carrots!. The items found on p. 2.
 
-The items found on p. i.  The items found on iii-ix.
+The items found on p. i.  The items found on pp. iii-ix.
 
-The item, p. 1. Item, 2-3. The items on ppp.[ << sic] 23.
+The item, p. 1. Item, 2-3. The items on ppp. jj w[ << sic] 23.
 
 This versus that versus those.  This vs. that versus that vs. that Stuart vs Stuart.
 
@@ -198,11 +214,12 @@ Very good, i.e., excellent! E.g., yet another example. E.g. another one; e.g one
 
 
 ------------------------------------------------------------------------------
-COMPARISON ABBREVIATION:
-------------------------
+COMPARISON, CARBON COPY ABBREVIATIONS:
+--------------------------------------
 
 This one cf this one.  This one, c.f. this one.  This one, c.f. This one.  This one, c.f., this one.
 
+Cc. this one, cc. this one, c.c. this one, cc this one, and CC this one.
 ------------------------------------------------------------------------------
 # ITEMIZED LISTS:
 # ---------------
@@ -231,7 +248,7 @@ The objective of this study is to examine the frequency, development, concomitan
 
 
 ==============================================================================
-CITATIONS - AUTHOR NAME ABBREVIATIONS
+CITATIONS-AUTHOR NAME ABBREVIATIONS
 ==============================================================================
 
 BRCA1. Genes.
@@ -250,14 +267,14 @@ Some additional text. William F.J. McLeod. More more added text.
 
 Some additional text. A. Smith, B. Smith, A.B. Smith, ABCD Smith. More more added text.
 
-Some additional text. A. Smith, A.B. Smith, A. B. Smith, A.B.C. Smith, A. B. C. Smith, A.B.C.D. Smith, A. B. C. D. Smith, ABCD Smith, AB.CD.Smith, ABCD. Smith, A. BCD.Smith. More more added text.
+Some additional text. A. Smith, A.B. Smith, A. B. Smith, A.B.C. Smith, A. B. C. Smith, A.B.C.D. Smith, A. B. C. D. Smith, ABCD Smith, ABCD.Smith, ABCD. Smith, A. BCD.Smith. More more added text.
 
 Some additional text. Chen A.-B. Jiang. More more added text.
 
 Some additional text. Chen A-B. Jiang. More more added text.
 
 ==============================================================================
-CITATIONS - JOURNAL TITLE ABBREVIATIONS
+CITATIONS-JOURNAL TITLE ABBREVIATIONS
 ==============================================================================
 
 We study the thermodiffusion behavior of spherical polystyrene beads with a diameter of 25 nm by infrared thermal diffusion Forced Rayleigh Scattering (IR-TDFRS). Similar beads were used to investigate the radial dependence of the Soret coefficient by different authors. While Duhr and Braun (Proc. Natl. Acad. Sci. U.S.A. 104, 9346 (2007)) observed a quadratic radial dependence Braibanti et al. (Phys. Rev. Lett. 100, 108303 (2008)) found a linear radial dependence of the Soret coefficient. We demonstrated that special care needs to be taken to obtain reliable thermophoretic data, because the measurements are very sensitive to surface properties. The colloidal particles were characterized by transmission electron microscopy and dynamic light scattering (DLS) experiments were performed. We carried out systematic thermophoretic measurements as a function of temperature, buffer and surfactant concentration. The temperature dependence was analyzed using an empirical formula. To describe the Debye length dependence we used a theoretical model by Dhont. The resulting surface charge density is in agreement with previous literature results. Finally, we analyze the dependence of the Soret coefficient on the concentration of the anionic surfactant sodium dodecyl sulfate (SDS), applying an empirical thermodynamic approach accounting for chemical contributions.
@@ -266,10 +283,11 @@ To describe the Debye length dependence we used. A theoretical model. By Dhont. 
 
 ------------------------------------------------------------------------------
 
+Am. J. Cardiol. Virol. 61: 1-72. Some random trailing text.
 J. Am. Soc. Bact. Virol. 61: 1-72. Some random trailing text.
 
 Some random preceding text. J. Am. Soc. Bact. 61: 1-72. Some random trailing text.
-Some random preceding text. Proc. Natl. Acad. Sci. U.S.A. 88: 7958-7962. Some random trailing text.
+Some random preceding text. Proc. Natl. Acad. Sci. U.S.A. 88: 7958-7962. Some random trailing text.'a'
 Some random preceding text. Proc. Natl. Acad. Sci. U.S.A.88: 7958-7962. Some random trailing text.
 Some random preceding text. Proc. Natl. Acad. Sci. U.S.A.Some extraneous text! 88: 7958-7962. Some random trailing text.
 Some random preceding text. Proc. Natl. Acad. Sci. U.S.A.
@@ -385,7 +403,7 @@ Reference: Shai Bel, Mihir Pendse, Yuhao Wang, Yun Li, Kelly A. Ruhn, Brian Hass
 
 Reference: Timon E. Adolph, Michal F. Tomczak, Lukas Niederreiter, Hyun-Jeong Ko, Janne Böck, Eduardo Martinez-Naves, Jonathan N. Glickman, Markus Tschurtschenthaler, John Hartwig, Shuhei Hosomi, Magdalena B. Flak, Jennifer L. Cusick, Kenji Kohno, Takao Iwawaki, Susanne Billmann-Born, Tim Raine, Richa Bharti, Ralph Lucius, Mi-Na Kweon, Stefan J. Marciniak, Augustine Choi, Susan J. Hagen, Stefan Schreiber, Philip Rosenstiel, Arthur Kaser, Richard S. Blumberg. Paneth cells as a site of origin for intestinal inflammation. Nature, 2013; DOI: 10.1038/nature12599
 
-Reference - Scientific Reports: http://nature.com/articles/doi:10.1038/s41598-017-05649-7
+Reference-Scientific Reports: http://nature.com/articles/doi:10.1038/s41598-017-05649-7
 
 Reference: Fran Supek, Ben Lehner. Clustered Mutation Signatures Reveal that Error-Prone DNA Repair Targets Mutations to Active Genes. Cell, 2017; 170 (3): 534 DOI: 10.1016/j.cell.2017.07.003
 
@@ -527,7 +545,7 @@ Rebecca Sims, Sven J van der Lee, Adam C Naj, Céline Bellenguez, Nandini Badari
 Nature Genetics (2017)
 doi:10.1038/ng.3916
 
-We identified rare coding variants associated with Alzheimer's disease in a three-stage case-control study of 85,133 subjects. In stage 1, we genotyped 34,174 samples using a whole-exome microarray. In stage 2, we tested associated variants (P < 1 × 10−4) in 35,962 independent samples using de novo genotyping and imputed genotypes. In stage 3, we used an additional 14,997 samples to test the most significant stage 2 associations (P < 5 × 10−8) using imputed genotypes. We observed three new genome-wide significant nonsynonymous variants associated with Alzheimer's disease: a protective variant in PLCG2 (rs72824905: p.Pro522Arg, P = 5.38 × 10−10, odds ratio (OR) = 0.68, minor allele frequency (MAF)cases = 0.0059, MAFcontrols = 0.0093), a risk variant in ABI3 (rs616338: p.Ser209Phe, P = 4.56 × 10−10, OR = 1.43, MAFcases = 0.011, MAFcontrols = 0.008), and a new genome-wide significant variant in TREM2 (rs143332484: p.Arg62His, P = 1.55 × 10−14, OR = 1.67, MAFcases = 0.0143, MAFcontrols = 0.0089), a known susceptibility gene for Alzheimer's disease. These protein-altering changes are in genes highly expressed in microglia and highlight an immune-related protein-protein interaction network enriched for previously identified risk genes in Alzheimer's disease. These genetic findings provide additional evidence that the microglia-mediated innate immune response contributes directly to the development of Alzheimer's disease.
+We identified rare coding variants associated with Alzheimer's disease in a three-stage case-control study of 85,133 subjects. In stage 1, we genotyped 34,174 samples using a whole-exome microarray. In stage 2, we tested associated variants (P < 1 x 10-4) in 35,962 independent samples using de novo genotyping and imputed genotypes. In stage 3, we used an additional 14,997 samples to test the most significant stage 2 associations (P < 5 x 10-8) using imputed genotypes. We observed three new genome-wide significant nonsynonymous variants associated with Alzheimer's disease: a protective variant in PLCG2 (rs72824905: p.Pro522Arg, P = 5.38 x 10-10, odds ratio (OR) = 0.68, minor allele frequency (MAF)cases = 0.0059, MAFcontrols = 0.0093), a risk variant in ABI3 (rs616338: p.Ser209Phe, P = 4.56 x 10-10, OR = 1.43, MAFcases = 0.011, MAFcontrols = 0.008), and a new genome-wide significant variant in TREM2 (rs143332484: p.Arg62His, P = 1.55 x 10-14, OR = 1.67, MAFcases = 0.0143, MAFcontrols = 0.0089), a known susceptibility gene for Alzheimer's disease. These protein-altering changes are in genes highly expressed in microglia and highlight an immune-related protein-protein interaction network enriched for previously identified risk genes in Alzheimer's disease. These genetic findings provide additional evidence that the microglia-mediated innate immune response contributes directly to the development of Alzheimer's disease.
 
 ==============================================================================
 
@@ -557,7 +575,7 @@ Rebecca Sims, Sven J van der Lee, Adam C Naj, Céline Bellenguez, Nandini Badari
 Nature Genetics (2017)
 doi:10.1038/ng.3916
 
-We identified rare coding variants associated with Alzheimer's disease in a three-stage case-control study of 85,133 subjects. In stage 1, we genotyped 34,174 samples using a whole-exome microarray. In stage 2, we tested associated variants (P < 1 × 10−4) in 35,962 independent samples using de novo genotyping and imputed genotypes. In stage 3, we used an additional 14,997 samples to test the most significant stage 2 associations (P < 5 × 10−8) using imputed genotypes. We observed three new genome-wide significant nonsynonymous variants associated with Alzheimer's disease: a protective variant in PLCG2 (rs72824905: p.Pro522Arg, P = 5.38 × 10−10, odds ratio (OR) = 0.68, minor allele frequency (MAF)cases = 0.0059, MAFcontrols = 0.0093), a risk variant in ABI3 (rs616338: p.Ser209Phe, P = 4.56 × 10−10, OR = 1.43, MAFcases = 0.011, MAFcontrols = 0.008), and a new genome-wide significant variant in TREM2 (rs143332484: p.Arg62His, P = 1.55 × 10−14, OR = 1.67, MAFcases = 0.0143, MAFcontrols = 0.0089), a known susceptibility gene for Alzheimer's disease. These protein-altering changes are in genes highly expressed in microglia and highlight an immune-related protein-protein interaction network enriched for previously identified risk genes in Alzheimer's disease. These genetic findings provide additional evidence that the microglia-mediated innate immune response contributes directly to the development of Alzheimer's disease.
+We identified rare coding variants associated with Alzheimer's disease in a three-stage case-control study of 85,133 subjects. In stage 1, we genotyped 34,174 samples using a whole-exome microarray. In stage 2, we tested associated variants (P < 1 x 10-4) in 35,962 independent samples using de novo genotyping and imputed genotypes. In stage 3, we used an additional 14,997 samples to test the most significant stage 2 associations (P < 5 x 10-8) using imputed genotypes. We observed three new genome-wide significant nonsynonymous variants associated with Alzheimer's disease: a protective variant in PLCG2 (rs72824905: p.Pro522Arg, P = 5.38 x 10-10, odds ratio (OR) = 0.68, minor allele frequency (MAF)cases = 0.0059, MAFcontrols = 0.0093), a risk variant in ABI3 (rs616338: p.Ser209Phe, P = 4.56 x 10-10, OR = 1.43, MAFcases = 0.011, MAFcontrols = 0.008), and a new genome-wide significant variant in TREM2 (rs143332484: p.Arg62His, P = 1.55 x 10-14, OR = 1.67, MAFcases = 0.0143, MAFcontrols = 0.0089), a known susceptibility gene for Alzheimer's disease. These protein-altering changes are in genes highly expressed in microglia and highlight an immune-related protein-protein interaction network enriched for previously identified risk genes in Alzheimer's disease. These genetic findings provide additional evidence that the microglia-mediated innate immune response contributes directly to the development of Alzheimer's disease.
 
 [170717110511_1_900x600.jpg  image/jpeg (50557 bytes)]
 
@@ -584,13 +602,13 @@ So here we have a rare variant association study (RVAS) that employs several str
 
   2. Analyzing missense variants with SKAT, which aggregates rare variants (i.e. collapses them at the level of the gene) to boost power for association but allows for multiple directions of effect.
 
-  3. Examining only regions known to be associated with AD - which seem likely to harbor [rare] functional variants - to reduce the multiple testing penalty.
+  3. Examining only regions known to be associated with AD-which seem likely to harbor [rare] functional variants-to reduce the multiple testing penalty.
 
 TARGETED ASSOCIATION STUDIES
 
 There are, of course, disadvantages to limiting the scope of association testing to known regions. Obviously you won't be discovering any new associations, especially ones that sequencing (but not genotyping) might be able to uncover. Even so, you're stacking the deck in your favor because the known GWAS loci almost certainly harbor some functional variation that hasn't yet been fully interrogated.
 
-Sometimes, sequencing will only serve to replicate the common variant association signal (i.e. not find anything new). Yet these targeted approaches might help narrow the boundaries of the associated region - which could encompass dozens or hundreds of genes - or, even better, identify disruptive variants whose LD with the lead SNP makes them good candidates for causal variants. Thirdly, one might uncover secondary independent association signals in GWAS loci, implicating that there are multiple haplotypes that influence disease risk.
+Sometimes, sequencing will only serve to replicate the common variant association signal (i.e. not find anything new). Yet these targeted approaches might help narrow the boundaries of the associated region-which could encompass dozens or hundreds of genes-or, even better, identify disruptive variants whose LD with the lead SNP makes them good candidates for causal variants. Thirdly, one might uncover secondary independent association signals in GWAS loci, implicating that there are multiple haplotypes that influence disease risk.
 
 VARIANT ANNOTATION AND AGGREGATION
 
@@ -607,7 +625,7 @@ ABCA7 encodes ATP-binding cassette transporter A7, a member of ABC transporters 
 
 But the authors had another NGS tool to look at this: RNA-seq. When they looked at the transcript sequences of c.5570+5G>C carriers, they included a retained intron that eventually included a stop codon.
 
-    Image: splicing variant in ABCA7 in Alzheimers - Intron retention in carriers (Steinberg et al
+    Image: splicing variant in ABCA7 in Alzheimers-Intron retention in carriers (Steinberg et al
 
 The image here is from Supplemental Figure 1 (the main text had no figures) and shows the intron retention in c.5570+5G>C carriers. Side note: according to the legend, the coordinates are on NCBI build 36, which practically a crime. But moving on, the RNA-seq results justified including the variant in the loss-of-function test (mask #1), which then yielded a p-value of 5.3e-10 with odds ratio of 1.97.
 

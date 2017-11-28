@@ -30,8 +30,6 @@ ssc = '/mnt/Vancouver/Programming/scripts/sed_sentence_chunker/sed_sentence_chun
 subprocess.call(ssc, shell=True)
 ```
 
-
-
 <hr size="3" color="lightblue" width="750" align="left" style="margin-bottom:16px;">
 
 **USAGE:**
@@ -99,9 +97,6 @@ This is sentence 2.
 ```
 
 <hr size="3" color="lightblue" width="750" align="left" style="margin-bottom:16px;">
-
-*Tip: I use a wide (>230 char) Neovim editor;<br>
-      use right, left arrows to view overflow content, below.*
 
 <pre><font size="2"># ============================================================================
 # TECHNICAL NOTES:      ## excerpted from sed_sentence_chunker.sh

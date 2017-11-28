@@ -25,7 +25,7 @@ echo "... PROCESSING: sed character preprocessing (various annoyances) ..."
 
 for f in $FILES
 do
-  cp $f g     ## work on a copy do input file $f is not modified
+  cp $f g     ## work on a copy so that the input file $f is not modified
   # sed -e 's/ﬃ/ffi/g
   sed -i -e 's/ﬃ/ffi/g
             s/ﬁ/fi/g

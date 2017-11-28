@@ -1,400 +1,405 @@
-```sed```-based biomedical sentence chunking (splitting)
+## Biomedical Sentence Splitter
 
-* My experiments in processing biomedical text with sed and regex expressions.
-* Useful for biomedical natural language processing (BioNLP) pre-processing, etc.
-* Not by any means perfect, but should provide very good sentence splitting.
-  * tests: my script > OpenNLP (v. good) ~ GeniaSS ...
-* Mostly for my own use, but shared in case it's of interest/use to others.
-* See my comments in the bash script(s) for additional detail/information.
-* Rename the scripts, if for convenience you want to use shortened script names:
-  * ssc (for sed_sentence_chunker.sh);
-  * ssc2 (for sed_sentence_chunker2.sh).
+* [**Biomedical Sentence Splitter**](https://github.com/victoriastuart/biomedical-sentence-splitter) [GitHub] process files in input dir; suitable for Python scripts
+* [chunk_test_input.txt](https://github.com/victoriastuart/sed_sentence_chunker/blob/master/chunk_test_input.txt) : input test file
 
-----------
-**USAGE -- `sed_sentence_chunker.sh`:**
+<hr size="1" color="lightblue" width="750" align="left" style="margin-bottom:16px;">
 
-*Processes input file; writes to output file.*
-```
-      ./sed_sentence_chunker.sh  <input_file>  <output_file>
-   bash sed_sentence_chunker.sh  <input_file>  <output_file>
-```
+Accurate sentence chunking is crucial for minimizing cascading (downstream) NLP errors, e.g.: dependency parsing; semantic parsing; ...
 
-----------
-**USAGE -- `sed_sentence_chunker2.sh`:**
+This script, `sed_sentence_chunker.sh`, processes text files in the `input/` directory, and outputs to a (*pre-existing*) `output/` directory.
 
-*Processes command-line input strings; outputs to terminal and bash environment variable.*
+**ATTRIBUTES:**
 
-See also comments (below) and at: http://persagen.com/about/victoria/projects/sed_sentence_chunker.html
-```
-. sed_sentence_chunker2.sh  <<<  "quoted input text / sentences"        ## << note: dot space command
-source sed_sentence_chunker2.sh  <<<  "quoted input text / sentences"   ## alternative (script sourcing)
-```
-**`sed_sentence_chunker2.sh` example 1:**
-```
-S="This is sentence 1. This is sentence 2."
+* Linux sed (Linux stream editor) + regex expressions
+* biomedical natural language processing (BioNLP) pre-processing
+  * includes code to replace various annoyances (common ligatures; various quotation marks and accents; etc.) prior to the sentence chunking steps
+* superior sentence chunking (splitting)
+  * my script > `OpenNLP` (v. good) ~ `GeniaSS` ...
+* usage: Linux command-line or bash scripts
+  * the code may be easily modified (see comments in code; examples below) for command-line use
+* the bash script may also be called from within Python scripts (see example, below)
+* rename the script (e.g.: ssc), if for convenience you want to use a shortened script name:
+* refer to my code (fully-commented) for additional detail / information / logic
 
-. sed_sentence_chunker2.sh <<< $S
-This is sentence 1.
+Here is an example of how to call `sed_sentence_chunker.sh` from within a Python 3 script:
 
-This is sentence 2.
-
-cat $OUTPUT
-This is sentence 1.
-
-This is sentence 2.
-```
-
-**`sed_sentence_chunker2.sh` example 2:**
-```
-. sed_sentence_chunker2.sh <<< "This is sentence 3. This is sentence 4."
-This is sentence 3.
-
-This is sentence 4.
-
-cat $OUTPUT
-This is sentence 3.
-
-This is sentence 4.
-```
-
-----------
-**USAGE -- `sed_sentence_chunker3.sh`:**
-
-*Processes text files in input dir; suitable for Python scripts.*
-
-* This script, `sed_sentence_chunker3.sh`, processes text files in the `input/` directory, and outputs to a (*pre-existing*) `output/` directory.
-* Otherwise, this script is identical to `sed_sentence_chunker{1|2}.sh` ...
-* Here is an example of how I called `sed_sentence_chunker3.sh` in one of my Python 3 scripts:
 ```
 import subprocess
-
-ssc = '/mnt/Vancouver/Programming/scripts/sed_sentence_chunker/sed_sentence_chunker3.sh'
-
+ssc = '/mnt/Vancouver/Programming/scripts/sed_sentence_chunker/sed_sentence_chunker.sh'
 subprocess.call(ssc, shell=True)
 ```
-* Update [2017.11.23]: added `sed`-based text preprocessing code, to replace annoyances (some ligatures; various quotation marks and accents; etc.) prior to sentence chunking.  I also uploaded my standalone script (`sed_characters2.sh`).
 
-----------
 
-**Update (Sep 26, 2017) -- `sed_sentence_chunker2.sh`:**
 
+<hr size="3" color="lightblue" width="750" align="left" style="margin-bottom:16px;">
+
+**USAGE:**
+
+*Processes text files in the `input/` directory, and outputs to the `output/` directory.*
 ```
-A Reader asks via e-mail:
-
-Date: 2017 Sep 26 (Tue) 22:24
-From: "raja..."
-To: info@Persagen.com
-Subject: sentence chunker
-
-Hi Victoria,
-
-I am trying to use your sentence chunking program
-(http://persagen.com/about/victoria/projects/sed_sentence_chunker.html).
-It looks pretty good.
-
-How can I pass a string (text fragment) to the program as an input
-variable rather than passing a file name?
-
-I also want to get back the chunked output as a string variable
-for further processing. Any suggestions?
-
-Thank you
-...
+   ./sed_sentence_chunker.sh
+bash sed_sentence_chunker.sh
 ```
 
-My reply:
+<hr size="3" color="lightblue" width="750" align="left" style="margin-bottom:16px;">
 
+I include two variations of this script, embedded / commented in the `sed_sentence_chunker.sh` code.
+[Refer to those comments for simple instructions on how to modify that script, accordingly.]
 
-## EXECUTIVE SUMMARY
+<hr size="1" color="lightblue" width="750" align="left" style="margin-bottom:16px;">
 
-The updated script (attached), intended for command-line use as you requested, is
+**Script variant 1:** specify input, output files on the command line
 
-    sed_sentence_chunker2.sh
-
-Usage is per the examples below.  Basically, call the script as follows (explanations in the output below, and in the Notes at the end of this message):
-
-    . sed_sentence_chunker2.sh <<< " Sentence 1. Sentence 2. Victoria's here! \"Internal quotation 1.\" 'Internal quotation 2.' "
-
-Note the space after the period; it is not the not the usual `./script` command:
-
-    ./sed_sentence_chunker2.sh
-
-Alternatively, you can execute this as follows (same thing):
-
-    source sed_sentence_chunker2.sh <<< " Sentence 1. Sentence 2. Victoria's here! \"Internal quotation 1.\" 'Internal quotation 2.' "
-
-As explained further below, executing the [sed_sentence_chunker2.sh](https://github.com/victoriastuart/sed_sentence_chunker/blob/master/sed_sentence_chunker2.sh) that way allows that script to write the output to a shell variable and export it to the terminal.  [*Aside: honestly, [sed_sentence_chunker.sh](https://github.com/victoriastuart/sed_sentence_chunker/blob/master/sed_sentence_chunker.sh) is much easier to use.*]
-
-Otherwise, you can also do this directly in the shell (terminal) the "normal" way, and manually assign the output to a shell variable, as follows:
-
-    ./sed_sentence_chunker2.sh <<< " Sentence 1. Sentence 2. Victoria's here! \"Internal quotation 1.\" 'Internal quotation 2.' "
-
-    OUTPUT=$(echo output)
-
-    cat $OUTPUT
-
-## SAMPLE OUTPUT / TESTS
-
+Usage:
 ```
-$ dp        ## d: date; p: pwd  [my ~/.bashrc aliases]
-
-    Tue Sep 26 16:24:50 PDT 2017
-    /mnt/Vancouver/Programming/scripts
-
-$ ./sed_sentence_chunker2.sh <<< " Sentence 1. Sentence 2. Victoria's here! \"Internal quotation 1.\" 'Internal quotation 2.' "
-
-    Sentence 1.
-
-    Sentence 2.
-
-    Victoria's here!
-
-    "Internal quotation 1."
-
-    'Internal quotation 2.'
+   ./sed_sentence_chunker.sh  <input_file>  <output_file>
+bash sed_sentence_chunker.sh  <input_file>  <output_file>
 ```
 
-Tweak the script, e.g. to get rid of the blank lines between the output lines (i.e. remove one of the `\n` in the `\n\n` statements.
-
-The following (**note:** different use of quotations but otherwise identical) will fail to execute, as you cannot use the escape ( `\` ) character within single-quoted strings, *except* by prefixing the string with `$`, per the accepted answer at [StackOverflow](https://stackoverflow.com/questions/8254120/how-to-escape-a-single-quote-in-single-quote-string-in-bash)
-
+Example:
 ```
-./sed_sentence_chunker2.sh <<< ' Sentence 1. Sentence 2. Victoria\'s here! "Internal quotation 1." \'Internal quotation 2.\' '
-
-    sed: can't read here!: No such file or directory
-
-# Above, I needed to enter another single quote to terminate / kill
-# that failed command.
+./sed_sentence_chunker.sh  chunk_test_input.txt  chunk_test_output.txt
 ```
 
-However, this will execute (notice the addition of the `$` prefix to the input, **single-quoted** string):
+<hr size="1" color="lightblue" width="750" align="left" style="margin-bottom:16px;">
 
+**Script variant 2:** directly pass input text on the command line
+
+Usage:
 ```
-./sed_sentence_chunker2.sh <<< $' Sentence 1. Sentence 2. Victoria\'s here! "Internal quotation 1." \'Internal quotation 2.\' '
+# note: "dot space" command (space after the period):
+. sed_sentence_chunker.sh  <<<  "quoted input text / sentences"
 
-    Sentence 1.
-
-    Sentence 2.
-
-    Victoria's here!
-
-    "Internal quotation 1."
-
-    'Internal quotation 2.'
+# alternative (script sourcing):
+source sed_sentence_chunker.sh  <<<  "quoted input text / sentences"
 ```
 
-Again:
-
+Example 1:
 ```
-./sed_sentence_chunker2.sh <<< $' Sentence 1. Sentence 2. Victoria\'s here! '
-
-    Sentence 1.
-
-    Sentence 2.
-
-    Victoria's here!
-```
-
-## ASSIGNING THE OUTPUT TO A SHELL VARIABLE
-
-As mentioned above and explained more fully on [StackOverflow](https://stackoverflow.com/questions/496702/can-a-shell-script-set-environment-variables-of-the-calling-shell), basically, you have to "source" the file under the running shell
-
-    source script.sh
-
-or
-
-    . script.sh     ## note the space: not the normal "./script.sh"
-                    ## command (that loads the process in another shell!)
-
-
-## EXAMPLES
-
-```
-source sed_sentence_chunker2.sh <<< " Sentence 1. Sentence 2. Victoria's here! \"Internal quotation 1.\" 'Internal quotation 2.' "
-
-    Sentence 1.
-
-    Sentence 2.
-
-    Victoria's here!
-
-    "Internal quotation 1."
-
-    'Internal quotation 2.'
-
-cat output
-
-    Sentence 1.
-
-    Sentence 2.
-
-    Victoria's here!
-
-    "Internal quotation 1."
-
-    'Internal quotation 2.'
+. sed_sentence_chunker.sh <<< "This is sentence 1. This is sentence 2."
+This is sentence 1.
+This is sentence 2.
 
 cat $OUTPUT
+This is sentence 1.
+This is sentence 2.
+```
 
-    Sentence 1.
+Example 2:
+```
+S="This is sentence 3. This is sentence 4."
+. sed_sentence_chunker.sh <<< $S
+This is sentence 1.
+This is sentence 2.
 
-    Sentence 2.
+cat $OUTPUT
+This is sentence 1.
+This is sentence 2.
+```
 
-    Victoria's here!
+<hr size="3" color="lightblue" width="750" align="left" style="margin-bottom:16px;">
 
-    "Internal quotation 1."
+*Tip: I use a wide (>230 char) Neovim editor;<br>
+      use right, left arrows to view overflow content, below.*
 
-    'Internal quotation 2.'
-
-grep ternal $OUTPUT
-
-    "Internal quotation 1."
-    'Internal quotation 2.'
-
-rm $OUTPUT
-
-    rm: remove regular file 'output'? y
+<pre><font size="2"># ============================================================================
+# TECHNICAL NOTES:      ## excerpted from sed_sentence_chunker.sh
+# ================
 
 # ----------------------------------------------------------------------------
-# The "alternative" source execution:
+# SCRIPT NAME ...:
+# ----------------
+
+# If the script name is too long for convenient use, just rename it; e.g.: ssc
+
+# Run this script on my "chunk_test_input.txt" file to get an idea of it's
+# capability (or to run your own unit tests).
+
+# If needed you can use the Linux "pwgen" command to generate alphanumeric
+# UID: "pwgen 8 2" will generate two (unique) 8-character alphanumeric strings.
+# Example: $ pwgen 8 2 >> eej8Ae2p | air4Coo2
 
-. sed_sentence_chunker2.sh <<< " Sentence 1. Sentence 2. Victoria's here! \"Internal quotation 1.\" 'Internal quotation 2.' "
-
-    Sentence 1.
-
-    Sentence 2.
-
-    Victoria's here!
-
-    "Internal quotation 1."
-
-    'Internal quotation 2.'
-
-cat output
-
-    Sentence 1.
-
-    Sentence 2.
-
-    Victoria's here!
-
-    "Internal quotation 1."
-
-    'Internal quotation 2.'
-
-cat $OUTPUT
-
-    Sentence 1.
-
-    Sentence 2.
-
-    Victoria's here!
-
-    "Internal quotation 1."
-
-    'Internal quotation 2.'
-```
-
-## REDIRECTING THE OUTPUT TO A FILE
-
-... then printing the contents of that file to a shell variable.  The commonly-employed source execution (loads the process in another shell; thus the $OUTPUT variable specific in the script is not available to the parent, running shell):
-
-```
-./sed_sentence_chunker2.sh <<< " Sentence 1. Sentence 2. Victoria's here! \"Internal quotation 1.\" 'Internal quotation 2.' "
-
-    Sentence 1.
-
-    Sentence 2.
-
-    Victoria's here!
-
-    "Internal quotation 1."
-
-    'Internal quotation 2.'
-
-cat output 
-
-    Sentence 1.
-
-    Sentence 2.
-
-    Victoria's here!
-
-    "Internal quotation 1."
-
-    'Internal quotation 2.'
-
-cat $OUTPUT
-
-    ^C      ## hangs (as there is no $OUTPUT variable);
-            ## you need to manually kill that command
-    
-# E.g.:
-
-cat applebanana
-
-     cat: applebanana: No such file or directory
-
-cat $applebanana    ## hangs!!
-
-    ^C              ## manually kiled that process
-    
-ls -l out*
-
-    -rw-r--r-- 1 victoria victoria 93 Sep 26 20:31 output
-
-OUTPUT=$(printf output)     ## can also do: OUTPUT=$(echo output)
-
-cat $OUTPUT
-
-    Sentence 1.
-
-    Sentence 2.
-
-    Victoria's here!
-
-    "Internal quotation 1."
-
-    'Internal quotation 2.'
-
-ls -l out*
-
-    -rw-r--r-- 1 victoria victoria 93 Sep 26 20:31 output
-
-rm $OUTPUT
-
-    rm: remove regular file 'output'? y
-
-ls -l out*
-
-    ls: cannot access 'out*': No such file or directory
-```
-
-## NOTES:
-
-1. The `<<<` redirect feeds the string to the bash script; for more on that see this [StackOverflow](https://stackoverflow.com/questions/6541109/send-string-to-stdin) thread.
-
-2. I wanted to see what would happen with mixed quotes {single: ' | double: "} in the input text string.  This is trivial in the original `sed_sentence_chunker.sh` script (where input and output is passed from / to files).  It is *much* more difficult on the command-line.  The accepted answer in this [StackOverflow](https://stackoverflow.com/questions/8254120/how-to-escape-a-single-quote-in-single-quote-string-in-bash) explains how and why to escape a backslash in a single-quoted string!  Fabulous!! :-D
-
-3. Assigning the output to a shell variable was also surprisingly difficult -- but doable as explained (e.g.) in this [StackOverflow](https://stackoverflow.com/questions/496702/can-a-shell-script-set-environment-variables-of-the-calling-shell) thread and illustrated in the output, above.  I modified the script (`sed_sentence_chunker.sh` >> `sed_sentence_chunker2.sh`) to output a variable; in that case you MUST "source" execute the script:
-
-    . sed_sentence_chunker2.sh <<< " Sentence 1. Sentence 2. Victoria's here! \"Internal quotation 1.\" 'Internal quotation 2.' "
-
-Again, note the space after the period: it's not the normal `./sed_sentence_chunker2.sh ...` command; alternatively, you can execute (same thing) as
-
-    source sed_sentence_chunker2.sh <<< " Sentence 1. Sentence 2. Victoria's here! \"Internal quotation 1.\" 'Internal quotation 2.' "
-
-Otherwise, you can also do this directly in the shell (terminal), the "normal" `./command` way, and manually assign the output to a shell variable:
-
-    ./sed_sentence_chunker2.sh <<< " Sentence 1. Sentence 2. Victoria's here! \"Internal quotation 1.\" 'Internal quotation 2.' "
-
-    OUTPUT=$(echo output)
-
-    cat $OUTPUT
-
-----------
-
-Anyway, I hope the modified script does what you want, and that it is helpful to you!
-
-Best,
-Victoria  :-)
+# ----------------------------------------------------------------------------
+# FIRST SED COMMAND IN THIS SCRIPT:
+# ---------------------------------
+
+# After much (!) experimentation, it appears that the first sed command (below),
+# outputting to the "tmp_file", MUST involve an "-r" argument (that in turn
+# expects a regex expression). To achieve this, it is best to use the first
+# command, as shown below.  [Otherwise, you end up with blank output.]
+
+# ----------------------------------------------------------------------------
+# [a-zA-Z] vs. [A-Za-z] :
+# -----------------------
+
+# [a-zA-Z] **also** matches the ASCII characters between z and A: [ \ ] ^ _ `
+# [A-Za-z] will only match the alphabet
+
+# https://stackoverflow.com/questions/4923380/difference-between-regex-a-z-and-a-za-z
+# http://www.asciitable.com/
+# https://en.wikipedia.org/wiki/ASCII#/media/File:USASCII_code_chart.png
+
+# ----------------------------------------------------------------------------
+# REGEX EXPRESSIONS:
+# ------------------
+
+# I predominantly use two sed expressions -- the second, here, involving regex:
+
+#     sed -i    's/foo/bar/g' 
+#     sed -i -r 's/foo\s?/bar/g'                ## \s? : 0 or 1 (?) spaces (\s)
+
+#  . : any char, including newline (\n)_
+# \. : period (literal period)
+# -i : --in-place
+
+# Regex "special" characters,
+#   [\^$.|?*+()
+# have special meaning / function, and will thus need to be \-escaped.
+
+# { and } are literal characters, unless they're part of a valid regular
+# expression token such as a quantifier, e.g.: {3}.
+
+# https://www.regular-expressions.info/refcharacters.html
+
+# ----------------------------------------
+# HERE IS MY (WORKING) EXPERIENCE RE: SED AND REGEX:
+
+# In non-regex sed expressions, those special characters will need to be \-escaped
+# to indicate that they are a regex special (not a literal) character.
+
+# in regex (-r) sed expressions, they will be recognized as regex special
+# characters, and will not have to be \-escaped.
+
+# Exception: as noted, [ is a special character in regex -- denoting (e.g.) the
+# start of a character class / set (https://www.regular-expressions.info/charclass.html).
+# HOWEVER, unlike ?{}*^$ etc., in non-regex sed expressions, we need to escape
+# it, \[ if we want to match a literal "[" in our expressions. [That applies,
+# also, to regex (-r) sed expressions!]. 
+
+# To match the start (^) or end ($) of a line. don't ever \-escape the ^ or $.
+
+# To match the end of a line (EOL) ending (e.g.) with: ... the end.
+#
+# sed    's/the end\.$/the end.\n\Period./g'    ## \. : literal period; $ EOL
+# sed -r 's/the end\.$/the end.\n\Period./g'    ## \. : literal period; $ EOL
+
+# sed    's/the end.$/the end.\n\Period./g'     ## .  : any single characer; $ EOL
+# sed -r 's/the end.$/the end.\n\Period./g'     ## .  : any single characer; $ EOL
+
+# To match a literal $, anywhere in a line / sentence, \-escape the $ ( \$ ):
+#
+# sed    's/\$/\n/g'
+# sed -r 's/\$/\n/g'
+
+# Likewise (viz-a-viz: ^ $), there is no need to ever escape * if you intend it
+# to match 0 or more of the preceding expression:
+#
+# sed    's/foo\s*bar/Foo.\n(Bar!)/g'         ## matches 0 or more spaces between foo and bar
+# sed -r 's/foo\s*bar/Foo.\n(Bar!)/g'         ## ditto
+#
+# sed -r 's/foo\*bar/Foo.\n(Bar!)/g'          ## matches foo*bar
+
+# sed    's/foo*bar/Foo.\n(Bar!)/g'           ## matches foobar (0 or more o)
+# sed -r 's/foo*bar/Foo.\n(Bar!)/g'           ## matches foobar (0 or more o)
+# sed    's/foob*ar/Foo.\n(Bar!)/g'           ## matches foobar (0 or more b)
+# sed -r 's/foob*ar/Foo.\n(Bar!)/g'           ## matches foobar (0 or more b)
+# sed    's/fooz*bar/Foo.\n(Bar!)/g'          ## matches foobar (0 or more z)
+# sed -r 's/fooz*bar/Foo.\n(Bar!)/g'          ## matches foobar (0 or more z)
+#
+# compare to:
+#
+# sed    's/foo?bar/Foo.\n(Bar!)/g'           ## does NOT match foobar; MATCHES foo?bar (literal ?)
+# sed    's/foo\?bar/Foo.\n(Bar!)/g'          ## matches foobar (0 or 1 o); does not match foo?bar
+# sed -r 's/foo?bar/Foo.\n(Bar!)/g'           ## matches foobar (0 or 1 o); does not match foo?bar
+
+# ----------------------------------------
+# MORE EXAMPLES:
+
+# model: sed 's/foo/bar/g'
+
+# sed    's/foo\s\?bar/Foo.\nBar!/g'
+# sed -r 's/foo\s?bar/Foo.\nBar!/g'
+#
+## 0 or 1 (?) spaces (\s)
+##        matches: foobar | foo bar
+## does not match: foo  bar | foo   bar | ...
+
+# sed    's/foo\s\{0,3\}bar/Foo.\nBar!/g'
+# sed -r 's/foo\s{0,3}bar/Foo.\nBar!/g'
+#
+##         {0,3} : 0, 1, 2 or 3 of preceding sequence (here: space, \s)
+##        matches: foobar | foo bar | foo  bar | foo   bar
+## does not match: foo    bar | foo     bar | ...
+
+# Regarding [ :
+
+# sed    's/foo\s\?\[bar]/Foo.\n(Bar!)/g'
+# sed -r 's/foo\s?\[bar]/Foo.\n(Bar!)/g'
+#
+##             \[: match literal [
+##        matches: foo[bar] | foo [bar]
+## does not match: foo  [bar] | foo   [bar] | foo    [bar] | foo     [bar] | ...
+## does not match: foobar | foo bar | foo  bar | ...
+
+# sed    's/foo\s\?[bar]/Foo.\n(Bar!)/g'
+# sed -r 's/foo\s?[bar]/Foo.\n(Bar!)/g'
+#
+##        matches: foobar | foo bar
+##                 replacing foo with Foo. and [bar] with (Bar!)ar
+##                 (with a line break, \n, between them)!
+## does not match: foo[bar] | foo [bar | ...
+#
+## Here, even in a non-regex sed expression, [bar] is being processed as a
+## character class (like [A-Za-z0-9]), and so will match the b in foobar, but
+## not the b in foo[bar]. To match the literal [ in that non-regex sed expression,
+## \-escape the [, \[ , as shown further above / here:
+
+# sed    's/foo\s\{0,3\}\[bar]/Foo.\n(Bar!)/g'
+# sed -r 's/foo\s{0,3}\[bar]/Foo.\n(Bar!)/g'
+#
+##        matches: foo[bar] | foo [bar] | foo  [bar] | foo   [bar]
+## does not match: foo    [bar] | foo     [bar] | ...
+## does not match: foobar | foo bar | foo  bar | ...
+
+# ----------------------------------------
+
+# sed -r 's/\.([A-Z])\.$/.\1Shah7a/g'
+#
+## \. : literal period; ([A-Z]) : ASCII capitals in character class ();
+## $ : end of line, non-escaped; . : period (do not need to escape in
+## replace portion of the sed expression; \1 : replace with captured
+## characters (class); Shah7a : an alphanumeric "tag" / substitution / 
+## UID (that I will replace later with the text it represents: .)
+
+# sed -r 's/([[({\s])pp\.\s?([ivx0-9])/\1Cho4Ph\2/g' $f > tmp_file
+#
+## NOTE: that "[" MUST appear FIRST in the "[...]" character expression);
+## i.e., [[...].  Also, if used, escape ] (i.e., \]).  Lastly, as this is
+## a -r regex expression, the ? is not \?-escaped; ...
+
+# ----------------------------------------
+# SED REGEX SUMMARY:
+# ==================
+
+# 1. No need to \-escape:   ^  (start of line)
+#                           $  (EOL) 
+#                           [] (character class / set)    ## sed 's/foo[b]ar/foo\nbar/g'
+#                           *  (0 or more instances of matches for preceding expression)
+#
+# in: sed    's///g'
+# or: sed -r 's///g'
+
+# 2. \-escape:  ? (0 or 1 of preceding expression)      ## \?
+#               * (0 or more of preceding expression)   ## \*
+#               { and } in {i,j} expressions            ## \{0,3\}
+#
+#     in: sed    's///g'
+# not in: sed -r 's///g'
+
+# ----------------------------------------
+
+# In the script below, I tried to minimize the use of "lookaheads" () in
+# my sed ( -r ) expressions, as I found these to increase the runtime.
+# That is, where possible / practical, I tended to prefer the simpler 
+# sed -i 's///g' expressions.
+
+# Expressions of the sort .{1,15}\.s\s* look complicated, but they are pretty
+#    simple!  Basically it says: match any character ( . ), appearing 1-15
+#    times ( {1,15}, that is followed by a period ( \.) and any space ( \s\s* ) ...
+#    Likewise: ^[A-Z].{1,5}\. says match any 1..5 preceding characters that are
+#    not capitals, followed by a period ...
+#
+#    sed -i -r "s/[.](.[^0-9]{1,15})[.]/Shah7a\1./g" tmp_file
+#
+#    likewise translates to: match, in place, a period [.] that is followed by
+#    any span of 1-15 characters {1,15}, that are not 0 through 9 [^0-9],
+#    followed by another period [.].  All of that is this bit: .[^0-9]{1,15})[.]
+#
+#    The second ("replace")_half of that regex expression states: replace replace
+#    THOSE periods (matched as described) with the unique alphanumeric string,
+#    Shah7a, followed by a period.
+#
+#    sed -i -r "s/.[^.]\{1,15\}.\s\s*/\n\n/g" tmp_file
+#
+#    Match any character ( . ), appearing 1-15 times ( {1,15} that is NOT a
+#    period ( !. ), but is followed by a period ( \.) and any space ( \s\s* ),
+#    and split ( \n\n ) at that position.
+
+# https://www.gnu.org/software/sed/manual/html_node/Regular-Expressions.html
+# http://www.rexegg.com/regex-quickstart.html
+
+# ----------------------------------------------------------------------------
+# ABBREVIATIONS -- JOURNAL TITLES; AUTHORS ...
+# --------------------------------------------
+
+# Journal author name initials and journal title abbreviations are a huge
+# programmatic, i.e. technical difficulty.  While my approach, below, minimizes
+# the disruptions of those viz-a-viz bone fide sentence chunking, some issues
+# will inevitably remain.  E.g., some very short sentences may not get split
+# from the others.  C'est la vie!
+
+# ----------------------------------------------------------------------------
+# OLDER NOTES / REFERENCE ...
+# ---------------------------
+
+# These notes are no longer relevant viz-a-viz this script, but are useful
+# re: my earlier versions -- and general knowledge (preserved here!).
+
+# ----------------------------------------
+# ESCAPING SINGLE QUOTES WITHIN SINGLE-QUOTED EXPRESSIONS:
+# --------------------------------------------------------
+
+# To escape a single quote within a single-quoted sed expression, you need to
+# terminate / chain the single quotes.  E.g., to escape an internal ', terminate
+# the sed single-quoted expression with another (internal) ', then escape the
+# internal single quote inside the sed expression: "'", then add back (chain)
+# another single quote ' to "continue / chain" the sed expression. Similarly,
+# to escape (e.g.) a bracket [ ] inside the optional match [] pattern within a
+# sed expression, chain the sed command, quoting the bracket term: ['"]"'] ...
+
+# https://stackoverflow.com/questions/18370536/sed-or-operator-in-set-of-regex
+# https://stackoverflow.com/questions/14813145/boolean-or-in-sed-regex
+
+# https://serverfault.com/questions/466118/using-sed-to-remove-both-an-opening-and-closing-square-bracket-around-a-string
+#   ... all members of a character class lose special meaning (with a few
+#       exceptions). And ] loses its meaning if it is placed first.
+
+# That observation is important re: the "([])}])" pattern below (that searches
+# for characters ")", "}" and ")").  You MUST list the "]" closing bracket
+# (within the "([  ])" character class), with the "]" square bracket listed FIRST:
+# "([])}])".
+
+# The following should capture all permutations of two contiguous sentences,
+# where the inter-sentence boundary may contain any permutation of terminal
+# punctuation (".", "!", "?"), parentheses and brackets ("(", "{, "[", ")", "}",
+# "]", and any combination of quotation marks -- and split those sentences!
+
+# sed -i -r 's/([A-Z]\.)\s\s*([A-Z])/\1\n\n\2/g' tmp_file
+
+# To "follow" these, focus on the second part (after the \n break):
+# '"'"' = escaped single quotation, used internally in single-quoted sed expression
+# Since multiple spaces were converted (above) to single spaces, sentences will
+# be separated by 0 or 1 spaces.  Hence, the ".?" expression, below, will match
+# 0 or 1 characters, between the two parts of these sed regex expressions 
+# [sentences will be split (\n) at those places].
+
+# Replace -- again --  multiple spaces with single space:
+# sed -i 's/  */ /g' tmp_file
+
+# ----------------------------------------
+# UPDATED [2017-11-24]:
+# ---------------------
+
+# With my substitution of ' " ( ) [ ] { } I no longer have to worry about
+# those when splitting sentences -- this HUGELY simplifies things!!  :-D
+# [E.g., look at the "main processing loops" in my older
+# "sed_sentence_chunker{1|2|3}.sh" scripts!]
+
+# As well, I took the approach that since they will not be especially relevant
+# for my BioNLP work, tokenized sentences, etc. of deleting all double quotation
+# marks: ".  As well, I delete all single quotes around sentences (keeping
+# internal single quotes / apostrophes, with the exception that I expand most
+# common contractions; e.g. it's --> it is ...).  This (also) greatly simplifies
+# the processing, i.e. sentence chunking / splitting!  :-D
+</font></pre>

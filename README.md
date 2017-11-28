@@ -1,7 +1,7 @@
 ## Biomedical Sentence Splitter
 
 * [**Biomedical Sentence Splitter**](https://github.com/victoriastuart/biomedical-sentence-splitter) [GitHub] process files in input dir; suitable for Python scripts
-* [chunk_test_input.txt](https://github.com/victoriastuart/sed_sentence_chunker/blob/master/chunk_test_input.txt) : input test file; often "non-sensical" as I was trying to challenge / break my script ...
+* [chunk_test_input.txt](https://github.com/victoriastuart/sed_sentence_chunker/blob/master/chunk_test_input.txt) : input test file; often "nonsensical" as I was trying to challenge / break my script ...
 * [chunk_test_input2.txt](https://github.com/victoriastuart/sed_sentence_chunker/blob/master/chunk_test_input2.txt) : realistic samples of biomedical text
 
 <hr size="1" color="lightblue" width="750" align="left" style="margin-bottom:16px;">

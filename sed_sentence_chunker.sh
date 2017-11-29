@@ -5,7 +5,7 @@ export LANG=C.UTF-8
 # sed_sentence_chunker.sh
 
 #      Created: 2017-Jul-20 | Victoria Stuart | "mail"..@t.."VictoriasJourney.com"
-# Last updated: 2017-Nov-27
+# Last updated: 2017-Nov-28
 
 # ----------------------------------------------------------------------------
 #  local: /mnt/Vancouver/Programming/scripts/sed_sentence_chunker/sed_sentence_chunker.sh
@@ -370,6 +370,13 @@ export LANG=C.UTF-8
 # from the others.  C'est la vie!
 
 # ----------------------------------------------------------------------------
+# THESE COMMENTS:
+# ---------------
+
+# I deleted all of these comments from this script, leaving only the commands.
+# The runtimes (time ./sed_sentence_chunker.sh) were essentially identical.
+
+# ----------------------------------------------------------------------------
 # OLDER NOTES / REFERENCE ...
 # ---------------------------
 
@@ -439,17 +446,25 @@ export LANG=C.UTF-8
 # PRELIMINARIES:
 # ==============
 
-# this is recursive; alt. approach is to use filename globbing: FILES=input/**/*.txt
-# = files ending in .txt, recursively through child directories
-# FILES=$(find ./input -type f -iname "*.txt")    ## specific extensions, e.g. *.txt
-# FILES=$(find ./input -type f -iname "*")        ## ALL files, recursively
-# echo $FILES
+# https://stackoverflow.com/questions/4638874/how-to-loop-through-a-directory-recursively-to-delete-files-with-certain-extensi
+# FILES="$(find ./input-z -type f -iname "*")"
+# ... As a number of people have commented, this will fail if there are spaces in filenames.
+#     You can work around this by temporarily setting the IFS (internal field separator) to the newline character. ...
 
-FILES=$(find ./input -type f -iname "*")                ## ALL files, recursively
+IFS=$'\n'; set -f
+
+FILES=$(find ./input -type f -iname "*")          ## ALL files, recursively
+# can also use this, in for loop a few lines below:
+# for f in $(find ./input-z -type f -iname "*")
+
+# echo '------------------------------------------------------------------------------'
+# echo '$FILES:'                      ## single-quoted, prints: $FILES:
+# echo "$FILES"                       ## double-quoted, prints path/, filename (one per line)
+# echo '------------------------------------------------------------------------------'
 
 for f in $FILES
     do
-      cp $f gahBaex1     ## work on a copy so that the input file $f is not modified
+      cp $f gahBaex1    ## work on a copy so that input file $f is not modified
       # ----------------------------------------------------------------------
       # Preprocessing step -- replace various annoyances (different types of quotation marks; ligatures; ...):
       # https://stackoverflow.com/questions/26568952/how-to-replace-multiple-patterns-at-once-with-sed
@@ -522,7 +537,7 @@ for f in $FILES
                 s/؊/-/g
                 s/ϩ/+/g
                 s/ϫ/x/g' gahBaex1
-                #s/ϫ/x/g' $f
+                # s/ϫ/x/g' $f
 
       # ============================================================================
       # SPECIAL CASES -- COMMON ABBREVIATIONS:
@@ -543,7 +558,7 @@ for f in $FILES
 
       # pp. followed by a space; unlikely to appear at EOL, so do simple substitution:
 
-      #sed 's/pp\.\s/Cho4Ph/g' $f > tmp_file     ## again, not sed -i ...: this line only
+      # sed 's/pp\.\s/Cho4Ph/g' $f > tmp_file     ## again, not sed -i ...: this line only
       sed 's/pp\.\s/Cho4Ph/g' gahBaex1 > tmp_file     ## again, not sed -i ...: this line only
 
       # [ in character expression [] must appear first: [[]; -r regex, therefore
@@ -1104,8 +1119,13 @@ for f in $FILES
       outname=$(basename $f)
 
       mv tmp_file output/$outname
-      
+
       rm gahBaex1       ## remove temporary input file
+
+      # https://stackoverflow.com/questions/4638874/how-to-loop-through-a-directory-recursively-to-delete-files-with-certain-extensi
+      # At top of script: IFS=$'\n'; set -f
+      # Unset here:
+      unset IFS; set +f
 
       # ============================================================================
       # Q.E.D.!  :-D

@@ -464,13 +464,15 @@ FILES=$(find ./input -type f -iname "*")          ## ALL files, recursively
 
 for f in $FILES
     do
-      cp $f gahBaex1    ## work on a copy so that input file $f is not modified
+      cp "$f" "tmp_file"      ## work on a copy so that input file $f is not modified
+
       # ----------------------------------------------------------------------
       # Preprocessing step -- replace various annoyances (different types of quotation marks; ligatures; ...):
       # https://stackoverflow.com/questions/26568952/how-to-replace-multiple-patterns-at-once-with-sed
       # https://stackoverflow.com/questions/24509214/how-to-escape-single-quote-in-sed
       #   Escape ' within single-quoted sed '...' expressions by substituting those ' with \x27; e.g.:
       #   s/'/'/g  -->  s/'/\x27/g 
+
       sed -i -e 's/ﬃ/ffi/g
                 s/ﬁ/fi/g
                 s/ﬀ/ff/g
@@ -536,8 +538,7 @@ for f in $FILES
                 s/—/-/g
                 s/؊/-/g
                 s/ϩ/+/g
-                s/ϫ/x/g' gahBaex1
-                # s/ϫ/x/g' $f
+                s/ϫ/x/g' tmp_file
 
       # ============================================================================
       # SPECIAL CASES -- COMMON ABBREVIATIONS:
@@ -549,17 +550,10 @@ for f in $FILES
       # Approach: substitute a unique alphanumeric string for "pp." (we will restore
       # it later).  Generated via the Linux command: pwgen 6 1
 
-      # Page number abbreviation "pp.":
+      # Page number abbreviation "pp.", followed by a space; unlikely to appear'
+      # at EOL, so we can do a simple substitution:
 
-      # Note that as this is the first sed expression in this place, there is
-      # no -i (--in-place) argument: the text in shell file variable $f is
-      # redirected ( > ) to a temporary file, that is in turn processes before
-      # being itself dumped to an output file.
-
-      # pp. followed by a space; unlikely to appear at EOL, so do simple substitution:
-
-      # sed 's/pp\.\s/Cho4Ph/g' $f > tmp_file     ## again, not sed -i ...: this line only
-      sed 's/pp\.\s/Cho4Ph/g' gahBaex1 > tmp_file     ## again, not sed -i ...: this line only
+      sed -i 's/pp\.\s/Cho4Ph/g' tmp_file
 
       # [ in character expression [] must appear first: [[]; -r regex, therefore
 
@@ -1116,11 +1110,10 @@ for f in $FILES
       # http://pubs.opengroup.org/onlinepubs/007908799/xcu/basename.html
       # https://stackoverflow.com/questions/15803227/getting-permission-denied-on-dirname-and-basename
 
-      outname=$(basename $f)
+      # https://stackoverflow.com/questions/7194192/basename-with-spaces-in-a-bash-script
+      outname=$(basename "$f")
 
-      mv tmp_file output/$outname
-
-      rm gahBaex1       ## remove temporary input file
+      mv "tmp_file" "output/$outname"
 
       # https://stackoverflow.com/questions/4638874/how-to-loop-through-a-directory-recursively-to-delete-files-with-certain-extensi
       # At top of script: IFS=$'\n'; set -f
@@ -1132,3 +1125,4 @@ for f in $FILES
       # ============================================================================
 
   done
+

@@ -452,6 +452,7 @@ export LANG=C.UTF-8
 #     You can work around this by temporarily setting the IFS (internal field separator) to the newline character. ...
 
 IFS=$'\n'; set -f
+# be sure to include "unset IFS; set +f" when done, near the bottom of the script
 
 FILES=$(find ./input -type f -iname "*")          ## ALL files, recursively
 # can also use this, in for loop a few lines below:

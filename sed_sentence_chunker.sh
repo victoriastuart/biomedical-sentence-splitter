@@ -447,7 +447,7 @@ export LANG=C.UTF-8
 # ==============
 
 # https://stackoverflow.com/questions/4638874/how-to-loop-through-a-directory-recursively-to-delete-files-with-certain-extensi
-# FILES="$(find ./input-z -type f -iname "*")"
+# FILES=$(find ./input-z -type f -iname "*")
 # ... As a number of people have commented, this will fail if there are spaces in filenames.
 #     You can work around this by temporarily setting the IFS (internal field separator) to the newline character. ...
 

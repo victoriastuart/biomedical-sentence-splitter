@@ -6,7 +6,7 @@
 
 <hr size="1" color="lightblue" width="750" align="left" style="margin-bottom:16px;">
 
-Accurate sentence chunking is crucial for minimizing cascading (downstream) NLP errors, e.g.: dependency parsing; semantic parsing; ...
+Accurate sentence chunking is crucial for minimizing cascading (downstream) NLP errors, e.g.: dependency parsing; semantic parsing; NP chunking (NP: noun phrase); ...
 
 This script, `sed_sentence_chunker.sh`, processes text files in the `input/` directory, and outputs to a (*pre-existing*) `output/` directory.
 

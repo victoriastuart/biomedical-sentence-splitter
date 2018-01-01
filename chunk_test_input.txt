@@ -1,8 +1,8 @@
 ==============================================================================
-ADDITIONAL TESTS -- BIOMEDICAL LITERATURE
+ADDITIONAL TESTS -- BIOMEDICAL LITERATURE.
 
      Created: 2017-Jul-20 | Victoria Stuart | "mail"..@t.."VictoriasJourney.com"
-Last updated: 2017-Nov-27
+Last updated: 2017-Dec-31
 ==============================================================================
 
 NOTES:
@@ -10,20 +10,23 @@ NOTES:
 1. The following will often look VERY silly, but I am trying to functionally challenge / break my script.  ;-)
 
 2. Sentences of length <= 15 may not be split, a consequence of dealing with journal title abbreviations (see comments in script code).
+
+3. I purposely add a " ." at the end of some lines, below, as an updated version of my script deletes unterminated lines (no terminal ".!?"; e.g. the "Created" and "Last updated" lines, above).
+
 ==============================================================================
 
 # CHARACTER SET TO TEST MY "SED CHARACTER REPLACEMENT" CODE (REPLACES SOME LIGATURES, VARIOUS QUOTATION MARKS, OTHER ANNOYANCES ...):
 
-ﬃ | ﬁ | ﬀ | ﬂ | ﬄ | � | ␮ | ௡ | ␣ | ␤ | ␦ | 5Ј- | -3Ј | þ | ¼ | ϭ | Ɛ | Ͻ | Ͼ | ␥ | ␧ | ␨ | Ϫ | À | OLD: | ‫؍‬ . | ␹ | Ն | Ն | Յ | Ã | Â | ¥ |  | ™ | ® | → | – | Ϯ | ؉ | ϫ | ϳ | ʽ | ʻ | “ | ˮ | ” | ״ | ʺ | ′′ | 〃 | ’ | ʼ | ‘ | ′ | ` | ׳ | ʹ | ꞌ | ˊ | ˋ | ˌ | — | ؊ | ϩ | ϫ
+ﬃ | ﬁ | ﬀ | ﬂ | ﬄ | � | ␮ | ௡ | ␣ | ␤ | ␦ | 5Ј- | -3Ј | þ | ¼ | ϭ | Ɛ | Ͻ | Ͼ | ␥ | ␧ | ␨ | Ϫ | À | OLD: | ‫؍‬ . | ␹ | Ն | Ն | Յ | Ã | Â | ¥ |  | ™ | ® | → | – | Ϯ | ؉ | ϫ | ϳ | ʽ | ʻ | “ | ˮ | ” | ״ | ʺ | ′′ | 〃 | ’ | ʼ | ‘ | ′ | ` | ׳ | ʹ | ꞌ | ˊ | ˋ | ˌ | — | ؊ | ϩ | ϫ .
 
 ==============================================================================
-1' 2' 3' 4' 5' 6' 7' 8' 9'
-5'-ACGT
-ACGT-3'
-3.1 x 10e-4
-p.Arg62His
-"one"
-'two'
+1' 2' 3' 4' 5' 6' 7' 8' 9' .
+5'-ACGT .
+ACGT-3' .
+3.1 x 10e-4 .
+p.Arg62His .
+"one" .
+'two' .
 "This is sentence number one."
 'This is sentence number one.'
 
@@ -31,9 +34,63 @@ The girls' dresses.
 The Wilsons' house.
 The women's room.
 
+1 < 2 .
+2 > 1 .
+x <= y .
+x < = y .
+x >= y .
+x > = y .
+p < 0.001 .
+p > 0.001 .
+P <= 0.001 .
+P >= 0.001 .
+
+Proc. Natl. Acad. Sci. U.S.A.
+Phys. Rev. Lett.
+Esther P.Black.
+
+While Duhr and Braun (Proc. Natl. Acad. Sci. U.S.A. 104, 9346 (2007)) observed a quadratic radial dependence Braibanti et al. (Phys. Rev. Lett. 100, 108303 (2008)) found a linear radial dependence of the Soret coefficient.
+
+   ...
+...
+A   ... .
+B ... .
+C... .
+... .
+   ...  b .
+...  b .
+
+==============================================================================
+# Added "Post-processing" sed expressions 2017-Dec-29 to deal with these problematic text (mostly sentence boundaries involving numbers, Greek letters ...
+
+apple.TGFβ .
+also cc.Ms. Smith.
+Hcc.When .
+invasion. km23-1 .
+lines.2OH-BNPP1 .
+CBX7. β3 .
+manner. β3 .
+
 ==============================================================================
 
-Hello? Ms. Wilson is asking for the file!      a. b. e. k. l. m. s. t. u. ... as Dr. Stuart et al
+Some text ...
+https://stackoverflow.com/questions/4283344/sed-to-remove-urls-from-a-file
+https://www.google.ca/search?dcr=0&ei=QCsyWtbYF43YjwPpzKyQAQ&q=python+remove++citations&oq=python+remove++citations&gs_l=psy-ab.3...1806.1806.0.2004.1.1.0.0.0.0.61.61.1.1.0....0...1c.1.64.psy-ab..0.0.0....0.-cxpNc6youY
+http://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html
+https://bbengfort.github.io/tutorials/2016/05/19/text-classification-nltk-sckit-learn.html
+http://datasynce.org/2017/05/sentiment-analysis-on-python-through-textblob/
+https://www.google.ca/?q=halifax&gws_rd=cr&dcr=0&ei=j7UyWuGKM47SjwOq-ojgCw
+http://www.google.ca/?q=halifax&gws_rd=cr&dcr=0&ei=j7UyWuGKM47SjwOq-ojgCw
+www.google.ca/?q=halifax&gws_rd=cr&dcr=0&ei=j7UyWuGKM47SjwOq-ojgCw
+ftp://ftp.ncbi.nlm.nih.gov/
+ftp://ftp.ncbi.nlm.nih.gov/1000genomes/ftp/alignment_indices/20100804.alignment.index
+Some more text.
+https://doi.org/10.1109/5.771073
+doi.org/10.1109/5.771073
+
+==============================================================================
+
+Hello? Ms. Wilson is asking for the file!      a. b. e. k. l. m. s. t. u. ... as Dr. Stuart et al .
 Where, exactly, do you live?  Main St.  I live on 1234 Main St. That's where you can find me. They found nothing there? Yes, nothing! However, in v.3.4 (see Fig. 2, and fig 3, and Figs. 5-6), it clearly shows, ... on the last page..  Very good, i.e., excellent! E.g., another example. E.g. another one; e.g one more; i.e. that's the last one!
 
 As indicated in v.1, and in v. 2, and in v3.
@@ -42,7 +99,7 @@ The items found on p. 2. The items found on p. 1.  The items found on pp.2-3 and
 
 The items found on p. i.  The items found on pp. iii-ix.
 
-The item, p. 1. Item, 2-3. The items on ppp. jj w[ << sic] 23.
+The item, p. 1. Item, 2-3. The items on ppp. [ << sic] 23.
 
 This versus that versus those.  This vs. that versus that vs. that Stuart vs Stuart.
 
@@ -246,7 +303,6 @@ MISC
 
 The objective of this study is to examine the frequency, development, concomitants, and risk factors of falls in a population-based incident Parkinson's disease (PD) cohort. One hundred eighty-one drug-naïve patients with incident PD and 173 normal controls recruited from the Norwegian ParkWest study were prospectively monitored over 7 years. Information on falls was obtained biannually from patients, and at baseline and after 1, 3, 5, and 7 years of follow-up in control subjects. Generalized estimating equation models for correlated data were applied to investigate concomitant features of falls and risk factors for incident falls during 7 years of follow-up in PD. Overall, 64.1% of patients reported falling during the study period. The 7-year cumulative incidence of falls in non-falling patients at baseline (n = 153) was 57.5%, with a relative risk to controls of at least 3.1 (95% confidence interval 1.5-6.3; p < 0.002). Significant concomitants of falls in patients during the study period were higher age, Unified PD Rating Scale motor score, postural instability and gait difficulties (PIGD) phenotype, dementia, and follow-up time. Higher age at baseline, PIGD phenotype at 1-year visit, and follow-up time were independent risk factors for incident falls during follow-up. Nearly two-thirds of patients in the general PD population experience falls within 7 years of diagnosis, representing a more than threefold increased risk compared to age- and gender-matched controls. Patients with higher age at baseline and early PIGD have the greatest risk of falling and may, therefore, be the prime target of specialized assessment and treatment interventions.
 
-
 ==============================================================================
 CITATIONS-AUTHOR NAME ABBREVIATIONS
 ==============================================================================
@@ -359,7 +415,7 @@ Reference: Gauri Dixit, Joshua B. Kelley, John R. Houser, Timothy C. Elston, Hen
 
 Reference: Arun K. Shukla, Gerwin H. Westfield, Kunhong Xiao, Rosana I. Reis, Li-Yin Huang, Prachi Tripathi-Shukla, Jiang Qian, Sheng Li, Adi Blanc, Austin N. Oleskie, Anne M. Dosey, Min Su, Cui-Rong Liang, Ling-Ling Gu, Jin-Ming Shan, Xin Chen, Rachel Hanna, Minjung Choi, Xiao Jie Yao, Bjoern U. Klink, Alem W. Kahsai, Sachdev S. Sidhu, Shohei Koide, Pawel A. Penczek, Anthony A. Kossiakoff, Virgil L. Woods Jr, Brian K. Kobilka, Georgios Skiniotis, Robert J. Lefkowitz. Visualization of arrestin recruitment by a G-protein-coupled receptor. Nature, 2014; DOI: 10.1038/nature13430
 
-Reference: Makoto R. Hara et alure10368
+Reference: Makoto R. Hara et al Nature 103: 68 (1888).
 
 Reference:
 
@@ -415,9 +471,7 @@ More information: Yoshida Y, Koutsovoulos G, Laetsch DR, Stevens L, Kumar S, Hor
 
 Explore further: How the first blood cells form during human development: https://phys.org/news/2017-04-blood-cells-human.html
 
-More information: Moussy A, Cosette J, Parmentier R, da Silva C, Corre G, Richard A, et altopoietic cell fate commitment. PLoS Biol 15(7): e2001867. doi.org/10.1371/journal.pbio.2001867
-
-Reference: TaChung Yu et al6/j.cell.2017.07.008
+More information: Moussy A, Cosette J, Parmentier R, da Silva C, Corre G, Richard A, et al. Hematopoietic cell fate commitment. PLoS Biol 15(7): e2001867. doi.org/10.1371/journal.pbio.2001867
 
 Reference: Dallas R. Donohoe, Nikhil Garge, Xinxin Zhang, Wei Sun, Thomas M. O'Connell, Maureen K. Bunger, Scott J. Bultman. The Microbiome and Butyrate Regulate Energy Metabolism and Autophagy in the Mammalian Colon. Cell Metabolism, 2011; 13 (5): 517-526 DOI: 10.1016/j.cmet.2011.02.018
 
@@ -425,10 +479,7 @@ Reference: Isabel Gonçalves Silva, Inna M. Yasinska, Svetlana S. Sakhnevych, Wa
 
 Reference: Huijie Feng, Benita Sjögren, Behirda Karaj, Vincent Shaw, Aysegul Gezer, Richard R. Neubig. Movement disorder in GNAO1 encephalopathy associated with gain-of-function mutations. Neurology, 2017; 10.1212/WNL.0000000000004262 DOI: 10.1212/WNL.0000000000004262
 
-
 Reference: Ville Kytola, Umit Topaloglu, Lance D. Miller, Rhonda L. Bitting, Michael M. Goodman, Ralph B. D'Agostino, Rodwige J. Desnoyers, Carol Albright, George Yacoub, Shadi A. Qasem, Barry DeYoung, Vesteinn Thorsson, Ilya Shmulevich, Meng Yang, Anastasia Shcherban, Matthew Pagni, Liang Liu, Matti Nykter, Kexin Chen, Gregory A. Hawkins, Stefan C. Grant, W. Jeffrey Petty, Angela Tatiana Alistar, Edward A. Levine, Edgar D. Staren, Carl D. Langefeld, Vincent Miller, Gaurav Singal, Robin M. Petro, Mac Robinson, William Blackstock, Bayard L. Powell, Lynne I. Wagner, Kristie L. Foley, Edward Abraham, Boris Pasche, Wei Zhang. Mutational Landscapes of Smoking-Related Cancers in Caucasians and African Americans: Precision Oncology Perspectives at Wake Forest Baptist Comprehensive Cancer Center. Theranostics, July 2017 DOI: 10.7150/thno.20355
-
-Reference: Zhang, Y. et al
 
 Reference: Yalin Zhang, Min Soo Kim, Baosen Jia, Jingqi Yan, Juan Pablo Zuniga-Hertz, Cheng Han, Dongsheng Cai. Hypothalamic stem cells control ageing speed partly through exosomal miRNAs. Nature, 2017; DOI: 10.1038/nature23282
 
@@ -444,7 +495,7 @@ Reference: Manav Korpal, Xiaoling Puyang, Zhenhua Jeremy Wu, Roland Seiler, Crai
 
 Explore further: New gene-editing technique could drive out mosquito-borne disease: https://phys.org/news/2017-06-gene-editing-technique-mosquito-borne-disease.html
 
-More information: Champer J, Reeves R, Oh SY, Liu C, Liu J, Clark AG, et alficiency in genetically diverse populations. PLoS Genet 13(7): e1006796. doi.org/10.1371/journal.pgen.1006796
+More information: Champer J, Reeves R, Oh SY, Liu C, Liu J, Clark AG, et al. Efficiency in genetically diverse populations. PLoS Genet 13(7): e1006796. doi.org/10.1371/journal.pgen.1006796
 
 Bull JJ, Malik HS (2017) The gene drive bubble: New realities. PLoS Genet 13(7): e1006850. doi.org/10.1371/journal.pgen.1006850
 
@@ -471,7 +522,7 @@ Google Scholar
 
 10. Galizi R, Doyle LA, Menichelli M, Bernardini F, Deredec A, Burt A, et al pmid:24915045
 
-11. Windbichler N, Menichelli M, Papathanos PA, Thyme SB, Li H, Ulge UY, et al:21508956
+11. Windbichler N, Menichelli M, Papathanos PA, Thyme SB, Li H, Ulge UY, et al 123:215.
 
 12. Gantz VM, Bier E. Genome Editing. The Mutagenic Chain Reaction: A Method for Converting Heterozygous to Homozygous Mutations. Science (New York, N.Y.). 2015;348(6233):442-44. pmid:25908821
 
@@ -489,7 +540,7 @@ Google Scholar
 
 19. Lyttle TW. Experimental Population Genetics of Meiotic Drive Systems. III. Neutralization of Sex-Ratio Distortion in Drosophila through Sex-Chromosome Aneuploidy. Genetics. 1981;98(2):317-34. pmid:6799357
 
-20. Champer JR, Reeves R, Oh SY, Liu C, Liu J, Clark AG, et aly in Genetically Diverse Populations. PLoS Genet. 2017;13(7):e1006796.
+20. Champer JR, Reeves R, Oh SY, Liu C, Liu J, Clark AG, et al. Parsimony in Genetically Diverse Populations. PLoS Genet. 2017;13(7):e1006796.
 
 21. Drury DW, Dapper AL, Siniard DJ, Zentner GE, Wade MJ. CRISPR/Cas9 Gene Drives in Genetically Variable and Nonrandomly Mating Wild Populations. Science Advances. 2017;3:e1601910. pmid:28560324
 
@@ -530,7 +581,7 @@ The variants the team found -- PLCG2, ABI3, and TREM2 -- are all protein-coding 
 
 The three variants they identified are fairly rare and he accounts for their success in finding them to their three-stage study. In the first stage, the entire protein coding regions of 34,290 samples were sequenced. In the second and third stages, the team further refined the sequences of variants and verified the significant hits against untested samples from AD patients.  "Our findings show that microglia and the innate immune system -- via microglia -- directly contribute to susceptibility of late-onset Alzheimer's disease, and are not just a down-stream 'after-the-fact' consequence of damage to the brain," Schellenberg said.
 
-Reference: Gerard D Schellenberg et ale Genetics, 2017; DOI: 10.1038/ng.3916
+Reference: Gerard D Schellenberg et al. Genetics, 2017; DOI: 10.1038/ng.3916
 
 Image: Beta-amyloid plaques from an AD mouse model. Pink represents beta-amyloid deposits (plaques), brown represents microglia cells and blue/purple is nuclei of neurons and glial cells.
 
@@ -546,38 +597,6 @@ Nature Genetics (2017)
 doi:10.1038/ng.3916
 
 We identified rare coding variants associated with Alzheimer's disease in a three-stage case-control study of 85,133 subjects. In stage 1, we genotyped 34,174 samples using a whole-exome microarray. In stage 2, we tested associated variants (P < 1 x 10-4) in 35,962 independent samples using de novo genotyping and imputed genotypes. In stage 3, we used an additional 14,997 samples to test the most significant stage 2 associations (P < 5 x 10-8) using imputed genotypes. We observed three new genome-wide significant nonsynonymous variants associated with Alzheimer's disease: a protective variant in PLCG2 (rs72824905: p.Pro522Arg, P = 5.38 x 10-10, odds ratio (OR) = 0.68, minor allele frequency (MAF)cases = 0.0059, MAFcontrols = 0.0093), a risk variant in ABI3 (rs616338: p.Ser209Phe, P = 4.56 x 10-10, OR = 1.43, MAFcases = 0.011, MAFcontrols = 0.008), and a new genome-wide significant variant in TREM2 (rs143332484: p.Arg62His, P = 1.55 x 10-14, OR = 1.67, MAFcases = 0.0143, MAFcontrols = 0.0089), a known susceptibility gene for Alzheimer's disease. These protein-altering changes are in genes highly expressed in microglia and highlight an immune-related protein-protein interaction network enriched for previously identified risk genes in Alzheimer's disease. These genetic findings provide additional evidence that the microglia-mediated innate immune response contributes directly to the development of Alzheimer's disease.
-
-==============================================================================
-
-https://www.sciencedaily.com/releases/2017/07/170717115356.htm
-
-Two new genes linked to Alzheimer's risk [Rare coding variants in PLCG2, ABI3, and TREM2 implicate microglial-mediated innate immunity in Alzheimer's disease]
-
-Date: July 17, 2017
-Source: Cardiff University
-
-A team of researchers led by Cardiff University has identified two genes that influence a person's risk of developing Alzheimer's disease.  The new finding, which builds on the team's previous work of identifying 24 susceptibility genes, enables a better understanding of the mechanisms underlying the disease and offers further hope in developing new treatments.  Dr Rebecca Sims from Cardiff University's School of Medicine said: "In addition to identifying two genes that affect the risk of developing Alzheimer's disease, our new research reveals a number of other genes and proteins that form a network likely to be important in its development. These particular genes, which suggest that immune cells in the brain play a causal role in the disease, are also very good targets for potential drug treatment." Dr Rosa Sancho, Head of Research at Alzheimer's Research UK, added: "The discovery of new genes is like finding puzzle pieces that biologists can start to fit together to build a complete picture of a disease.  "Alzheimer's Research UK is proud to be supporting scientists at the cutting edge of this work as they continue to make valuable discoveries that are shaping our understanding of the disease. There are currently no treatments to slow the progression of Alzheimer's and increased investment in research is vital so that we can capitalise on new findings and drive progress for people with the condition and their families."
-
-The two novel genes, which were not previously considered candidates for Alzheimer's risk, were identified during a study which compared the DNA of tens of thousands of individuals with Alzheimer's with aged-matched people who are free from the disease.  There are currently around 850,000 people in the UK with Alzheimer's. During the course of the disease, proteins build up in the brain to form structures called plaques and tangles. The connections between nerve cells are lost, and eventually the nerve cells die and brain tissue volume is reduced. People with Alzheimer's also have a shortage of some important chemicals in their brain. These chemical messengers help to transmit signals around the brain. When there is a shortage of them, the signals are not transmitted as effectively.
-
-Dr Doug Brown, Director of Research and Development at Alzheimer's Society, said: "Over 60% of people with dementia have Alzheimer's disease, yet despite its prevalence we still don't fully understand the complex causes of the disease.  "The discovery of two new risk genes for Alzheimer's is an exciting advance that could help to deepen our understanding of what happens in the brains of people with the disease. These genes reinforce a critical role for special cells in the brain -- called microglia -- that are responsible for clearing up debris including damaged cells and proteins. Insights like this are vital to help unravel the complexities of Alzheimer's disease and show researchers where to focus their efforts in the search for new, effective treatments.  "As a funder of this research, we're delighted to see important progress being made. The UK Dementia Research Institute centre at Cardiff will now build on this discovery to investigate in detail the role of microglia in dementia and ultimately accelerate our progress towards finding a cure."
-
-Reference: Gerard D Schellenberg et ale Genetics, 2017; DOI: 10.1038/ng.3916
-
-------------------------------------------------------------------------------
-
-https://www.nature.com/ng/journal/vaop/ncurrent/full/ng.3916.html
-
-Rare coding variants in PLCG2, ABI3, and TREM2 implicate microglial-mediated innate immunity in Alzheimer's disease
-
-Rebecca Sims, Sven J van der Lee, Adam C Naj, Céline Bellenguez, Nandini Badarinarayan, Johanna Jakobsdottir, Brian W Kunkle, Anne Boland, Rachel Raybould, Joshua C Bis, Eden R Martin, Benjamin Grenier-Boley, Stefanie Heilmann-Heimbach, Vincent Chouraki, Amanda B Kuzma, Kristel Sleegers, Maria Vronskaya, Agustin Ruiz, Robert R Graham, Robert Olaso, Per Hoffmann, Megan L Grove, Badri N Vardarajan, Mikko Hiltunen, Markus M Nöthen et al
-
-Nature Genetics (2017)
-doi:10.1038/ng.3916
-
-We identified rare coding variants associated with Alzheimer's disease in a three-stage case-control study of 85,133 subjects. In stage 1, we genotyped 34,174 samples using a whole-exome microarray. In stage 2, we tested associated variants (P < 1 x 10-4) in 35,962 independent samples using de novo genotyping and imputed genotypes. In stage 3, we used an additional 14,997 samples to test the most significant stage 2 associations (P < 5 x 10-8) using imputed genotypes. We observed three new genome-wide significant nonsynonymous variants associated with Alzheimer's disease: a protective variant in PLCG2 (rs72824905: p.Pro522Arg, P = 5.38 x 10-10, odds ratio (OR) = 0.68, minor allele frequency (MAF)cases = 0.0059, MAFcontrols = 0.0093), a risk variant in ABI3 (rs616338: p.Ser209Phe, P = 4.56 x 10-10, OR = 1.43, MAFcases = 0.011, MAFcontrols = 0.008), and a new genome-wide significant variant in TREM2 (rs143332484: p.Arg62His, P = 1.55 x 10-14, OR = 1.67, MAFcases = 0.0143, MAFcontrols = 0.0089), a known susceptibility gene for Alzheimer's disease. These protein-altering changes are in genes highly expressed in microglia and highlight an immune-related protein-protein interaction network enriched for previously identified risk genes in Alzheimer's disease. These genetic findings provide additional evidence that the microglia-mediated innate immune response contributes directly to the development of Alzheimer's disease.
-
-[170717110511_1_900x600.jpg  image/jpeg (50557 bytes)]
 
 ==============================================================================
 
@@ -625,7 +644,7 @@ ABCA7 encodes ATP-binding cassette transporter A7, a member of ABC transporters 
 
 But the authors had another NGS tool to look at this: RNA-seq. When they looked at the transcript sequences of c.5570+5G>C carriers, they included a retained intron that eventually included a stop codon.
 
-    Image: splicing variant in ABCA7 in Alzheimers-Intron retention in carriers (Steinberg et al
+    Image: splicing variant in ABCA7 in Alzheimers-Intron retention in carriers (Steinberg et al ).
 
 The image here is from Supplemental Figure 1 (the main text had no figures) and shows the intron retention in c.5570+5G>C carriers. Side note: according to the legend, the coordinates are on NCBI build 36, which practically a crime. But moving on, the RNA-seq results justified including the variant in the loss-of-function test (mask #1), which then yielded a p-value of 5.3e-10 with odds ratio of 1.97.
 
@@ -649,7 +668,7 @@ SEQUENCE variant nomenclature
 
 GENERAL
 
-Since references to web sites are not yet acknowledged as citations, please mention Den Dunnen et aling to these pages. Note that although the examples on these pages mainly give examples for human (Homo sapiens), the recommendations can be applied to all species.
+Since references to web sites are not yet acknowledged as citations, please mention Den Dunnen et al relating to these pages. Note that although the examples on these pages mainly give examples for human (Homo sapiens), the recommendations can be applied to all species.
 
 GENERAL RECOMMENDATIONS
 
